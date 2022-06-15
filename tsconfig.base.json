@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@webskills/logging": ["packages/logging/src/index.ts"],
+      "@webskills/models": ["packages/models/src/index.ts"],
+      "@webskills/ng-components": ["packages/ng-components/src/index.ts"],
+      "@webskills/ng-utils": ["packages/ng-utils/src/index.ts"],
+      "@webskills/ts-utils": ["packages/ts-utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
