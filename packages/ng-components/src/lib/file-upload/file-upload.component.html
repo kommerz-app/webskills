@@ -1,0 +1,78 @@
+<div class="flex flex-col items-center">
+  <div
+    class="w-full lg:w-2/3 overflow-auto mb-3 mt-4"
+    wskFileDrop
+    data-cy="file-drop-zone"
+    (fileDropped)="onFileDropped($event)"
+  >
+    <div class="flex flex-col">
+      <div
+        class="flex flex-col items-center border border-primary rounded-xl p-8"
+      >
+        <p
+          i18n="@@fileUploadDragYourFile"
+          *ngIf="!files?.length; else elseBlock"
+        >
+          Drag your files here
+        </p>
+        <ng-template #elseBlock
+          ><p i18n="@@fileUploadDragNewFile">
+            Drag new files to replace
+          </p></ng-template
+        >
+        <mat-icon class="upload-icon text-primary">cloud_upload </mat-icon>
+        <div class="flex flex-col justify-center items-center">
+          <p i18n="@@fileUploadOr" class="pb-3">or</p>
+          <button
+            i18n="@@fileUploadButtonBrowseFile"
+            data-cy="file-upload-btn-browse"
+            type="button"
+            mat-raised-button
+            color="primary"
+            class="uppercase"
+            (click)="fileInput.click()"
+          >
+            Browse files
+          </button>
+          <p class="text-xs pt-3">max. 10MB</p>
+        </div>
+      </div>
+      <input
+        data-cy="file-input"
+        hidden
+        type="file"
+        name="file"
+        accept="{{ fileExtensions }}"
+        multiple
+        #fileInput
+        (change)="onFileInputSelected($event.target)"
+      />
+    </div>
+  </div>
+  <div class="w-full lg:w-2/3">
+    <p class="pt-6 pl-4 font-bold" *ngIf="files.length">Uploaded Files</p>
+    <ul
+      data-cy="file-upload-show-file"
+      class="w-full py-6 px-4"
+      *ngIf="files?.length && showFileName"
+    >
+      <li
+        class="mb-7 last:mb-0 border-b border-primary"
+        *ngFor="let file of files; let i = index"
+      >
+        <div class="flex items-center justify-between pb-1">
+          <p
+            class="truncate"
+            matTooltip="{{ files[i]?.name }}"
+            aria-label="Text that displays the full file name when focused or hovered over"
+          >
+            {{ files[i]?.name }}
+          </p>
+          <button mat-icon-button color="primary" (click)="removeFile(file)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

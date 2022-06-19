@@ -1,0 +1,5 @@
+<picture>
+  <source [srcset]="webpSrcset" type="image/webp" />
+  <source [srcset]="origSrcset" [type]="'image/' + extension" />
+  <img [src]="src" [alt]="alt" [class]="imgclass" />
+</picture>

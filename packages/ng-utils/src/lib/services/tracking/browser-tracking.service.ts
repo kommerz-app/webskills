@@ -1,0 +1,66 @@
+import { Injectable } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { TrackingService } from './tracking.service';
+import { Breakpoints } from '@webskills/ng-utils';
+import { forEachProp } from '@webskills/ts-utils';
+import { BreakpointObserver } from '@angular/cdk/layout';
+
+@Injectable({ providedIn: 'root' })
+export class BrowserTrackingService {
+  constructor(
+    private trackingService: TrackingService,
+    private router: Router,
+    private breakpointObserver: BreakpointObserver
+  ) {}
+
+  init(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.trackingService.trackVisit({ url: event.url });
+      }
+    });
+
+    this.trackUa();
+    this.trackBreakpoints();
+  }
+
+  private trackBreakpoints(): void {
+    this.breakpointObserver
+      .observe([
+        Breakpoints.Handset,
+        Breakpoints.Tablet,
+        Breakpoints.Web,
+        Breakpoints.HandsetPortrait,
+        Breakpoints.TabletPortrait,
+        Breakpoints.WebPortrait,
+        Breakpoints.HandsetLandscape,
+        Breakpoints.TabletLandscape,
+        Breakpoints.WebLandscape,
+      ])
+      .subscribe((res) => {
+        const breakpoints: string[] = [];
+
+        forEachProp(res.breakpoints, (breakpoint, matched) => {
+          if (matched) {
+            forEachProp(Breakpoints, (bpName, bpVal) => {
+              if (breakpoint === bpVal) {
+                breakpoints.push(bpName);
+              }
+            });
+          }
+        });
+
+        this.trackingService.trackInfo({ name: 'bps', data: breakpoints });
+      });
+  }
+
+  private trackUa(): void {
+    this.trackingService.trackUserAgent({
+      ua: navigator.userAgent,
+      lng: navigator.language,
+      res: screen.width + 'x' + screen.height,
+      tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      c: navigator.cookieEnabled,
+    });
+  }
+}

@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "webskills",
+            "prefix": "wsk",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "webskills",
+            "prefix": "wsk",
             "style": "kebab-case"
           }
         ]
