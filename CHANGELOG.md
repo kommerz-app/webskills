@@ -1,3 +1,10 @@
+## [1.0.9](https://dev.colamda.de/webskills/webskills/compare/v1.0.8...v1.0.9) (2022-06-19)
+
+
+### Bug Fixes
+
+* vega deps ([05e01a7](https://dev.colamda.de/webskills/webskills/commit/05e01a7e0894320ccd99ce278e657c9e4e10f5b7))
+
 ## [1.0.8](https://dev.colamda.de/webskills/webskills/compare/v1.0.7...v1.0.8) (2022-06-19)
 
 
