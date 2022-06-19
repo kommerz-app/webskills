@@ -1,3 +1,10 @@
+## [1.0.7](https://dev.colamda.de/webskills/webskills/compare/v1.0.6...v1.0.7) (2022-06-19)
+
+
+### Bug Fixes
+
+* export production and apiBasePath ([640a4ae](https://dev.colamda.de/webskills/webskills/commit/640a4ae0872818109b953f2e3625c00ba8d75226))
+
 ## [1.0.6](https://dev.colamda.de/webskills/webskills/compare/v1.0.5...v1.0.6) (2022-06-19)
 
 
