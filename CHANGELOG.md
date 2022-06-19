@@ -1,3 +1,10 @@
+## [1.0.8](https://dev.colamda.de/webskills/webskills/compare/v1.0.7...v1.0.8) (2022-06-19)
+
+
+### Bug Fixes
+
+* export and rename ([5020151](https://dev.colamda.de/webskills/webskills/commit/5020151ba08ea7c71a3160c2fc94ff73af1128f7))
+
 ## [1.0.7](https://dev.colamda.de/webskills/webskills/compare/v1.0.6...v1.0.7) (2022-06-19)
 
 
