@@ -1,3 +1,10 @@
+## [1.0.10](https://dev.colamda.de/webskills/webskills/compare/v1.0.9...v1.0.10) (2022-06-19)
+
+
+### Bug Fixes
+
+* build libs as ecma modules ([b166659](https://dev.colamda.de/webskills/webskills/commit/b166659723d6889f2a599ca14a47ea4a3eabdca6))
+
 ## [1.0.9](https://dev.colamda.de/webskills/webskills/compare/v1.0.8...v1.0.9) (2022-06-19)
 
 
