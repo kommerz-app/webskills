@@ -2,13 +2,13 @@
 // @ts-nocheck
 
 import {
-  ColDataSource,
+  WskDataSource,
   FilterParams,
   Page,
   PageParams,
   PaginationEndpoint,
   SortParams,
-} from './col-data-source';
+} from './wsk-data-source';
 import { forkJoin, of, Subject, throwError } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
@@ -50,7 +50,7 @@ describe('ColDataSource', () => {
       return of(page);
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
     dataSource.connect(undefined).subscribe();
 
     const pageParams: PageParams = { page: 3, size: 15 };
@@ -73,7 +73,7 @@ describe('ColDataSource', () => {
       return of(page);
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
     dataSource.connect(undefined).subscribe();
 
     const sortParams: SortParams[] = [
@@ -99,7 +99,7 @@ describe('ColDataSource', () => {
       return of(page);
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
     dataSource.connect(undefined).subscribe();
 
     const filterParams: FilterParams[] = [
@@ -122,7 +122,7 @@ describe('ColDataSource', () => {
       return of(page);
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
 
     const pageParams: PageParams = { page: 3, size: 15 };
     const sortParams: SortParams[] = [
@@ -163,7 +163,7 @@ describe('ColDataSource', () => {
       return of(page);
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
     dataSource.connect(undefined).subscribe();
 
     const pageParams: PageParams = { page: 3, size: 15 };
@@ -187,7 +187,7 @@ describe('ColDataSource', () => {
       return of(page);
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
 
     dataSource.totalElements$.subscribe((elements) => {
       if (counter === 0) {
@@ -209,7 +209,7 @@ describe('ColDataSource', () => {
       return of(page);
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
 
     const expectedData = [
       {
@@ -265,7 +265,7 @@ describe('ColDataSource', () => {
       return of(page);
     };
 
-    const dataSource = new ColDataSource<Address>(cb, {
+    const dataSource = new WskDataSource<Address>(cb, {
       pageParams,
       sortParams,
       filterParams,
@@ -284,7 +284,7 @@ describe('ColDataSource', () => {
       return of(page);
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
 
     dataSource.connect(null).subscribe((data) => {
       expect(data.length).toBe(3);
@@ -301,7 +301,7 @@ describe('ColDataSource', () => {
       return forkJoin([of(page), wait$]).pipe(map(([page]) => page));
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
 
     const loading = await dataSource.loading$.pipe(take(1)).toPromise();
     expect(loading).toBeFalsy();
@@ -323,7 +323,7 @@ describe('ColDataSource', () => {
       return throwError('error on ep');
     };
 
-    const dataSource = new ColDataSource<Address>(cb);
+    const dataSource = new WskDataSource<Address>(cb);
     dataSource.connect(null).subscribe();
 
     const loading = await dataSource.loading$.pipe(take(1)).toPromise();
@@ -336,7 +336,7 @@ describe('ColDataSource', () => {
     };
 
     let counter = 0;
-    const dataSource = new ColDataSource<Address>(cb, {
+    const dataSource = new WskDataSource<Address>(cb, {
       pageParams: { page: 7, size: 11 },
     });
     dataSource.connect(null).subscribe({
@@ -358,7 +358,7 @@ describe('ColDataSource', () => {
     };
 
     let counter = 0;
-    const dataSource = new ColDataSource<Address>(cb, {
+    const dataSource = new WskDataSource<Address>(cb, {
       pageParams: { page: 7, size: 11 },
     });
     dataSource.connect(null).subscribe({

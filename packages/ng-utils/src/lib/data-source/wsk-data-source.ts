@@ -93,7 +93,7 @@ function deepFreeze<T>(obj: T) {
   return Object.freeze(obj);
 }
 
-export class ColDataSource<T> extends DataSource<T> {
+export class WskDataSource<T> extends DataSource<T> {
   private destroy$ = new Subject<void>();
   private load$ = new Subject<void>();
 
