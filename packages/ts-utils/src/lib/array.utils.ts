@@ -67,7 +67,7 @@ export function getLastElement<T>(array: T[]): T | null {
 export function getElement<T>(
   array: T[],
   index: number,
-  infinite: boolean = false
+  infinite = false
 ): T | null {
   if (isDefined(array) && array.length > 0) {
     if (infinite === true) {

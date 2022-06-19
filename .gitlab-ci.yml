@@ -1,0 +1,88 @@
+stages:
+  - test
+  - lint
+  - build
+  - release
+
+include:
+  - template: Code-Quality.gitlab-ci.yml
+  - project: 'webskills/ci-cd-pipelines'
+    file: 'qa.gitlab-ci.yml'
+  - project: 'webskills/ci-cd-pipelines'
+    file: 'frontend.gitlab-ci.yml'
+  - project: 'webskills/ci-cd-pipelines'
+    file: 'semantic-release.gitlab-ci.yml'
+
+frontend-fixing:
+  before_script:
+    - export NX_HEAD=$CI_COMMIT_SHA
+    - export NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
+
+code_quality:
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+build-libs:
+  image: node:17
+  stage: build
+  needs: []
+  rules:
+    - if: $CI_COMMIT_TAG
+    - if: $CI_MERGE_REQUEST_ID
+  variables:
+    JEST_JUNIT_OUTPUT_DIR: './junit'
+    JEST_JUNIT_UNIQUE_OUTPUT_NAME: 'true'
+    NODE_OPTIONS: '--max_old_space_size=4096'
+    npm_config_cache: '$CI_PROJECT_DIR/.npm'
+    YARN_CACHE_FOLDER: '$CI_PROJECT_DIR/.yarn'
+  script:
+    - NX_HEAD=$CI_COMMIT_SHA
+    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
+    - echo $NX_BASE
+    - echo $NX_HEAD
+    - echo $CI_MERGE_REQUEST_DIFF_BASE_SHA
+    - echo $CI_COMMIT_BEFORE_SHA
+    - yarn install --frozen-lockfile
+    - yarn nx affected:test --reporters=jest-junit --base=$NX_BASE --head=$NX_HEAD --parallel --maxParallel=5
+    - NODE_ENV=production yarn nx affected:build --base=$NX_BASE --head=$NX_HEAD --parallel --maxParallel=5
+  cache:
+    key: deps-cache
+    paths:
+      - .yarn
+      - .npm
+      - .cache
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+      - dist
+    reports:
+      junit: junit/*.xml
+
+deploy-libs:
+  image: node:17
+  stage: build
+  needs:
+    - build-libs
+  rules:
+    - if: $CI_COMMIT_TAG
+  variables:
+    npm_config_cache: '$CI_PROJECT_DIR/.npm'
+    YARN_CACHE_FOLDER: '$CI_PROJECT_DIR/.yarn'
+  script:
+    - npm config set @webskills:registry $CI_API_V4_URL/projects/${CI_PROJECT_ID}/packages/npm/
+    - npm config set -- "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken" "${GITBOT_ACCESS_TOKEN}"
+    - npm publish dist/logging
+    - npm publish dist/models
+    - npm publish dist/ng-components
+    - npm publish dist/ng-utils
+    - npm publish dist/ts-utils
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hrs
+  cache:
+    key: npm-release-cache
+    paths:
+      - .yarn
+      - .npm
