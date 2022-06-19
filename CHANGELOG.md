@@ -1,3 +1,10 @@
+## [1.0.1](https://dev.colamda.de/webskills/webskills/compare/v1.0.0...v1.0.1) (2022-06-19)
+
+
+### Bug Fixes
+
+* ci ([776402f](https://dev.colamda.de/webskills/webskills/commit/776402f5c8c4b7bd3b9cb50948b5c4b221028a71))
+
 # 1.0.0 (2022-06-19)
 
 
