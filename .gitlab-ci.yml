@@ -37,7 +37,7 @@ build-libs:
     YARN_CACHE_FOLDER: '$CI_PROJECT_DIR/.yarn'
   script:
     - NX_HEAD=$CI_COMMIT_SHA
-    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-"origin/$CI_COMMIT_TAG~2"}
+    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-"origin/$CI_COMMIT_SHA~2"}
     - yarn install --frozen-lockfile
     - yarn nx affected:test --reporters=jest-junit --base=$NX_BASE --head=$NX_HEAD --parallel --maxParallel=5
     - NODE_ENV=production yarn nx affected:build --base=$NX_BASE --head=$NX_HEAD --parallel --maxParallel=5
