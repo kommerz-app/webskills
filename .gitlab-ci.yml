@@ -68,11 +68,11 @@ deploy-libs:
   script:
     - npm config set @webskills:registry $CI_API_V4_URL/projects/${CI_PROJECT_ID}/packages/npm/
     - npm config set -- "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken" "${GITBOT_ACCESS_TOKEN}"
-    - npm publish dist/logging
-    - npm publish dist/models
-    - npm publish dist/ng-components
-    - npm publish dist/ng-utils
-    - npm publish dist/ts-utils
+    - npm publish dist/logging/
+    - npm publish dist/models/
+    - npm publish dist/ng-components/
+    - npm publish dist/ng-utils/
+    - npm publish dist/ts-utils/
   artifacts:
     paths:
       - dist/
