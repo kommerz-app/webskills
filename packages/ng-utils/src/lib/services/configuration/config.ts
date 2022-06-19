@@ -9,6 +9,14 @@ export interface EnvironmentConfig extends Record<string, unknown> {
 export class Config {
   constructor(private config: EnvironmentConfig) {}
 
+  get production(): boolean {
+    return this.config.production;
+  }
+
+  get apiBasePath(): string {
+    return this.config.apiBasePath;
+  }
+
   /**
    * Get the value for a specified config option or fallback to the specified default value.
    *
