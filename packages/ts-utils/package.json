@@ -3,5 +3,5 @@
   "author": "Colamda GmbH",
   "license": "MIT",
   "version": "1.0.9",
-  "type": "commonjs"
+  "type": "module"
 }
