@@ -1,3 +1,10 @@
+## [1.0.12](https://dev.colamda.de/webskills/webskills/compare/v1.0.11...v1.0.12) (2022-06-29)
+
+
+### Bug Fixes
+
+* equal in datasource ([7b9c341](https://dev.colamda.de/webskills/webskills/commit/7b9c341f0b51372b8d879cf9ba3f894528d92b99))
+
 ## [1.0.11](https://dev.colamda.de/webskills/webskills/compare/v1.0.10...v1.0.11) (2022-06-29)
 
 
