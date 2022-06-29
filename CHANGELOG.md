@@ -1,3 +1,10 @@
+## [1.0.11](https://dev.colamda.de/webskills/webskills/compare/v1.0.10...v1.0.11) (2022-06-29)
+
+
+### Bug Fixes
+
+* remove type ([40f3e71](https://dev.colamda.de/webskills/webskills/commit/40f3e7197bc41da9d934265994a2c19dc558112a))
+
 ## [1.0.10](https://dev.colamda.de/webskills/webskills/compare/v1.0.9...v1.0.10) (2022-06-19)
 
 
