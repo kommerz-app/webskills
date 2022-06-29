@@ -10,9 +10,8 @@ import {
   takeUntil,
   tap,
 } from 'rxjs/operators';
-import * as equal from 'fast-deep-equal';
 import { isDevMode } from '@angular/core';
-import { cloneDeep, isDefined } from '@webskills/ts-utils';
+import { cloneDeep, isDefined, isEqual } from '@webskills/ts-utils';
 
 export interface PageParams {
   page: number;
@@ -58,7 +57,7 @@ export class RequestParamsHolder {
   });
   public params$ = this._params$.pipe(
     takeUntil(this.destroy$),
-    distinctUntilChanged<RequestParams>(equal)
+    distinctUntilChanged<RequestParams>(isEqual)
   );
 
   /**
