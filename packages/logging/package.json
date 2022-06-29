@@ -2,6 +2,5 @@
   "name": "@webskills/logging",
   "author": "Colamda GmbH",
   "license": "MIT",
-  "version": "1.0.10",
-  "type": "module"
+  "version": "1.0.10"
 }
