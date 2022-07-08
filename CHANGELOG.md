@@ -1,3 +1,10 @@
+# [1.1.0](https://dev.colamda.de/webskills/webskills/compare/v1.0.12...v1.1.0) (2022-07-08)
+
+
+### Features
+
+* add sap floorplans ([f261c50](https://dev.colamda.de/webskills/webskills/commit/f261c50c51cb46f404c93282467753f4080937a5))
+
 ## [1.0.12](https://dev.colamda.de/webskills/webskills/compare/v1.0.11...v1.0.12) (2022-06-29)
 
 
