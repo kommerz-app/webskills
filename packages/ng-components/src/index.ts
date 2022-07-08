@@ -24,6 +24,12 @@ export * from './lib/error/error.service';
 export * from './lib/picture/picture.component';
 export * from './lib/picture/picture.module';
 
+export * from './lib/sap/list-report/list-report.component';
+export * from './lib/sap/list-report/list-report.module';
+
+export * from './lib/sap/object-page/object-page.component';
+export * from './lib/sap/object-page/object-page.module';
+
 export * from './lib/vega/vega.component';
 export * from './lib/vega/vega.module';
 

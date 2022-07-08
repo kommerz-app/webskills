@@ -1,0 +1,31 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background: white;
+}
+
+.mat-expansion-panel {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.mat-expansion-panel-header {
+  order: 2;
+  border-bottom: 2px solid grey;
+}
+
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}
+
+.mat-expansion-panel-header-title {
+  justify-content: center;
+}
+
+.sticky-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}

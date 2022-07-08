@@ -1,0 +1,46 @@
+<div class="sticky-toolbar">
+  <div>
+    <ng-content select="[breadcrumbs]"></ng-content>
+  </div>
+
+  <mat-toolbar>
+    <div>
+      <div>
+        <ng-content select="[headerTitle]"></ng-content>
+      </div>
+      <div>
+        <ng-content select="[subTitle]"></ng-content>
+      </div>
+      <div>
+        <ng-content select="[objectMarker]"></ng-content>
+      </div>
+    </div>
+    <span class="example-spacer"></span>
+
+    <div>
+      <ng-content select="[headerToolbar]"></ng-content>
+    </div>
+  </mat-toolbar>
+
+  <mat-accordion>
+    <mat-expansion-panel
+      hideToggle
+      expanded
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon *ngIf="panelOpenState; else closeIcon"
+            >expand_less
+          </mat-icon>
+          <ng-template #closeIcon>
+            <mat-icon>expand_more</mat-icon>
+          </ng-template>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <ng-content select="[headerContent]"></ng-content>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

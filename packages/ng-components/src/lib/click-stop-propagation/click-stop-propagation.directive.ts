@@ -8,7 +8,7 @@ export class ClickStopPropagationDirective {
   private logger = new Logger('ClickStopPropagationDirective');
 
   @HostListener('click', ['$event'])
-  public onClick(event: any): void {
+  public onClick(event: Event): void {
     this.logger.trace('prevent');
     event.stopPropagation();
   }
