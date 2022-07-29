@@ -13,9 +13,9 @@ import {
 })
 export class NumberComponent {
   @HostBinding('class') get classes(): string | undefined {
-    if (this.value ?? 0 > 0) {
+    if ((this.value ?? 0) > 0) {
       return this.classPositive;
-    } else if (this.value ?? 0 < 0) {
+    } else if ((this.value ?? 0) < 0) {
       return this.classNegative;
     } else {
       return '';

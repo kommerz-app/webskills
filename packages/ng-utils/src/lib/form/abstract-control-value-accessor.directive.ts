@@ -31,7 +31,7 @@ export abstract class AbstractControlValueAccessor
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.setProperty('disabled', '');
+    this.setProperty('disabled', isDisabled);
   }
 
   abstract writeValue(obj: unknown): void;
