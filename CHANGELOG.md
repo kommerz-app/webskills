@@ -1,3 +1,10 @@
+## [1.1.1](https://dev.colamda.de/webskills/webskills/compare/v1.1.0...v1.1.1) (2022-07-29)
+
+
+### Bug Fixes
+
+* number component did not use class for negative values ([0eb0cea](https://dev.colamda.de/webskills/webskills/commit/0eb0cea52b8ee3b190101d7e757eacd3896fd487))
+
 # [1.1.0](https://dev.colamda.de/webskills/webskills/compare/v1.0.12...v1.1.0) (2022-07-08)
 
 
