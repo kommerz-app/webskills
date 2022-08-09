@@ -6,6 +6,7 @@
     "models": "packages/models",
     "ng-components": "packages/ng-components",
     "ng-utils": "packages/ng-utils",
-    "ts-utils": "packages/ts-utils"
+    "ts-utils": "packages/ts-utils",
+    "webskills-demo": "apps/webskills-demo"
   }
 }
