@@ -1,0 +1,44 @@
+@use '@angular/material' as mat;
+@import 'styles/material';
+@import 'styles/roboto';
+@import 'styles/variables';
+
+@include mat.core();
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$webskills-primary: mat.define-palette($webskills-blue, 800);
+$webskills-accent: mat.define-palette($webskills-cyan, 500);
+$webskills-warn: mat.define-palette($webskills-warn, 600);
+
+$webskills-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $webskills-primary,
+      accent: $webskills-accent,
+      warn: $webskills-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($webskills-theme);
+
+.mat-drawer-side {
+  border: none;
+}
+
+.isDragOver {
+  background-color: #edf5fc;
+  border-radius: 0.75rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

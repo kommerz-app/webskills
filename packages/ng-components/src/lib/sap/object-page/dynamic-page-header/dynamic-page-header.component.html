@@ -1,46 +1,38 @@
-<div class="sticky-toolbar">
-  <div>
+<div class="header" [ngClass]="{ minified: minified, maximized: !minified }">
+  <div class="text-xs py-3 px-6">
     <ng-content select="[breadcrumbs]"></ng-content>
   </div>
 
-  <mat-toolbar>
-    <div>
-      <div>
-        <ng-content select="[headerTitle]"></ng-content>
+  <div class="flex flex-col">
+    <div class="flex px-6">
+      <div class="flex items-center">
+        <div *ngIf="!minified">
+          <ng-content select="[header]"></ng-content>
+        </div>
+        <div *ngIf="minified">
+          <ng-content select="[headerMinified]"></ng-content>
+        </div>
       </div>
+      <span class="example-spacer"></span>
+
       <div>
-        <ng-content select="[subTitle]"></ng-content>
-      </div>
-      <div>
-        <ng-content select="[objectMarker]"></ng-content>
+        <ng-content select="[headerToolbar]"></ng-content>
       </div>
     </div>
-    <span class="example-spacer"></span>
 
-    <div>
-      <ng-content select="[headerToolbar]"></ng-content>
+    <div class="header-content" [style.--max-height.px]="contentHeight">
+      <div #headerContent>
+        <ng-content select="[headerContent]"></ng-content>
+      </div>
     </div>
-  </mat-toolbar>
 
-  <mat-accordion>
-    <mat-expansion-panel
-      hideToggle
-      expanded
-      (opened)="panelOpenState = true"
-      (closed)="panelOpenState = false"
-    >
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon *ngIf="panelOpenState; else closeIcon"
-            >expand_less
-          </mat-icon>
-          <ng-template #closeIcon>
-            <mat-icon>expand_more</mat-icon>
-          </ng-template>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <ng-content select="[headerContent]"></ng-content>
-    </mat-expansion-panel>
-  </mat-accordion>
+    <div class="flex justify-center">
+      <button mat-icon-button (click)="onClick()">
+        <mat-icon *ngIf="minified; else closeIcon">expand_more</mat-icon>
+        <ng-template #closeIcon>
+          <mat-icon>expand_less</mat-icon>
+        </ng-template>
+      </button>
+    </div>
+  </div>
 </div>

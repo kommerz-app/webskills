@@ -63,10 +63,10 @@
         <div class="flex items-center justify-between pb-1">
           <p
             class="truncate"
-            matTooltip="{{ files[i]?.name }}"
+            matTooltip="{{ files[i].name }}"
             aria-label="Text that displays the full file name when focused or hovered over"
           >
-            {{ files[i]?.name }}
+            {{ files[i].name }}
           </p>
           <button mat-icon-button color="primary" (click)="removeFile(file)">
             <mat-icon>delete</mat-icon>

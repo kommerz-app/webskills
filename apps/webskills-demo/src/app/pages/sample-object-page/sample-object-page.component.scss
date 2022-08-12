@@ -1,0 +1,23 @@
+.placeholder-image {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 8px;
+  background-color: blue;
+}
+
+.placeholder-image-minified {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 8px;
+  background-color: blue;
+}
+
+dt,
+dd {
+  display: inline;
+}
+
+dd:after {
+  content: '';
+  display: block;
+}

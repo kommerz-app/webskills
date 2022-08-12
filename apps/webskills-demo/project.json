@@ -16,7 +16,7 @@
           "apps/webskills-demo/src/favicon.ico",
           "apps/webskills-demo/src/assets"
         ],
-        "styles": ["apps/webskills-demo/src/styles.css"],
+        "styles": ["apps/webskills-demo/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -25,7 +25,7 @@
             {
               "type": "initial",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",

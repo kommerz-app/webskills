@@ -4,7 +4,7 @@ import { convertMinutesToDuration } from '../../date-time/time.utils';
 @Pipe({
   name: 'minutes',
 })
-export class MinutesPipe<T> implements PipeTransform {
+export class MinutesPipe implements PipeTransform {
   transform(minutes: number): string | undefined {
     if (!minutes) {
       return undefined;

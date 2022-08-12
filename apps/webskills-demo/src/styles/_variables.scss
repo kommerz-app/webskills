@@ -1,0 +1,88 @@
+/*
+This file contains all variables that can be overridden.
+ */
+
+// color settings
+
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+//webskills blue-palette
+$webskills-blue: (
+  50: #edecff,
+  100: #cdd5ed,
+  200: #b2b8d4,
+  300: #969cbc,
+  400: #8087aa,
+  500: #6b7398,
+  600: #5c6587,
+  700: #4a5270,
+  800: #3a405a,
+  900: #262c42,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  ),
+);
+
+//webskills cyan-palette
+$webskills-cyan: (
+  50: #e4f5fb,
+  100: #bae6f5,
+  200: #91d5ef,
+  300: #70c4e7,
+  400: #5eb8e3,
+  500: #54abde,
+  600: #4d9ed0,
+  700: #458bbc,
+  800: #407aa8,
+  900: #345a84,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  ),
+);
+
+//webskills warn-palette
+$webskills-warn: (
+  50: #fef2f2,
+  100: #fee2e2,
+  200: #fecaca,
+  300: #fca5a5,
+  400: #f87171,
+  500: #ef4444,
+  600: #dc2626,
+  700: #b91c1c,
+  800: #991b1b,
+  900: #7f1d1d,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  ),
+);
+
+// font settings
