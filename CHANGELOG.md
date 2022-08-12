@@ -1,3 +1,10 @@
+# [1.2.0](https://dev.colamda.de/webskills/webskills/compare/v1.1.1...v1.2.0) (2022-08-12)
+
+
+### Features
+
+* **object-page:** ui fine tuning ([3bcb324](https://dev.colamda.de/webskills/webskills/commit/3bcb32478582bd4b12593cb18cd244863217cfd3)), closes [#3](https://dev.colamda.de/webskills/webskills/issues/3)
+
 ## [1.1.1](https://dev.colamda.de/webskills/webskills/compare/v1.1.0...v1.1.1) (2022-07-29)
 
 
