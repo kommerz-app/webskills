@@ -1,7 +1,8 @@
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
-  NgZone,
   OnDestroy,
   OnInit,
   ViewChild,
@@ -11,32 +12,33 @@ import {
   selector: 'wsk-dynamic-page-header',
   templateUrl: './dynamic-page-header.component.html',
   styleUrls: ['./dynamic-page-header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicPageHeaderComponent implements OnInit, OnDestroy {
+  private resizeObserver!: ResizeObserver;
+
   @ViewChild('headerContent', { static: true })
-  headerContent!: ElementRef<HTMLDivElement>;
+  private headerContent!: ElementRef<HTMLDivElement>;
 
   minified!: boolean;
   contentHeight!: number;
-  resizeObserver!: ResizeObserver;
 
-  onClick(): void {
-    this.minified = !this.minified;
-  }
-
-  constructor(private zone: NgZone) {}
+  constructor(private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.resizeObserver = new ResizeObserver((entries) => {
-      this.zone.run(() => {
-        this.contentHeight = entries[0].contentRect.height;
-      });
+      this.contentHeight = entries[0].contentRect.height;
+      this.cd.markForCheck();
     });
 
     this.resizeObserver.observe(this.headerContent.nativeElement);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.resizeObserver.disconnect();
+  }
+
+  onClick(): void {
+    this.minified = !this.minified;
   }
 }
