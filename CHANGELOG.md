@@ -1,3 +1,10 @@
+## [1.2.2](https://dev.colamda.de/webskills/webskills/compare/v1.2.1...v1.2.2) (2022-08-13)
+
+
+### Bug Fixes
+
+* change detection did not detect contentHeight reliably ([4a0bbdf](https://dev.colamda.de/webskills/webskills/commit/4a0bbdfd29b95c1b9661558a992771bb01e44676))
+
 ## [1.2.1](https://dev.colamda.de/webskills/webskills/compare/v1.2.0...v1.2.1) (2022-08-13)
 
 
