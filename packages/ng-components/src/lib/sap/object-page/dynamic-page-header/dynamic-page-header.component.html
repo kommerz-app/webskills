@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class="header-content" [style.--max-height.px]="contentHeight">
+    <div class="header-content" #contentWrapper>
       <div #headerContent>
         <ng-content select="[headerContent]"></ng-content>
       </div>

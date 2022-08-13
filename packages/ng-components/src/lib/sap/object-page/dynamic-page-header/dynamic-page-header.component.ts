@@ -1,10 +1,10 @@
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   ElementRef,
   OnDestroy,
   OnInit,
+  Renderer2,
   ViewChild,
 } from '@angular/core';
 
@@ -17,18 +17,24 @@ import {
 export class DynamicPageHeaderComponent implements OnInit, OnDestroy {
   private resizeObserver!: ResizeObserver;
 
+  @ViewChild('contentWrapper', { static: true })
+  private contentWrapper!: ElementRef<HTMLDivElement>;
+
   @ViewChild('headerContent', { static: true })
   private headerContent!: ElementRef<HTMLDivElement>;
 
   minified!: boolean;
-  contentHeight!: number;
 
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
     this.resizeObserver = new ResizeObserver((entries) => {
-      this.contentHeight = entries[0].contentRect.height;
-      this.cd.markForCheck();
+      const contentHeight = entries[0].contentRect.height;
+      this.renderer.setStyle(
+        this.contentWrapper.nativeElement,
+        '--max-height.px',
+        contentHeight
+      );
     });
 
     this.resizeObserver.observe(this.headerContent.nativeElement);
