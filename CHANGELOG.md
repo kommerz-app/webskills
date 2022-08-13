@@ -1,3 +1,10 @@
+## [1.2.1](https://dev.colamda.de/webskills/webskills/compare/v1.2.0...v1.2.1) (2022-08-13)
+
+
+### Bug Fixes
+
+* use onPush and change detector ([24fbe31](https://dev.colamda.de/webskills/webskills/commit/24fbe31dad3bb41da00c55cb77b0a08f0793c08a))
+
 # [1.2.0](https://dev.colamda.de/webskills/webskills/compare/v1.1.1...v1.2.0) (2022-08-12)
 
 
