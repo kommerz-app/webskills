@@ -1,3 +1,10 @@
+# [1.3.0](https://dev.colamda.de/webskills/webskills/compare/v1.2.2...v1.3.0) (2022-08-24)
+
+
+### Features
+
+* add split button ([7044062](https://dev.colamda.de/webskills/webskills/commit/70440621664e87cbd2165cfdc0cdee652b796803)), closes [#6](https://dev.colamda.de/webskills/webskills/issues/6)
+
 ## [1.2.2](https://dev.colamda.de/webskills/webskills/compare/v1.2.1...v1.2.2) (2022-08-13)
 
 
