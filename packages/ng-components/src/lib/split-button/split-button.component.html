@@ -1,0 +1,30 @@
+<button
+  mat-raised-button
+  color="primary"
+  [type]="type"
+  (click)="onSubmit($event)"
+  [disabled]="disabled"
+>
+  <ng-content></ng-content>
+</button>
+
+<button
+  mat-raised-button
+  color="primary"
+  type="button"
+  [matMenuTriggerFor]="dropdownMenuOne"
+>
+  <mat-icon>arrow_drop_down</mat-icon>
+</button>
+
+<mat-menu #dropdownMenuOne="matMenu">
+  <button
+    mat-menu-item
+    *ngFor="let item of items; let idx = index"
+    (click)="item.action()"
+    [disabled]="item.disabled"
+  >
+    <mat-icon>{{ item.icon }}</mat-icon>
+    <span class="uppercase">{{ item.label }}</span>
+  </button>
+</mat-menu>

@@ -92,8 +92,18 @@
       </div>
     </div>
 
-    <div contentArea class="bg-slate-100 h-screen">
-      <p>Content Area</p>
+    <div contentArea class="bg-slate-100 h-screen p-6">
+      <div class="flex justify-between">
+        <p>Content Area</p>
+
+        <wsk-split-button
+          [items]="items"
+          [disabled]="disabled"
+          (clickSubmit)="onSubmitClicked()"
+        >
+          <div label class="uppercase">Export as Excel</div>
+        </wsk-split-button>
+      </div>
     </div>
 
     <div footerToolbar></div>

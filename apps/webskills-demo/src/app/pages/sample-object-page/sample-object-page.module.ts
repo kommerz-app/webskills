@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SampleObjectPageComponent } from './sample-object-page.component';
-import { NumberModule, ObjectPageModule } from '@webskills/ng-components';
+import {
+  NumberModule,
+  ObjectPageModule,
+  SplitButtonModule,
+} from '@webskills/ng-components';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +23,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatButtonModule,
     NumberModule,
     MatMenuModule,
+    SplitButtonModule,
   ],
   exports: [SampleObjectPageComponent],
 })

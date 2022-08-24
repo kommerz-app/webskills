@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuItem } from '@webskills/ng-components';
 
 interface User {
   id: string;
@@ -20,4 +21,37 @@ export class SampleObjectPageComponent {
     { id: 'user-1', userName: 'Sascha Wollin' },
     { id: 'user-3', userName: 'Sophia Mahnert' },
   ];
+
+  items: MenuItem[] = [
+    {
+      label: 'PDF',
+      icon: 'file_download',
+      disabled: false,
+      action: () => console.log('export PDF'),
+    },
+    {
+      label: 'CSV',
+      icon: 'file_download',
+      disabled: false,
+      action: () => console.log('export CSV'),
+    },
+    {
+      label: 'DOC',
+      icon: 'file_download',
+      disabled: false,
+      action: () => console.log('export DOC'),
+    },
+    {
+      label: 'XLS',
+      icon: 'file_download',
+      disabled: false,
+      action: () => console.log('export XLS'),
+    },
+  ];
+
+  disabled = false;
+
+  onSubmitClicked() {
+    console.log('button was clicked');
+  }
 }
