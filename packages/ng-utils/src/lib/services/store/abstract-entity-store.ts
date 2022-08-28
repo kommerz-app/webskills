@@ -1,5 +1,5 @@
 import { Directive } from '@angular/core';
-import { AbstractStore } from '@webskills/ng-utils';
+import { AbstractStore } from './abstract-store';
 import { isUndefined } from '@webskills/ts-utils';
 
 @Directive()
