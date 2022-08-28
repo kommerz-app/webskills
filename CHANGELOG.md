@@ -1,3 +1,10 @@
+## [1.4.2](https://dev.colamda.de/webskills/webskills/compare/v1.4.1...v1.4.2) (2022-08-28)
+
+
+### Bug Fixes
+
+* circular dependency due to incorrect import ([06974ee](https://dev.colamda.de/webskills/webskills/commit/06974ee5e14b506d2262427a56541157c9e31085))
+
 ## [1.4.1](https://dev.colamda.de/webskills/webskills/compare/v1.4.0...v1.4.1) (2022-08-28)
 
 
