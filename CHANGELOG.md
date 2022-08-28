@@ -1,3 +1,10 @@
+## [1.4.4](https://dev.colamda.de/webskills/webskills/compare/v1.4.3...v1.4.4) (2022-08-28)
+
+
+### Bug Fixes
+
+* make id optional for better compatibility ([6b487db](https://dev.colamda.de/webskills/webskills/commit/6b487db74399fc2002fa274e5916aded6daf15aa))
+
 ## [1.4.3](https://dev.colamda.de/webskills/webskills/compare/v1.4.2...v1.4.3) (2022-08-28)
 
 
