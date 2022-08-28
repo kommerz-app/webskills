@@ -1,3 +1,10 @@
+# [1.4.0](https://dev.colamda.de/webskills/webskills/compare/v1.3.0...v1.4.0) (2022-08-28)
+
+
+### Features
+
+* add AbstractEntityStore ([df31a81](https://dev.colamda.de/webskills/webskills/commit/df31a81ea5209a54d714987f6ab8a768dac39936))
+
 # [1.3.0](https://dev.colamda.de/webskills/webskills/compare/v1.2.2...v1.3.0) (2022-08-24)
 
 
