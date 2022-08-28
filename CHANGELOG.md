@@ -1,3 +1,10 @@
+## [1.4.1](https://dev.colamda.de/webskills/webskills/compare/v1.4.0...v1.4.1) (2022-08-28)
+
+
+### Bug Fixes
+
+* export AbstractEntityStore ([183171f](https://dev.colamda.de/webskills/webskills/commit/183171f04f15473c2224d7395191b970a591203e))
+
 # [1.4.0](https://dev.colamda.de/webskills/webskills/compare/v1.3.0...v1.4.0) (2022-08-28)
 
 
