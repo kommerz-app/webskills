@@ -14,4 +14,5 @@ export * from './authn/local-auth-status';
 export * from './user/local-user-account';
 export * from './routing/previous-route.service';
 export * from './store/abstract-store';
+export * from './store/abstract-entity-store';
 export * from './time/time.service';
