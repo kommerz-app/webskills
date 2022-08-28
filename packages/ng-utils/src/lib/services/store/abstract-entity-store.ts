@@ -4,7 +4,7 @@ import { isUndefined } from '@webskills/ts-utils';
 
 @Directive()
 export abstract class AbstractEntityStore<
-  T extends { id: string }
+  T extends { id: string | null | undefined }
 > extends AbstractStore<T[]> {
   insertEntity(value: T): void {
     this.update([...this.getInstant(), value]);
