@@ -22,7 +22,7 @@ export class AuthenticationService implements OnDestroy {
 
   constructor(
     private userService: UserService,
-    @Inject(CONFIG) private readonly config: Config,
+    @Inject(CONFIG) private readonly config: Config<never>,
     private router: Router,
     private authAdapter: AuthenticationAdapter,
     private userAdapter: UserAdapter,

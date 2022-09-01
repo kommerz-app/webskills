@@ -15,7 +15,7 @@ export class TimeService implements OnDestroy {
   private offset = 0;
 
   constructor(
-    @Inject(CONFIG) private readonly config: Config,
+    @Inject(CONFIG) private readonly config: Config<never>,
     private timeAdapter: TimeAdapter,
     private trackingService: TrackingService
   ) {}

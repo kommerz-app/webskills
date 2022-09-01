@@ -10,7 +10,7 @@ import { Config, CONFIG } from '../configuration/config';
 export class TimeAdapter {
   constructor(
     private http: HttpClient,
-    @Inject(CONFIG) private readonly config: Config
+    @Inject(CONFIG) private readonly config: Config<never>
   ) {}
 
   public getServerTime(): Observable<string> {

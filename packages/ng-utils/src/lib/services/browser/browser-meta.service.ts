@@ -11,7 +11,7 @@ export class BrowserMetaService {
     private router: Router,
     private title: Title,
     private meta: Meta,
-    @Inject(CONFIG) private readonly config: Config
+    @Inject(CONFIG) private readonly config: Config<never>
   ) {}
 
   init(): void {
