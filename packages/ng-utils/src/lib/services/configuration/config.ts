@@ -6,15 +6,15 @@ export interface EnvironmentConfig extends Record<string, unknown> {
   apiBasePath: string;
 }
 
-export class Config {
-  constructor(private config: EnvironmentConfig) {}
+export class Config<T extends EnvironmentConfig> {
+  constructor(public values: T) {}
 
   get production(): boolean {
-    return this.config.production;
+    return this.values.production;
   }
 
   get apiBasePath(): string {
-    return this.config.apiBasePath;
+    return this.values.apiBasePath;
   }
 
   /**
@@ -23,13 +23,13 @@ export class Config {
    * @param name of the config option
    * @param defaultValue value that is used when config option is not specified elsewhere
    */
-  public getProperty<T>(name: string, defaultValue: T): T {
-    if (isDefined(this.config[name])) {
-      return <T>this.config[name];
+  public getProperty<V>(name: string, defaultValue: V): V {
+    if (isDefined(this.values[name])) {
+      return <V>this.values[name];
     }
 
     return defaultValue;
   }
 }
 
-export const CONFIG = new InjectionToken<Config>('Config');
+export const CONFIG = new InjectionToken<Config<never>>('Config');
