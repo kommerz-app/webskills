@@ -1,3 +1,10 @@
+# [1.5.0](https://dev.colamda.de/webskills/webskills/compare/v1.4.4...v1.5.0) (2022-09-01)
+
+
+### Features
+
+* extend config with generic type ([8ebe904](https://dev.colamda.de/webskills/webskills/commit/8ebe9044212ee08b32069e4f285a2c6180ce3a28))
+
 ## [1.4.4](https://dev.colamda.de/webskills/webskills/compare/v1.4.3...v1.4.4) (2022-08-28)
 
 
