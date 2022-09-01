@@ -1,3 +1,10 @@
+## [1.5.1](https://dev.colamda.de/webskills/webskills/compare/v1.5.0...v1.5.1) (2022-09-01)
+
+
+### Bug Fixes
+
+* missing types for config ([bd3384f](https://dev.colamda.de/webskills/webskills/commit/bd3384f2d63b369c62efbcfd66ad598185d4a035))
+
 # [1.5.0](https://dev.colamda.de/webskills/webskills/compare/v1.4.4...v1.5.0) (2022-09-01)
 
 
