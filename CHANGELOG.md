@@ -1,3 +1,10 @@
+# [1.6.0](https://dev.colamda.de/webskills/webskills/compare/v1.5.1...v1.6.0) (2022-09-06)
+
+
+### Features
+
+* implement launchpad-spaces ([dcadd28](https://dev.colamda.de/webskills/webskills/commit/dcadd285c568a884848db1e83276c620403a8149)), closes [#7](https://dev.colamda.de/webskills/webskills/issues/7)
+
 ## [1.5.1](https://dev.colamda.de/webskills/webskills/compare/v1.5.0...v1.5.1) (2022-09-01)
 
 
