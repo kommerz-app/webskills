@@ -1,3 +1,10 @@
+## [1.6.1](https://dev.colamda.de/webskills/webskills/compare/v1.6.0...v1.6.1) (2022-09-06)
+
+
+### Bug Fixes
+
+* launchpad-spaces menu button ([b686f69](https://dev.colamda.de/webskills/webskills/commit/b686f69832515f75add89020b119ec42d71c879b)), closes [#8](https://dev.colamda.de/webskills/webskills/issues/8)
+
 # [1.6.0](https://dev.colamda.de/webskills/webskills/compare/v1.5.1...v1.6.0) (2022-09-06)
 
 
