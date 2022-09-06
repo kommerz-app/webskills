@@ -30,6 +30,10 @@ export * from './lib/sap/list-report/list-report.module';
 export * from './lib/sap/object-page/object-page.component';
 export * from './lib/sap/object-page/object-page.module';
 
+export * from './lib/sap/launchpad/launchpad-top-level-navigation/launchpad-top-level-navigation.component';
+export * from './lib/sap/launchpad/launchpad-space/launchpad-space.component';
+export * from './lib/sap/launchpad/launchpad.module';
+
 export * from './lib/vega/vega.component';
 export * from './lib/vega/vega.module';
 

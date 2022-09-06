@@ -11,6 +11,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { LaunchpadModule } from '@webskills/ng-components';
+import { RouterModule } from '@angular/router';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [SampleObjectPageComponent],
@@ -24,6 +27,9 @@ import { MatMenuModule } from '@angular/material/menu';
     NumberModule,
     MatMenuModule,
     SplitButtonModule,
+    LaunchpadModule,
+    RouterModule,
+    MatBadgeModule,
   ],
   exports: [SampleObjectPageComponent],
 })
