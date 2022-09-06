@@ -1,20 +1,23 @@
 <nav>
   <ul class="flex items-center list-none">
     <wsk-launchpad-space *ngFor="let item of menuItems">
-      <p spaceTitle *ngIf="item.pages; else link" class="pl-6 mr-2 text-white">
+      <a
+        spaceTitle
+        mat-button
+        *ngIf="!item.pages"
+        routerLink="{{ item.spaceLink }}"
+        class="!ml-6 !text-white"
+      >
         {{ item.spaceTitle }}
-      </p>
-      <ng-template #link>
-        <a routerLink="{{ item.spaceLink }}" class="pl-6 mr-2 text-white">{{
-          item.spaceTitle
-        }}</a>
-      </ng-template>
+      </a>
       <div pages *ngIf="item.pages">
         <button
-          mat-icon-button
+          mat-button
           [matMenuTriggerFor]="menu"
           aria-label="icon button with a menu"
+          class="!ml-6 !text-white"
         >
+          {{ item.spaceTitle }}
           <mat-icon class="text-white">keyboard_arrow_down</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
