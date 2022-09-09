@@ -1,0 +1,44 @@
+<div *ngFor="let group of groups">
+  <div
+    class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg-launchpad-grid-cols-{{
+      group.maxColumn
+    }} gap-3 px-9 pt-6 pb-5 max-w-lg md:max-w-3xl lg:max-w-none"
+  >
+    <h3 *ngIf="group.groupTitle" class="col-span-full !text-xl">
+      {{ group.groupTitle }}
+    </h3>
+    <div *ngFor="let tile of group.tiles" class="sm:col-span-1 launchpad-card">
+      <a [routerLink]="tile.link">
+        <mat-card class="aspect-square">
+          <mat-card-title
+            class="text-base md:text-lg truncate"
+            matTooltip="{{ tile.title }}"
+            >{{ tile.title }}</mat-card-title
+          >
+          <mat-card-subtitle
+            class="text-sm md:text-base truncate"
+            matTooltip="{{ tile.subtitle }}"
+            >{{ tile.subtitle }}</mat-card-subtitle
+          >
+          <mat-card-content>
+            <mat-icon>{{ tile.icon }}</mat-icon>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </div>
+  </div>
+  <div class="flex flex-wrap px-9">
+    <div *ngFor="let link of group.links" class="mr-3">
+      <a routerLink="{{ link.link }}">
+        <mat-card class="w-fit mb-3">
+          <div class="flex flex-col sm:flex-row">
+            <p class="!mr-3 !mb-0 text-accent-800 font-bold">
+              {{ link.title }}
+            </p>
+            <p class="!mb-0">{{ link.subtitle }}</p>
+          </div>
+        </mat-card>
+      </a>
+    </div>
+  </div>
+</div>

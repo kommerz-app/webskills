@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Group } from '@webskills/ng-components';
 
 @Component({
   selector: 'webskills-sample-launchpad-page',
@@ -9,9 +10,10 @@ export class SampleLaunchpadPageComponent {
   menuItems = [
     {
       spaceTitle: 'Internal Sales',
+      spaceLink: '/object-page',
       pages: [
         {
-          link: '/',
+          link: '/object-page',
           text: 'Overview',
         },
         {
@@ -34,6 +36,81 @@ export class SampleLaunchpadPageComponent {
     },
     {
       spaceTitle: 'Sourcing and Contracting',
+    },
+  ];
+
+  groups: Group[] = [
+    {
+      groupTitle: 'Object page',
+      maxColumn: 6,
+      tiles: [
+        {
+          title: 'Object page',
+          subtitle: 'Example Object page header',
+          link: '/object-page',
+          icon: 'receipt',
+        },
+        {
+          title: 'Object page',
+          subtitle: 'Example Object page header',
+          link: '/object-page',
+          icon: 'receipt',
+        },
+        {
+          title: 'Object page',
+          subtitle: 'Example Object page header',
+          link: '/object-page',
+          icon: 'receipt',
+        },
+        {
+          title: 'Object page',
+          subtitle: 'Example Object page header',
+          link: '/object-page',
+          icon: 'receipt',
+        },
+        {
+          title: 'Object page',
+          subtitle: 'Example Object page header',
+          link: '/object-page',
+          icon: 'receipt',
+        },
+        {
+          title: 'Object page',
+          subtitle: 'Example Object page header',
+          link: '/object-page',
+          icon: 'receipt',
+        },
+      ],
+      links: [
+        {
+          link: '/object-page',
+          title: 'LinkTitle',
+          subtitle: 'subtitle',
+        },
+        {
+          link: '/object-page',
+          title: 'LinkTitle',
+          subtitle: 'subtitle',
+        },
+      ],
+    },
+    {
+      groupTitle: 'Object Page',
+      maxColumn: 6,
+      tiles: [
+        {
+          title: 'Object page',
+          subtitle: 'Example Object page header',
+          link: '/object-page',
+          icon: 'receipt',
+        },
+        {
+          title: 'Object page',
+          subtitle: 'Example Object page header',
+          link: '/object-page',
+          icon: 'receipt',
+        },
+      ],
     },
   ];
 }

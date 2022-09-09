@@ -8,6 +8,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { RouterModule } from '@angular/router';
 import { LaunchpadTopLevelNavigationComponent } from './launchpad-top-level-navigation/launchpad-top-level-navigation.component';
+import { LaunchpadComponent } from './launchpad.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -18,8 +21,18 @@ import { LaunchpadTopLevelNavigationComponent } from './launchpad-top-level-navi
     MatMenuModule,
     MatBadgeModule,
     RouterModule,
+    MatCardModule,
+    MatTooltipModule,
   ],
-  declarations: [LaunchpadSpaceComponent, LaunchpadTopLevelNavigationComponent],
-  exports: [LaunchpadSpaceComponent, LaunchpadTopLevelNavigationComponent],
+  declarations: [
+    LaunchpadSpaceComponent,
+    LaunchpadTopLevelNavigationComponent,
+    LaunchpadComponent,
+  ],
+  exports: [
+    LaunchpadSpaceComponent,
+    LaunchpadTopLevelNavigationComponent,
+    LaunchpadComponent,
+  ],
 })
 export class LaunchpadModule {}
