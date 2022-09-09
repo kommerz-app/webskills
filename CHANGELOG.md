@@ -1,3 +1,10 @@
+# [1.7.0](https://dev.colamda.de/webskills/webskills/compare/v1.6.1...v1.7.0) (2022-09-09)
+
+
+### Features
+
+* add launchpad component ([e1b0c4f](https://dev.colamda.de/webskills/webskills/commit/e1b0c4f65711e6fddacb65e2957baefb80b42158)), closes [#10](https://dev.colamda.de/webskills/webskills/issues/10)
+
 ## [1.6.1](https://dev.colamda.de/webskills/webskills/compare/v1.6.0...v1.6.1) (2022-09-06)
 
 
