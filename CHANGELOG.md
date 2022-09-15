@@ -1,3 +1,10 @@
+# [1.8.0](https://dev.colamda.de/webskills/webskills/compare/v1.7.0...v1.8.0) (2022-09-15)
+
+
+### Features
+
+* **list-report:** header ui fine tuning ([ca87023](https://dev.colamda.de/webskills/webskills/commit/ca870239748c879b7eb5696dbd81ee30e11baef2)), closes [#12](https://dev.colamda.de/webskills/webskills/issues/12)
+
 # [1.7.0](https://dev.colamda.de/webskills/webskills/compare/v1.6.1...v1.7.0) (2022-09-09)
 
 
