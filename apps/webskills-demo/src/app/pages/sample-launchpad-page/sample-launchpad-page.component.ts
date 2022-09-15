@@ -95,19 +95,19 @@ export class SampleLaunchpadPageComponent {
       ],
     },
     {
-      groupTitle: 'Object Page',
+      groupTitle: 'List report page',
       maxColumn: 6,
       tiles: [
         {
-          title: 'Object page',
-          subtitle: 'Example Object page header',
-          link: '/object-page',
+          title: 'List report page',
+          subtitle: 'Example List report page header',
+          link: '/list-report-page',
           icon: 'receipt',
         },
         {
-          title: 'Object page',
-          subtitle: 'Example Object page header',
-          link: '/object-page',
+          title: 'List report page',
+          subtitle: 'Example List report page header',
+          link: '/list-report-page',
           icon: 'receipt',
         },
       ],

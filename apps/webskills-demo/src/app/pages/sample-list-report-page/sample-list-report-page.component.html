@@ -1,0 +1,99 @@
+<div>
+  <wsk-list-report>
+    <div header>
+      <div class="flex items-center">
+        <p class="text-xl md:text-2xl font-bold mr-4">Header Title</p>
+      </div>
+    </div>
+
+    <div headerMinified>
+      <div>
+        <p class="text-xl md:text-2xl font-bold mr-4">Header Title</p>
+        <p class="text-sm md:text-base text-gray-500">
+          Filtered By (1): Editing Status
+        </p>
+      </div>
+    </div>
+
+    <div headerContent class="px-6 pt-4">
+      <div class="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-12 gap-6 pb-2">
+        <div class="col-span-2">
+          <mat-form-field class="w-full">
+            <mat-label type="search">Search</mat-label>
+            <input matInput />
+            <mat-icon matSuffix color="primary">search</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="col-span-2">
+          <mat-form-field class="w-full">
+            <mat-label>Availability</mat-label>
+            <mat-select>
+              <mat-option
+                *ngFor="let availability of availabilities"
+                [value]="availability.value"
+              >
+                {{ availability.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-span-2">
+          <mat-form-field class="w-full">
+            <mat-label>Price Range</mat-label>
+            <input matInput />
+            <mat-icon matSuffix color="primary">filter_none</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="col-span-2">
+          <mat-form-field class="w-full">
+            <mat-label>Category</mat-label>
+            <mat-select>
+              <mat-option
+                *ngFor="let category of categories"
+                [value]="category.value"
+              >
+                {{ category.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-span-2">
+          <mat-form-field class="w-full">
+            <mat-label>Supplier</mat-label>
+            <input matInput />
+            <mat-icon matSuffix color="primary">filter_none</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-span-2 text-primary flex items-center justify-end">
+          <button mat-raised-button color="primary" style="margin-right: 1rem">
+            Go
+          </button>
+          <p class="text-sm">Adapt Filters (1)</p>
+        </div>
+      </div>
+    </div>
+
+    <div headerToolbar>
+      <div>
+        <button mat-icon-button color="primary">
+          <mat-icon>share</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div contentArea class="bg-slate-100 h-screen p-6">
+      <div class="flex justify-between">
+        <p>Content Area</p>
+        <button mat-stroked-button color="primary" routerLink="/">
+          Go to Launchpad
+        </button>
+      </div>
+    </div>
+
+    <div footerToolbar></div>
+  </wsk-list-report>
+</div>
