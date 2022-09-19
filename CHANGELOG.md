@@ -1,3 +1,10 @@
+## [1.8.1](https://dev.colamda.de/webskills/webskills/compare/v1.8.0...v1.8.1) (2022-09-19)
+
+
+### Bug Fixes
+
+* fix deep freeze of null in AbstractStore ([b4a51c2](https://dev.colamda.de/webskills/webskills/commit/b4a51c261320935f823e9262dedcd66f4a00abc5))
+
 # [1.8.0](https://dev.colamda.de/webskills/webskills/compare/v1.7.0...v1.8.0) (2022-09-15)
 
 
