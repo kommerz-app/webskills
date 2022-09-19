@@ -1,6 +1,7 @@
 import { Directive, isDevMode, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { deepFreeze } from '../../immutability/freeze.utils';
+import { isDefined } from '@webskills/ts-utils';
 
 @Directive()
 export abstract class AbstractStore<T> implements OnDestroy {
@@ -15,8 +16,8 @@ export abstract class AbstractStore<T> implements OnDestroy {
   }
 
   update(value: T): void {
-    if (isDevMode()) {
-      deepFreeze(value);
+    if (isDevMode() && isDefined(value)) {
+      value = deepFreeze(value);
     }
     this._value$.next(value);
   }
