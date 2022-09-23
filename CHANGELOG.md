@@ -1,3 +1,10 @@
+## [1.8.2](https://dev.colamda.de/webskills/webskills/compare/v1.8.1...v1.8.2) (2022-09-23)
+
+
+### Bug Fixes
+
+* remove tableToolbar from list report ([cc0ebea](https://dev.colamda.de/webskills/webskills/commit/cc0ebeaa7a17ac96f0b02a7615cf5fbc03e0c532))
+
 ## [1.8.1](https://dev.colamda.de/webskills/webskills/compare/v1.8.0...v1.8.1) (2022-09-19)
 
 
