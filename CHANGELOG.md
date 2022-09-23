@@ -1,3 +1,10 @@
+## [1.8.3](https://dev.colamda.de/webskills/webskills/compare/v1.8.2...v1.8.3) (2022-09-23)
+
+
+### Bug Fixes
+
+* remove unused headerTitle from list-report ([dab0165](https://dev.colamda.de/webskills/webskills/commit/dab01658f4a04112dad9179b55f2a9427565e26e))
+
 ## [1.8.2](https://dev.colamda.de/webskills/webskills/compare/v1.8.1...v1.8.2) (2022-09-23)
 
 
