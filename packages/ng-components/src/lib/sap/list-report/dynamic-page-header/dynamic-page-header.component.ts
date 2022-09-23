@@ -2,6 +2,8 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  OnDestroy,
+  OnInit,
   Renderer2,
   ViewChild,
 } from '@angular/core';
@@ -12,7 +14,7 @@ import {
   styleUrls: ['./dynamic-page-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DynamicPageHeaderComponent {
+export class DynamicPageHeaderComponent implements OnInit, OnDestroy {
   private resizeObserver!: ResizeObserver;
 
   @ViewChild('contentWrapper', { static: true })
