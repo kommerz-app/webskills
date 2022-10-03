@@ -1,3 +1,11 @@
+## [1.8.5](https://dev.colamda.de/webskills/webskills/compare/v1.8.4...v1.8.5) (2022-10-03)
+
+
+### Reverts
+
+* Revert "fix: update dependencies" ([f52a9a5](https://dev.colamda.de/webskills/webskills/commit/f52a9a53426f673862ebfb13bd9ae669e4d67675))
+* Revert "chore(release): 1.8.4 [skip ci]" ([9b27513](https://dev.colamda.de/webskills/webskills/commit/9b2751390d98b845adaf5b6c94f425537439949b))
+
 ## [1.8.3](https://dev.colamda.de/webskills/webskills/compare/v1.8.2...v1.8.3) (2022-09-23)
 
 
