@@ -14,7 +14,7 @@
       }
     },
     "publish": {
-      "executor": "nx:run-commands",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
         "command": "node tools/scripts/publish.mjs models {args.ver} {args.tag}"
       },
