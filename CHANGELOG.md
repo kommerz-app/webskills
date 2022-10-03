@@ -1,10 +1,3 @@
-## [1.8.4](https://dev.colamda.de/webskills/webskills/compare/v1.8.3...v1.8.4) (2022-10-03)
-
-
-### Bug Fixes
-
-* update dependencies ([5e9efed](https://dev.colamda.de/webskills/webskills/commit/5e9efed2a5a83287bdad36648e76b776e27cd896))
-
 ## [1.8.3](https://dev.colamda.de/webskills/webskills/compare/v1.8.2...v1.8.3) (2022-09-23)
 
 
