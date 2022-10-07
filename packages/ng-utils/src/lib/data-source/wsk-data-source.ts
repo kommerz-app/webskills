@@ -96,8 +96,10 @@ export class WskDataSource<T> extends DataSource<T> {
   private destroy$ = new Subject<void>();
   private load$ = new Subject<void>();
 
-  private _totalElements$ = new BehaviorSubject<number>(0);
   private _data$ = new BehaviorSubject<T[]>([]);
+  public data$ = this._data$.pipe(takeUntil(this.destroy$));
+
+  private _totalElements$ = new BehaviorSubject<number>(0);
 
   /**
    * Stream of current amount of all available elements.
