@@ -1,3 +1,16 @@
+# [1.9.0](https://dev.colamda.de/webskills/webskills/compare/v1.8.5...v1.9.0) (2022-10-07)
+
+
+### Bug Fixes
+
+* open access to data$ ([3c219b9](https://dev.colamda.de/webskills/webskills/commit/3c219b965680e2f7ffc96771417428a2b19f02e4))
+
+
+### Features
+
+* add CanDeactivateGuard ([2468406](https://dev.colamda.de/webskills/webskills/commit/2468406812cb9ab538ba1b34a65a68834399d06c))
+* add idCompare function ([a6556f9](https://dev.colamda.de/webskills/webskills/commit/a6556f92605949ccb79ee51ca9be44e160d5eb4b))
+
 ## [1.8.5](https://dev.colamda.de/webskills/webskills/compare/v1.8.4...v1.8.5) (2022-10-03)
 
 
