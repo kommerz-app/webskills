@@ -17,3 +17,4 @@ export * from './store/abstract-store';
 export * from './store/abstract-entity-store';
 export * from './time/time.service';
 export * from './edit/can-deactivate.guard';
+export * from './edit/id-compare';
