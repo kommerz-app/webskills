@@ -16,3 +16,4 @@ export * from './routing/previous-route.service';
 export * from './store/abstract-store';
 export * from './store/abstract-entity-store';
 export * from './time/time.service';
+export * from './edit/can-deactivate.guard';
