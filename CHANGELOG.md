@@ -1,3 +1,10 @@
+# [1.10.0](https://dev.colamda.de/webskills/webskills/compare/v1.9.0...v1.10.0) (2022-10-08)
+
+
+### Features
+
+* add optional typing for AbstractControlValueAccessor ([c779c5f](https://dev.colamda.de/webskills/webskills/commit/c779c5f4082a931ef2bba723c53858f4d763d49f))
+
 # [1.9.0](https://dev.colamda.de/webskills/webskills/compare/v1.8.5...v1.9.0) (2022-10-07)
 
 
