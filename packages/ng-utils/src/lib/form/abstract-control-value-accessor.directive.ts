@@ -2,14 +2,14 @@ import { Directive, ElementRef, Renderer2 } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
 @Directive()
-export abstract class AbstractControlValueAccessor
+export abstract class AbstractControlValueAccessor<T = unknown>
   implements ControlValueAccessor
 {
-  protected onChange = (_: unknown) => {
+  protected onChange: (data: T) => void = () => {
     // nop
   };
 
-  protected onTouched = () => {
+  protected onTouched: () => void = () => {
     // nop
   };
 
@@ -22,7 +22,7 @@ export abstract class AbstractControlValueAccessor
     this._renderer.setProperty(this._elementRef.nativeElement, key, value);
   }
 
-  registerOnChange(fn: (_: unknown) => unknown): void {
+  registerOnChange(fn: (data: T) => void): void {
     this.onChange = fn;
   }
 
@@ -34,5 +34,5 @@ export abstract class AbstractControlValueAccessor
     this.setProperty('disabled', isDisabled);
   }
 
-  abstract writeValue(obj: unknown): void;
+  abstract writeValue(data: T): void;
 }
