@@ -1,3 +1,10 @@
+## [1.10.1](https://dev.colamda.de/webskills/webskills/compare/v1.10.0...v1.10.1) (2022-10-12)
+
+
+### Bug Fixes
+
+* comparator of FilterParams should be enum ([e420fc6](https://dev.colamda.de/webskills/webskills/commit/e420fc6df09bf1408e63c861823e3baf223203b0)), closes [#13](https://dev.colamda.de/webskills/webskills/issues/13)
+
 # [1.10.0](https://dev.colamda.de/webskills/webskills/compare/v1.9.0...v1.10.0) (2022-10-08)
 
 
