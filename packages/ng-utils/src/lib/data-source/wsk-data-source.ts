@@ -23,9 +23,20 @@ export interface SortParams {
   sortDirection: 'asc' | 'desc' | '';
 }
 
+export enum Comparator {
+  SIM = 'sim',
+  NSIM = 'nsim',
+  EQ = 'eq',
+  NEQ = 'neq',
+  LEQ = 'leq',
+  LESS = 'less',
+  GEQ = 'geq',
+  GTR = 'gtr',
+}
+
 export interface FilterParams {
   filterColumn: string;
-  comparator?: 'eq' | 'neq' | 'less' | 'greater';
+  comparator?: Comparator;
   filterValue: string;
 }
 
