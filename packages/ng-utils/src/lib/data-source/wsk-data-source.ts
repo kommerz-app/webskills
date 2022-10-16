@@ -12,6 +12,7 @@ import {
 } from 'rxjs/operators';
 import { isDevMode } from '@angular/core';
 import { cloneDeep, isDefined, isEqual } from '@webskills/ts-utils';
+import { deepFreeze } from '../immutability/freeze.utils';
 
 export interface PageParams {
   page: number;
@@ -71,6 +72,10 @@ export class RequestParamsHolder {
     distinctUntilChanged<RequestParams>(isEqual)
   );
 
+  public get params(): RequestParams {
+    return this._params$.getValue();
+  }
+
   /**
    * Update/patch specified params. All other params remain untouched.
    * In order to remove params, they must be provided with the value 'undefined'
@@ -90,17 +95,6 @@ export class RequestParamsHolder {
     this.destroy$.next(null);
     this.destroy$.complete();
   }
-}
-
-function deepFreeze<T>(obj: T) {
-  const propNames = Object.getOwnPropertyNames(obj);
-  for (const name of propNames) {
-    const value = (obj as never)[name];
-    if (value && typeof value === 'object') {
-      deepFreeze(value);
-    }
-  }
-  return Object.freeze(obj);
 }
 
 export class WskDataSource<T> extends DataSource<T> {

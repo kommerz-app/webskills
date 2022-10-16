@@ -1,7 +1,11 @@
-export function deepFreeze(obj: any): any {
-  Object.keys(obj).forEach((prop) => {
-    if (typeof obj[prop] === 'object' && !Object.isFrozen(obj[prop]))
-      deepFreeze(obj[prop]);
+export function deepFreeze<T>(obj: T): T {
+  Object.keys(obj).forEach((name) => {
+    const value = (obj as never)[name];
+
+    if (typeof value === 'object' && !Object.isFrozen(value)) {
+      deepFreeze(value);
+    }
   });
+
   return Object.freeze(obj);
 }
