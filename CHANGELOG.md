@@ -1,3 +1,10 @@
+## [1.10.2](https://dev.colamda.de/webskills/webskills/compare/v1.10.1...v1.10.2) (2022-10-16)
+
+
+### Bug Fixes
+
+* **datasource:** allow access to params instant ([f3875f0](https://dev.colamda.de/webskills/webskills/commit/f3875f006981ff6595d39baff72ba3795a5df23d))
+
 ## [1.10.1](https://dev.colamda.de/webskills/webskills/compare/v1.10.0...v1.10.1) (2022-10-12)
 
 
