@@ -25,7 +25,7 @@ code_quality:
 build-libs:
   image: node:17
   stage: build
-  needs: []
+  needs: [ ]
   rules:
     - if: $CI_COMMIT_TAG
     - if: $CI_MERGE_REQUEST_ID
@@ -61,7 +61,7 @@ sonarqube-check:
     - build-libs
   image:
     name: sonarsource/sonar-scanner-cli:latest
-    entrypoint: [""]
+    entrypoint: [ "" ]
   variables:
     SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
     GIT_DEPTH: 0
@@ -73,7 +73,7 @@ sonarqube-check:
     - sonar-scanner
   allow_failure: true
   only:
-    - master # or the name of your main branch
+    - $CI_DEFAULT_BRANCH
 
 deploy-libs:
   image: node:17
