@@ -52,6 +52,7 @@ build-libs:
     when: always
     paths:
       - dist
+      - junit
     reports:
       junit: junit/*.xml
 
