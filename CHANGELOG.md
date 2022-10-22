@@ -1,3 +1,10 @@
+## [1.10.3](https://dev.colamda.de/webskills/webskills/compare/v1.10.2...v1.10.3) (2022-10-22)
+
+
+### Bug Fixes
+
+* **ci:** sonar config (1) ([cbe79b6](https://dev.colamda.de/webskills/webskills/commit/cbe79b618258f7a07f839d91e6952f6fea992516))
+
 ## [1.10.2](https://dev.colamda.de/webskills/webskills/compare/v1.10.1...v1.10.2) (2022-10-16)
 
 
