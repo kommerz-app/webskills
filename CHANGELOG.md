@@ -1,3 +1,10 @@
+## [1.10.7](https://dev.colamda.de/webskills/webskills/compare/v1.10.6...v1.10.7) (2022-10-27)
+
+
+### Bug Fixes
+
+* **ci:** dtrack config (1) ([11edff8](https://dev.colamda.de/webskills/webskills/commit/11edff8b8a40f59aec03d5b40e2bf937d519c089))
+
 ## [1.10.6](https://dev.colamda.de/webskills/webskills/compare/v1.10.5...v1.10.6) (2022-10-22)
 
 
