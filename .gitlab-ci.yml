@@ -56,6 +56,18 @@ build-libs:
     reports:
       junit: junit/*.xml
 
+frontend-sbom:
+  image: node:17
+  stage: build
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - ./ci/generate-frontend-sbom.sh
+  cache:
+    - key: "${CI_JOB_NAME}"
+      paths:
+        - ci/.cache
+
 sonarqube-check:
   stage: build
   needs:
