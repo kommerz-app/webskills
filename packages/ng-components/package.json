@@ -2,7 +2,7 @@
   "name": "@webskills/ng-components",
   "author": "Colamda GmbH",
   "license": "MIT",
-  "version": "1.10.7",
+  "version": "1.10.8",
   "peerDependencies": {
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0",
