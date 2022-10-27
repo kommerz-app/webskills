@@ -8,7 +8,7 @@ if ! [ -f syft ]; then
     tar -xzf syft.tgz
 fi
 
-./syft package ../../yarn.lock -o cyclonedx-xml > bom.xml
+./syft packages ../../yarn.lock -o cyclonedx-xml > bom.xml
 
 curl -X "POST" "https://dtrack-api.colamda.de/api/v1/bom" \
   -H 'Content-Type: multipart/form-data' \
