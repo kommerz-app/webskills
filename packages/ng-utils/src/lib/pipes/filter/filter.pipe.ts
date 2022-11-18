@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'filter',
 })
-export class FilterPipe<T> implements PipeTransform {
+export class FilterPipe<T, P = unknown> implements PipeTransform {
   /**
    * @param value list that will be filtered
    * @param predicate function to test each value element
@@ -11,8 +11,8 @@ export class FilterPipe<T> implements PipeTransform {
    */
   transform(
     value: T[],
-    predicate: (v: T, param: unknown) => boolean,
-    param: unknown
+    predicate: (v: T, param?: P) => boolean,
+    param?: P
   ): T[] | undefined {
     if (!value) {
       return undefined;
