@@ -1,3 +1,10 @@
+## [1.10.10](https://dev.colamda.de/webskills/webskills/compare/v1.10.9...v1.10.10) (2022-11-18)
+
+
+### Bug Fixes
+
+* typing of FilterPipe and optional param ([720846c](https://dev.colamda.de/webskills/webskills/commit/720846cfc00d285b78aabbc8e8f9c29826160340))
+
 ## [1.10.9](https://dev.colamda.de/webskills/webskills/compare/v1.10.8...v1.10.9) (2022-10-27)
 
 
