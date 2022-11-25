@@ -1,3 +1,10 @@
+## [1.10.12](https://dev.colamda.de/webskills/webskills/compare/v1.10.11...v1.10.12) (2022-11-25)
+
+
+### Bug Fixes
+
+* remove localize from file upload ([dcb5996](https://dev.colamda.de/webskills/webskills/commit/dcb5996dc32fbad0c675716fe655fc2e0032558c))
+
 ## [1.10.11](https://dev.colamda.de/webskills/webskills/compare/v1.10.10...v1.10.11) (2022-11-25)
 
 
