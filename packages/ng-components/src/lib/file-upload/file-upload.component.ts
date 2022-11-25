@@ -1,9 +1,9 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
   Output,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 import { isUndefined, removeElement } from '@webskills/ts-utils';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,10 +15,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileUploadComponent {
-  @Output() fileSelected = new EventEmitter<File[]>();
   @Input() isMultiUpload = false;
   @Input() showFileName?: boolean;
   @Input() fileExtensions!: string[];
+
+  @Output() fileSelected = new EventEmitter<File[]>();
 
   files: File[] = [];
 
@@ -46,11 +47,12 @@ export class FileUploadComponent {
     }
 
     this.addFiles(lastAddedFiles);
-    this.fileSelected.emit(this.files);
+    this.fileSelected.emit([...this.files]);
   }
 
   removeFile(file: File): void {
     removeElement(this.files, file);
+    this.fileSelected.emit([...this.files]);
   }
 
   private addFiles(files: FileList | File[]): void {
