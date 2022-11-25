@@ -7,7 +7,6 @@ import {
 } from '@angular/core';
 import { isUndefined, removeElement } from '@webskills/ts-utils';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { $localize } from '@angular/localize/init';
 
 @Component({
   selector: 'wsk-file-upload',
@@ -40,7 +39,7 @@ export class FileUploadComponent {
   onFileDropped(lastAddedFiles: File[]): void {
     if (!this.isMultiUpload && lastAddedFiles.length > 1) {
       this.snackBar.open(
-        $localize`You have tried to upload multiple files. Please select only one file.`,
+        'You have tried to upload multiple files. Please select only one file.',
         undefined,
         { duration: 6000 }
       );
