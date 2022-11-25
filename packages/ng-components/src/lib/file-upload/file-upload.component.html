@@ -1,6 +1,6 @@
 <div class="flex flex-col items-center">
   <div
-    class="w-full lg:w-2/3 overflow-auto mb-3 mt-4"
+    class="w-full overflow-auto mb-3 mt-4"
     wskFileDrop
     data-cy="file-drop-zone"
     (fileDropped)="onFileDropped($event)"
@@ -12,6 +12,7 @@
         <p
           i18n="@@fileUploadDragYourFile"
           *ngIf="!files?.length; else elseBlock"
+          class="text-sm md:text-base"
         >
           Drag your files here
         </p>
@@ -22,7 +23,7 @@
         >
         <mat-icon class="upload-icon text-primary">cloud_upload </mat-icon>
         <div class="flex flex-col justify-center items-center">
-          <p i18n="@@fileUploadOr" class="pb-3">or</p>
+          <p i18n="@@fileUploadOr" class="pb-3 text-sm md:text-base">or</p>
           <button
             i18n="@@fileUploadButtonBrowseFile"
             data-cy="file-upload-btn-browse"
@@ -43,14 +44,20 @@
         type="file"
         name="file"
         accept="{{ fileExtensions }}"
-        multiple
+        [multiple]="isMultiUpload"
         #fileInput
         (change)="onFileInputSelected($event.target)"
       />
     </div>
   </div>
-  <div class="w-full lg:w-2/3">
-    <p class="pt-6 pl-4 font-bold" *ngIf="files.length">Uploaded Files</p>
+  <div class="w-full">
+    <p
+      i18n="@@fileUploadUploadedFiles"
+      class="pt-6 pl-4 font-bold"
+      *ngIf="files.length"
+    >
+      Uploaded Files
+    </p>
     <ul
       data-cy="file-upload-show-file"
       class="w-full py-6 px-4"

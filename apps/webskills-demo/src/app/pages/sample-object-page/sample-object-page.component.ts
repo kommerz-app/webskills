@@ -50,6 +50,7 @@ export class SampleObjectPageComponent {
   ];
 
   disabled = false;
+  fileExtensions = ['.svg', '.png', '.jpg', '.jpeg'];
 
   onSubmitClicked() {
     console.log('button was clicked');

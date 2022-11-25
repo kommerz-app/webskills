@@ -107,6 +107,13 @@
           <div label class="uppercase">Export as Excel</div>
         </wsk-split-button>
       </div>
+      <div class="w-3/4 my-4 mx-auto">
+        <wsk-file-upload
+          [showFileName]="true"
+          [fileExtensions]="fileExtensions"
+          [isMultiUpload]="false"
+        ></wsk-file-upload>
+      </div>
     </div>
 
     <div footerToolbar></div>

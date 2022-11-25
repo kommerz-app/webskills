@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SampleObjectPageComponent } from './sample-object-page.component';
 import {
+  FileUploadModule,
   NumberModule,
   ObjectPageModule,
   SplitButtonModule,
@@ -30,6 +31,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     LaunchpadModule,
     RouterModule,
     MatBadgeModule,
+    FileUploadModule,
   ],
   exports: [SampleObjectPageComponent],
 })
