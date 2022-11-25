@@ -1,3 +1,10 @@
+## [1.10.11](https://dev.colamda.de/webskills/webskills/compare/v1.10.10...v1.10.11) (2022-11-25)
+
+
+### Bug Fixes
+
+* **file-upload:** add option for single and multi upload ([824d2a3](https://dev.colamda.de/webskills/webskills/commit/824d2a379291091877c35eed9ecf2531de120ed8)), closes [#14](https://dev.colamda.de/webskills/webskills/issues/14)
+
 ## [1.10.10](https://dev.colamda.de/webskills/webskills/compare/v1.10.9...v1.10.10) (2022-11-18)
 
 
