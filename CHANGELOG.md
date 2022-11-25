@@ -1,3 +1,10 @@
+## [1.10.13](https://dev.colamda.de/webskills/webskills/compare/v1.10.12...v1.10.13) (2022-11-25)
+
+
+### Bug Fixes
+
+* **file-upload:** emit fileSelected event when file has been removed ([d77a931](https://dev.colamda.de/webskills/webskills/commit/d77a931204f7792e38131f52f9b3ce6e6b7026de))
+
 ## [1.10.12](https://dev.colamda.de/webskills/webskills/compare/v1.10.11...v1.10.12) (2022-11-25)
 
 
