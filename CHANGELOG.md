@@ -1,3 +1,10 @@
+# [1.11.0](https://dev.colamda.de/webskills/webskills/compare/v1.10.13...v1.11.0) (2022-11-30)
+
+
+### Features
+
+* add upsert functionality to AbstractEntityStore ([9ac6301](https://dev.colamda.de/webskills/webskills/commit/9ac6301ba83553f323caa29d4caf347f2bf1282e))
+
 ## [1.10.13](https://dev.colamda.de/webskills/webskills/compare/v1.10.12...v1.10.13) (2022-11-25)
 
 
