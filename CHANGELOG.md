@@ -1,3 +1,10 @@
+## [1.11.1](https://dev.colamda.de/webskills/webskills/compare/v1.11.0...v1.11.1) (2022-12-01)
+
+
+### Bug Fixes
+
+* rename to convertTimeToMinutes ([0f07b4e](https://dev.colamda.de/webskills/webskills/commit/0f07b4ea8272556b709ad2d61d91edff1806fe2c))
+
 # [1.11.0](https://dev.colamda.de/webskills/webskills/compare/v1.10.13...v1.11.0) (2022-11-30)
 
 
