@@ -6,7 +6,7 @@ import { hoursMinutesPattern, minutesHoursPattern } from './time';
  *
  * @param timeString hours with optional minutes
  */
-export function convertDurationToMinutes(timeString: string): number {
+export function convertTimeToMinutes(timeString: string): number {
   if (isBlank(timeString)) {
     return 0;
   }
@@ -16,8 +16,8 @@ export function convertDurationToMinutes(timeString: string): number {
     return 0;
   }
 
-  const hours = parseInt(match[1] || '0', 10);
-  const minutes = parseInt(match[3] || '0', 10);
+  const hours = parseInt(match[1] ?? '0', 10);
+  const minutes = parseInt(match[3] ?? '0', 10);
 
   return hours * 60 + minutes;
 }
@@ -27,7 +27,7 @@ export function convertDurationToMinutes(timeString: string): number {
  *
  * @param minutes
  */
-export function convertMinutesToDuration(minutes: number): string {
+export function convertMinutesToTime(minutes: number): string {
   if (isUndefined(minutes)) {
     return '';
   }
@@ -78,7 +78,7 @@ export function formatDurationString(timeString: string): string {
     if (isNaN(timeNumber)) {
       return '0:00';
     }
-    return convertMinutesToDuration(timeNumber);
+    return convertMinutesToTime(timeNumber);
   }
 
   if (timeString.includes(':')) {

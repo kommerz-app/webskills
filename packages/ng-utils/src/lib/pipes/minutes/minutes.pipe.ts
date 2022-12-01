@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { convertMinutesToDuration } from '../../date-time/time.utils';
+import { convertMinutesToTime } from '../../date-time/time.utils';
 
 @Pipe({
   name: 'minutes',
@@ -9,6 +9,6 @@ export class MinutesPipe implements PipeTransform {
     if (!minutes) {
       return undefined;
     }
-    return convertMinutesToDuration(minutes);
+    return convertMinutesToTime(minutes);
   }
 }
