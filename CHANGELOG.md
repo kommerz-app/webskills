@@ -1,3 +1,10 @@
+## [1.11.3](https://dev.colamda.de/webskills/webskills/compare/v1.11.2...v1.11.3) (2022-12-03)
+
+
+### Bug Fixes
+
+* extend formatLocalTimeString to exclude seconds ([c20a825](https://dev.colamda.de/webskills/webskills/commit/c20a82586f2e313d6c91b5bfbc8a93040a780ee8))
+
 ## [1.11.2](https://dev.colamda.de/webskills/webskills/compare/v1.11.1...v1.11.2) (2022-12-03)
 
 
