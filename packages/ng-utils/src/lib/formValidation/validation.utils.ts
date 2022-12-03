@@ -1,5 +1,8 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { hoursMinutesPattern, minutesHoursPattern } from '../date-time/time';
+import {
+  hoursMinutesSecondsPattern,
+  minutesHoursPattern,
+} from '../date-time/time';
 import {
   DecimalSeparator,
   floatPattern,
@@ -95,7 +98,7 @@ export function localTime(): ValidatorFn {
       return { localTime: true };
     }
 
-    if (value.match(hoursMinutesPattern)) {
+    if (value.match(hoursMinutesSecondsPattern)) {
       return null;
     }
 

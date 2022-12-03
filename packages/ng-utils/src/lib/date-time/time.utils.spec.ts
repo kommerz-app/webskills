@@ -1,10 +1,11 @@
 import { convertMinutesToTime, convertTimeToMinutes } from './time.utils';
 
 describe('TimeUtils', () => {
-  it('convertTimeStringToMinutes', () => {
+  it('convertTimeToMinutes', () => {
     expect(convertTimeToMinutes('0:00')).toBe(0);
     expect(convertTimeToMinutes('2:01')).toBe(121);
     expect(convertTimeToMinutes('2')).toBe(120);
+    expect(convertTimeToMinutes('2:00:50')).toBe(120);
   });
 });
 

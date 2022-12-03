@@ -1,17 +1,17 @@
 import { isBlank, isUndefined } from '@webskills/ts-utils';
-import { hoursMinutesPattern, minutesHoursPattern } from './time';
+import { hoursMinutesSecondsPattern, minutesHoursPattern } from './time';
 
 /**
  * Convert specified time string (hh:mm) to minutes of day. E.g. 2:01 to 121.
  *
- * @param timeString hours with optional minutes
+ * @param timeString hours with optional minutes and seconds (e.g. 16:23)
  */
 export function convertTimeToMinutes(timeString: string): number {
   if (isBlank(timeString)) {
     return 0;
   }
 
-  const match = timeString.match(hoursMinutesPattern);
+  const match = timeString.match(hoursMinutesSecondsPattern);
   if (!match) {
     return 0;
   }
@@ -49,7 +49,7 @@ export function formatLocalTimeString(timeString: string): string {
     return '0:00';
   }
 
-  const match = timeString.match(hoursMinutesPattern);
+  const match = timeString.match(hoursMinutesSecondsPattern);
   if (!match) {
     return '0:00';
   }
