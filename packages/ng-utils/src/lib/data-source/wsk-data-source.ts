@@ -37,7 +37,7 @@ export enum Comparator {
 
 export interface FilterParams {
   filterColumn: string;
-  comparator?: Comparator;
+  comparator: Comparator;
   filterValue: string;
 }
 

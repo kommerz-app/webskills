@@ -1,4 +1,4 @@
-import { isBlank, isUndefined } from '@webskills/ts-utils';
+import { isBlank, isDefined, isUndefined } from '@webskills/ts-utils';
 import { hoursMinutesSecondsPattern, minutesHoursPattern } from './time';
 
 /**
@@ -40,25 +40,36 @@ export function convertMinutesToTime(minutes: number): string {
 }
 
 /**
- * reformat e.g. "9" to "9:00"
+ * reformat e.g. "9" to "9:00:00"
  *
  * @param timeString hours with optional minutes
+ * @param includeSeconds set to false (default: true) when seconds shall not be displayed
  */
-export function formatLocalTimeString(timeString: string): string {
+export function formatLocalTimeString(
+  timeString: string,
+  includeSeconds = true
+): string {
   if (isBlank(timeString)) {
-    return '0:00';
+    return includeSeconds ? '0:00:00' : '0:00';
   }
 
   const match = timeString.match(hoursMinutesSecondsPattern);
+
   if (!match) {
-    return '0:00';
+    return includeSeconds ? '0:00:00' : '0:00';
   }
 
-  if (timeString.includes(':')) {
-    return timeString;
+  if (isDefined(match[5])) {
+    return includeSeconds ? timeString : `${match[1]}:${match[3]}`;
   }
 
-  return timeString + ':00';
+  if (isDefined(match[3])) {
+    return includeSeconds
+      ? `${match[1]}:${match[3]}:00`
+      : `${match[1]}:${match[3]}`;
+  }
+
+  return timeString + (includeSeconds ? ':00:00' : ':00');
 }
 
 /**
