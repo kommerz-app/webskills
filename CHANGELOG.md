@@ -1,3 +1,10 @@
+## [1.11.2](https://dev.colamda.de/webskills/webskills/compare/v1.11.1...v1.11.2) (2022-12-03)
+
+
+### Bug Fixes
+
+* expand hoursMinutesPattern to hoursMinutesSecondsPattern ([6e76f72](https://dev.colamda.de/webskills/webskills/commit/6e76f728ed92742fa2c8e8bdef9d51c9157ef57a))
+
 ## [1.11.1](https://dev.colamda.de/webskills/webskills/compare/v1.11.0...v1.11.1) (2022-12-01)
 
 
