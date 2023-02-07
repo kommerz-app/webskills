@@ -1,3 +1,10 @@
+# [1.12.0](https://dev.colamda.de/webskills/webskills/compare/v1.11.3...v1.12.0) (2023-02-07)
+
+
+### Features
+
+* add toast component ([0d566d6](https://dev.colamda.de/webskills/webskills/commit/0d566d6aa3d5551c8c997ba88928ca05369eb64e)), closes [#16](https://dev.colamda.de/webskills/webskills/issues/16)
+
 ## [1.11.3](https://dev.colamda.de/webskills/webskills/compare/v1.11.2...v1.11.3) (2022-12-03)
 
 
