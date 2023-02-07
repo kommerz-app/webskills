@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { MenuItem } from '@webskills/ng-components';
+import {
+  MenuItem,
+  NotificationType,
+  ToastService,
+} from '@webskills/ng-components';
 
 interface User {
   id: string;
@@ -54,5 +58,20 @@ export class SampleObjectPageComponent {
 
   onSubmitClicked() {
     console.log('button was clicked');
+  }
+
+  constructor(private toastService: ToastService) {}
+
+  onShowToastClicked() {
+    this.toastService.emitMessage({
+      avatar: 'assets/avatar.svg',
+      messageTitle: 'Very very very very long notification title long',
+      subtitle:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.',
+      type: 'notification',
+      timestamp: '4 minutes ago',
+      notificationType: NotificationType.Leave,
+      autoHide: false,
+    });
   }
 }

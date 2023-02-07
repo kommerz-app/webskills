@@ -43,3 +43,9 @@ export * from './lib/loading/loading.module';
 
 export * from './lib/split-button/split-button.component';
 export * from './lib/split-button/split-button.module';
+
+export * from './lib/toast/toast-view.component';
+export * from './lib/toast/toast-item.component';
+export * from './lib/toast/toast.module';
+export * from './lib/toast/toast.service';
+export * from './lib/toast/toast';

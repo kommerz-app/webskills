@@ -6,6 +6,7 @@ import {
   NumberModule,
   ObjectPageModule,
   SplitButtonModule,
+  ToastModule,
 } from '@webskills/ng-components';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -32,6 +33,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     RouterModule,
     MatBadgeModule,
     FileUploadModule,
+    ToastModule,
   ],
   exports: [SampleObjectPageComponent],
 })

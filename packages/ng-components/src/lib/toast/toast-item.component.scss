@@ -1,0 +1,64 @@
+.avatar {
+  min-width: 2rem;
+}
+
+.animation-container {
+  .content {
+    width: fit-content;
+    max-width: 35rem;
+
+    &.error {
+      background: #dc2626;
+      color: white;
+
+      .icon-toast {
+        color: white;
+      }
+    }
+
+    &.warn {
+      background: #f59e0b;
+      color: white;
+
+      .icon-toast {
+        color: white;
+      }
+    }
+
+    &.success {
+      background: #16a34a;
+      color: white;
+
+      .icon-toast {
+        color: white;
+      }
+    }
+
+    &.notification {
+      background: white;
+
+      .icon-toast {
+        color: #dc2626;
+      }
+    }
+
+    .toast-title-truncate {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .toast-subtitle-truncate {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  .notification-type::after {
+    content: '\00B7';
+    padding: 0 0.2rem;
+  }
+}

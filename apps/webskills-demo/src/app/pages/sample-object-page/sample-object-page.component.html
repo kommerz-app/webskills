@@ -95,9 +95,22 @@
     <div contentArea class="bg-slate-100 h-screen p-6">
       <div class="flex justify-between">
         <p>Content Area</p>
-        <button mat-stroked-button color="primary" routerLink="/">
-          Go to Launchpad
-        </button>
+        <div>
+          <button mat-stroked-button color="primary" routerLink="/">
+            Go to Launchpad
+          </button>
+        </div>
+
+        <div>
+          <button
+            mat-raised-button
+            color="primary"
+            type="button"
+            (click)="onShowToastClicked()"
+          >
+            Show Toast
+          </button>
+        </div>
 
         <wsk-split-button
           [items]="items"
