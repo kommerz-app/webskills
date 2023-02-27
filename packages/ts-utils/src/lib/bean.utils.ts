@@ -2,7 +2,7 @@ import { isBlank } from './string.utils';
 import { isUndefined } from './lang.utils';
 
 /**
- * Retrieve the property of a object.
+ * Retrieve the property of an object.
  *
  * @param obj of which a property shall be retrieved
  * @param {string} path for the property
@@ -31,7 +31,7 @@ export function getValueOf(obj: any, path: string): any {
 }
 
 /**
- * Provides the same function as getValueOf() but by means of an callback.
+ * Provides the same function as getValueOf() but by means of a callback.
  *
  * @param {() => V} cb
  * @return {V}
