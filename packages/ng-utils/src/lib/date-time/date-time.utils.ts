@@ -5,6 +5,10 @@
  * @returns {Date}
  */
 export function getTodayAsUtc(todayDate: Date): Date {
+  if (!(todayDate instanceof Date)) {
+    return todayDate;
+  }
+
   // shift the date to today's day (from UTC perspective); effectively removes the timezone information from the date
   todayDate = new Date(
     todayDate.getTime() - todayDate.getTimezoneOffset() * 60 * 1000
