@@ -1,3 +1,10 @@
+## [1.12.1](https://dev.colamda.de/webskills/webskills/compare/v1.12.0...v1.12.1) (2023-03-08)
+
+
+### Bug Fixes
+
+* check if date is really a date ([e4c43b1](https://dev.colamda.de/webskills/webskills/commit/e4c43b10fe8778231f8533ae7ac860f23775588c))
+
 # [1.12.0](https://dev.colamda.de/webskills/webskills/compare/v1.11.3...v1.12.0) (2023-02-07)
 
 
