@@ -13,13 +13,12 @@
           i18n="@@fileUploadDragYourFile"
           *ngIf="!files?.length; else elseBlock"
           class="text-sm md:text-base"
+          >Drag your files here</p
         >
-          Drag your files here
-        </p>
         <ng-template #elseBlock
-          ><p i18n="@@fileUploadDragNewFile">
-            Drag new files to replace
-          </p></ng-template
+          ><p i18n="@@fileUploadDragNewFile"
+            >Drag new files to replace</p
+          ></ng-template
         >
         <mat-icon class="upload-icon text-primary">cloud_upload </mat-icon>
         <div class="flex flex-col justify-center items-center">
@@ -32,9 +31,8 @@
             color="primary"
             class="uppercase"
             (click)="fileInput.click()"
+            >Browse files</button
           >
-            Browse files
-          </button>
           <p class="text-xs pt-3">max. 10MB</p>
         </div>
       </div>
@@ -55,9 +53,8 @@
       i18n="@@fileUploadUploadedFiles"
       class="pt-6 pl-4 font-bold"
       *ngIf="files.length"
+      >Uploaded files</p
     >
-      Uploaded Files
-    </p>
     <ul
       data-cy="file-upload-show-file"
       class="w-full py-6 px-4"
@@ -71,6 +68,7 @@
           <p
             class="truncate"
             matTooltip="{{ files[i].name }}"
+            i18n-aria-label
             aria-label="Text that displays the full file name when focused or hovered over"
           >
             {{ files[i].name }}
