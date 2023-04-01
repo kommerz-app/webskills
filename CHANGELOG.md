@@ -1,3 +1,10 @@
+## [1.12.2](https://dev.colamda.de/webskills/webskills/compare/v1.12.1...v1.12.2) (2023-04-01)
+
+
+### Bug Fixes
+
+* fix language ([71f77a7](https://dev.colamda.de/webskills/webskills/commit/71f77a7a1e97f3d62cb88ecec6b0e743227372a8))
+
 ## [1.12.1](https://dev.colamda.de/webskills/webskills/compare/v1.12.0...v1.12.1) (2023-03-08)
 
 
