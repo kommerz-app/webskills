@@ -1,3 +1,10 @@
+## [1.12.3](https://dev.colamda.de/webskills/webskills/compare/v1.12.2...v1.12.3) (2023-05-20)
+
+
+### Bug Fixes
+
+* hide minification button in case header content is empty ([c9f401d](https://dev.colamda.de/webskills/webskills/commit/c9f401dea1d12a7eb2629aba21e5604503539456))
+
 ## [1.12.2](https://dev.colamda.de/webskills/webskills/compare/v1.12.1...v1.12.2) (2023-04-01)
 
 
