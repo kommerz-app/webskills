@@ -1,4 +1,11 @@
-<div class="header" [ngClass]="{ minified: minified, maximized: !minified }">
+<div
+  class="header"
+  [ngClass]="{
+    minified: minified,
+    maximized: !minified,
+    'mb-3': !showExpansion
+  }"
+>
   <div class="text-xs py-3 px-6">
     <ng-content select="[breadcrumbs]"></ng-content>
   </div>
@@ -26,7 +33,7 @@
       </div>
     </div>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center" *ngIf="showExpansion">
       <button mat-icon-button (click)="onClick()">
         <mat-icon *ngIf="minified; else closeIcon">expand_more</mat-icon>
         <ng-template #closeIcon>

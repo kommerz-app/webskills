@@ -1,5 +1,7 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   OnDestroy,
@@ -14,7 +16,9 @@ import {
   styleUrls: ['./dynamic-page-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DynamicPageHeaderComponent implements OnInit, OnDestroy {
+export class DynamicPageHeaderComponent
+  implements OnInit, OnDestroy, AfterViewInit
+{
   private resizeObserver!: ResizeObserver;
 
   @ViewChild('contentWrapper', { static: true })
@@ -23,9 +27,10 @@ export class DynamicPageHeaderComponent implements OnInit, OnDestroy {
   @ViewChild('headerContent', { static: true })
   private headerContent!: ElementRef<HTMLDivElement>;
 
-  minified!: boolean;
+  minified = false;
+  showExpansion = true;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.resizeObserver = new ResizeObserver((entries) => {
@@ -35,9 +40,28 @@ export class DynamicPageHeaderComponent implements OnInit, OnDestroy {
         '--max-height.px',
         contentHeight
       );
+
+      this.updateInternalConfig();
     });
 
     this.resizeObserver.observe(this.headerContent.nativeElement);
+  }
+
+  ngAfterViewInit(): void {
+    this.updateInternalConfig();
+  }
+
+  private updateInternalConfig() {
+    if (this.headerContent.nativeElement.childNodes.length == 0) {
+      this.minified = true;
+      this.showExpansion = false;
+    } else {
+      if (!this.showExpansion) {
+        this.minified = false;
+      }
+      this.showExpansion = true;
+    }
+    this.cd.detectChanges();
   }
 
   ngOnDestroy(): void {
