@@ -63,6 +63,13 @@ export function trimToNull(value: string): string | null {
   return value.trim();
 }
 
+export function replaceAllWhitespace(value: string): string | null {
+  if (isBlank(value)) {
+    return null;
+  }
+  return value.replace(/\s+/g, '');
+}
+
 export function replaceAll(
   string: string,
   searchValue: string,
