@@ -1,5 +1,9 @@
 import { isBlank, isDefined, isUndefined } from '@webskills/ts-utils';
-import { hoursMinutesSecondsPattern, minutesHoursPattern } from './time';
+import {
+  hoursMinutesSecondsFractionsPattern,
+  hoursMinutesSecondsPattern,
+  minutesHoursPattern,
+} from './time';
 
 /**
  * Convert specified time string (hh:mm) to minutes of day. E.g. 2:01 to 121.
@@ -11,7 +15,7 @@ export function convertTimeToMinutes(timeString: string): number {
     return 0;
   }
 
-  const match = timeString.match(hoursMinutesSecondsPattern);
+  const match = timeString.match(hoursMinutesSecondsFractionsPattern);
   if (!match) {
     return 0;
   }

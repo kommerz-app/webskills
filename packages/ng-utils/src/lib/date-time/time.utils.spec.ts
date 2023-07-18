@@ -10,6 +10,7 @@ describe('TimeUtils', () => {
     expect(convertTimeToMinutes('2:01')).toBe(121);
     expect(convertTimeToMinutes('2')).toBe(120);
     expect(convertTimeToMinutes('2:00:50')).toBe(120);
+    expect(convertTimeToMinutes('2:03:01.843396')).toBe(123);
   });
 
   it('convertMinutesToTimeString', () => {
