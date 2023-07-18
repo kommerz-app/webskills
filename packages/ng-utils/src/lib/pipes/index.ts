@@ -11,6 +11,7 @@ export * from './map/map.pipe';
 export * from './map/map.module';
 
 export * from './minutes/minutes.pipe';
+export * from './minutes/duration-minutes.pipe';
 export * from './minutes/minutes.module';
 
 export * from './array/select-from-array.pipe';
