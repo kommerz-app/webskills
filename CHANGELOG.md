@@ -1,3 +1,10 @@
+## [1.12.4](https://dev.colamda.de/webskills/webskills/compare/v1.12.3...v1.12.4) (2023-07-18)
+
+
+### Bug Fixes
+
+* convertTimeToMinutes was not able to handle fractions of seconds ([77786db](https://dev.colamda.de/webskills/webskills/commit/77786dbd88d7265882698502ac6a708558b32d85))
+
 ## [1.12.3](https://dev.colamda.de/webskills/webskills/compare/v1.12.2...v1.12.3) (2023-05-20)
 
 
