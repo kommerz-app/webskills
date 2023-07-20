@@ -6,7 +6,7 @@ import { convertMinutesToTime } from '../../date-time/time.utils';
 })
 export class MinutesPipe implements PipeTransform {
   transform(minutes: number): string | undefined {
-    if (!minutes) {
+    if (!minutes && minutes !== 0) {
       return undefined;
     }
     return convertMinutesToTime(minutes);

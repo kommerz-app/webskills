@@ -6,7 +6,7 @@ import { formatDurationString } from '../../date-time/time.utils';
 })
 export class DurationMinutesPipe implements PipeTransform {
   transform(minutes: number): string | undefined {
-    if (!minutes) {
+    if (!minutes && minutes !== 0) {
       return undefined;
     }
     return formatDurationString(minutes.toString());
