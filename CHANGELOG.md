@@ -1,3 +1,10 @@
+## [1.12.5](https://dev.colamda.de/webskills/webskills/compare/v1.12.4...v1.12.5) (2023-07-20)
+
+
+### Bug Fixes
+
+* **MinutesPipe:** convert zeros falsy value in pipe ([d623a9c](https://dev.colamda.de/webskills/webskills/commit/d623a9c38017eb2b26f6267dba53597d616ca90f))
+
 ## [1.12.4](https://dev.colamda.de/webskills/webskills/compare/v1.12.3...v1.12.4) (2023-07-18)
 
 
