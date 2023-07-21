@@ -2,7 +2,7 @@ import { TimeService } from './time.service';
 import { TestBed } from '@angular/core/testing';
 import { TimeAdapter } from './time.adapter';
 import { TrackingService } from '../tracking/tracking.service';
-import { Config, CONFIG } from '@webskills/ng-utils';
+import { Config, CONFIG } from '../configuration/config';
 
 describe('TimeService', () => {
   beforeEach(() =>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TrackingService } from './tracking.service';
-import { Breakpoints } from '@webskills/ng-utils';
+import { Breakpoints } from '../../breakpoints/breakpoints';
 import { forEachProp } from '@webskills/ts-utils';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
