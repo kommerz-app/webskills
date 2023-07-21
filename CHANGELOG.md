@@ -1,3 +1,10 @@
+## [1.12.7](https://dev.colamda.de/webskills/webskills/compare/v1.12.6...v1.12.7) (2023-07-21)
+
+
+### Bug Fixes
+
+* time service issues ([5633c05](https://dev.colamda.de/webskills/webskills/commit/5633c0500069bb1d0c17b64a574bba3c0b3bde0a))
+
 ## [1.12.6](https://dev.colamda.de/webskills/webskills/compare/v1.12.5...v1.12.6) (2023-07-21)
 
 
