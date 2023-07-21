@@ -16,6 +16,7 @@ export * from './routing/previous-route.service';
 export * from './store/abstract-store';
 export * from './store/abstract-entity-store';
 export * from './time/time.service';
+export * from './time/time.adapter';
 export * from './edit/can-deactivate.guard';
 export * from './edit/id-compare';
 export * from './tracking/browser-tracking.service';

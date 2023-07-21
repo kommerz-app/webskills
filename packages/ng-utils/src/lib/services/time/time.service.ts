@@ -1,7 +1,7 @@
 import { Inject, Injectable, OnDestroy } from '@angular/core';
-import { combineLatest, mergeMap, of, Subject, timer } from 'rxjs';
+import { combineLatest, EMPTY, of, Subject, switchMap, timer } from 'rxjs';
 import { TimeAdapter } from './time.adapter';
-import { catchError, filter, takeUntil } from 'rxjs/operators';
+import { catchError, takeUntil } from 'rxjs/operators';
 import { isDefined } from '@webskills/ts-utils';
 import { Logger } from '@webskills/logging';
 import { TrackingService } from '../tracking/tracking.service';
@@ -31,18 +31,11 @@ export class TimeService implements OnDestroy {
     timer(initialDelayMs, timerIntervalSeconds * 1000)
       .pipe(
         takeUntil(this.componentDestroyed$),
-        mergeMap(() =>
+        switchMap(() =>
           combineLatest([
             this.timeAdapter.getServerTime(),
             of(new Date()),
-          ]).pipe(
-            catchError(() => {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              return of(null as [string, Date]);
-            }),
-            filter((result) => isDefined(result))
-          )
+          ]).pipe(catchError(() => EMPTY))
         )
       )
       .subscribe({

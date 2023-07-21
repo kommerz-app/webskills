@@ -8,7 +8,7 @@
     "ng": "nx",
     "format:write": "nx format:write --base=$NX_BASE --head=$NX_HEAD",
     "linting:write": "nx affected:lint --fix=true --base=$NX_BASE --head=$NX_HEAD --parallel --maxParallel=5",
-    "build": "nx build",
+    "build": "yarn nx affected:build",
     "clearCache": "rm -rf ./node_modules/.cache/nx",
     "serve:demo": "nx run webskills-demo:serve:development"
   },
