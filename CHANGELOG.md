@@ -1,3 +1,10 @@
+## [1.12.6](https://dev.colamda.de/webskills/webskills/compare/v1.12.5...v1.12.6) (2023-07-21)
+
+
+### Bug Fixes
+
+* service time, logging and tracking ([ae36136](https://dev.colamda.de/webskills/webskills/commit/ae36136519eef5d0483b2e5a14604654863de532))
+
 ## [1.12.5](https://dev.colamda.de/webskills/webskills/compare/v1.12.4...v1.12.5) (2023-07-20)
 
 
