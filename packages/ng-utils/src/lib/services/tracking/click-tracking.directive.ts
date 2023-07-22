@@ -8,11 +8,11 @@ import {
   selector: '[wskClickTracking]',
 })
 export class ClickTrackingDirective {
-  @Input() ptnClickTracking!: AppTrackingInteractionEvent;
+  @Input() wskClickTracking!: AppTrackingInteractionEvent;
 
   @HostListener('click', ['$event'])
   public onClick(): void {
-    this.trackingService.trackInteraction(this.ptnClickTracking);
+    this.trackingService.trackInteraction(this.wskClickTracking);
   }
 
   constructor(private trackingService: TrackingService) {}
