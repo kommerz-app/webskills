@@ -1,3 +1,10 @@
+## [1.12.8](https://dev.colamda.de/webskills/webskills/compare/v1.12.7...v1.12.8) (2023-07-22)
+
+
+### Bug Fixes
+
+* wskClickTracking ([04ef42a](https://dev.colamda.de/webskills/webskills/commit/04ef42a849264f5b07ee3d94817b8bcda707823d))
+
 ## [1.12.7](https://dev.colamda.de/webskills/webskills/compare/v1.12.6...v1.12.7) (2023-07-21)
 
 
