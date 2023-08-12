@@ -1,3 +1,10 @@
+## [1.12.9](https://dev.colamda.de/webskills/webskills/compare/v1.12.8...v1.12.9) (2023-08-12)
+
+
+### Bug Fixes
+
+* clean up file upload component ([9ffdefa](https://dev.colamda.de/webskills/webskills/commit/9ffdefa3faf0973c0cedd57cbdd8781bea094d62))
+
 ## [1.12.8](https://dev.colamda.de/webskills/webskills/compare/v1.12.7...v1.12.8) (2023-07-22)
 
 
