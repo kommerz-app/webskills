@@ -1,9 +1,9 @@
 import {
   Directive,
-  Output,
   EventEmitter,
   HostBinding,
   HostListener,
+  Output,
 } from '@angular/core';
 
 @Directive({
@@ -16,7 +16,6 @@ export class FileDropDirective {
   @HostBinding('class.isDragOver') isDragOver?: boolean;
   @HostBinding('class.hasFile') hasFile?: boolean;
 
-  //Dragover listener
   @HostListener('dragover', ['$event']) onDragOver(evt: {
     preventDefault: () => void;
     stopPropagation: () => void;
@@ -27,8 +26,8 @@ export class FileDropDirective {
     this.hasFile = false;
   }
 
-  //Dragleave listener
-  @HostListener('dragleave', ['$event']) public onDragLeave(evt: {
+  @HostListener('dragleave', ['$event'])
+  public onDragLeave(evt: {
     preventDefault: () => void;
     stopPropagation: () => void;
   }): void {
@@ -37,8 +36,8 @@ export class FileDropDirective {
     this.isDragOver = false;
   }
 
-  //Drop listener
-  @HostListener('drop', ['$event']) public ondrop(evt: {
+  @HostListener('drop', ['$event'])
+  public ondrop(evt: {
     preventDefault: () => void;
     stopPropagation: () => void;
     dataTransfer: { files: any };

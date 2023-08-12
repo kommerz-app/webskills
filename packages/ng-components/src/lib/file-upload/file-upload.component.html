@@ -10,17 +10,17 @@
         class="flex flex-col items-center border border-primary rounded-xl p-8"
       >
         <p
-          i18n="@@fileUploadDragYourFile"
-          *ngIf="!files?.length; else elseBlock"
+          i18n="@@fileUploadDragYourFiles"
+          *ngIf="isMultiUpload; else elseBlock"
           class="text-sm md:text-base"
           >Drag your files here</p
         >
         <ng-template #elseBlock
-          ><p i18n="@@fileUploadDragNewFile"
-            >Drag new files to replace</p
+          ><p i18n="@@fileUploadDragYourFile"
+            >Drag your file here</p
           ></ng-template
         >
-        <mat-icon class="upload-icon text-primary">cloud_upload </mat-icon>
+        <mat-icon class="upload-icon text-primary">cloud_upload</mat-icon>
         <div class="flex flex-col justify-center items-center">
           <p i18n="@@fileUploadOr" class="pb-3 text-sm md:text-base">or</p>
           <button
@@ -33,7 +33,12 @@
             (click)="fileInput.click()"
             >Browse files</button
           >
-          <p class="text-xs pt-3">max. 10MB</p>
+          <p
+            *ngIf="(maxFileSize ?? 0) > 0"
+            class="text-xs pt-3"
+            i18n="@@fileUploadMaxSize"
+            >max. {{ getMaxFileSizeInMb() }} MB</p
+          >
         </div>
       </div>
       <input
@@ -48,17 +53,17 @@
       />
     </div>
   </div>
-  <div class="w-full">
+  <div class="w-full" *ngIf="showFileName">
     <p
       i18n="@@fileUploadUploadedFiles"
       class="pt-6 pl-4 font-bold"
       *ngIf="files.length"
-      >Uploaded files</p
+      >Selected files</p
     >
     <ul
       data-cy="file-upload-show-file"
       class="w-full py-6 px-4"
-      *ngIf="files?.length && showFileName"
+      *ngIf="files?.length"
     >
       <li
         class="mb-7 last:mb-0 border-b border-primary"
