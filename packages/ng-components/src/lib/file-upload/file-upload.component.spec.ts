@@ -189,7 +189,7 @@ describe('FileUploadComponent', () => {
     component.isMultiUpload = false;
     component.onFileDropped(files);
     fixture.detectChanges();
-    const snackingBar = document.querySelector('snack-bar-container');
+    const snackingBar = document.querySelector('mat-snack-bar-container');
 
     expect(snackingBar).toBeTruthy();
   });

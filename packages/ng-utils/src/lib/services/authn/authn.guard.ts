@@ -1,8 +1,5 @@
 import {
   ActivatedRouteSnapshot,
-  CanActivate,
-  CanActivateChild,
-  CanLoad,
   Route,
   Router,
   RouterStateSnapshot,
@@ -16,7 +13,7 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
+export class AuthGuard {
   constructor(
     private authService: AuthenticationService,
     private router: Router

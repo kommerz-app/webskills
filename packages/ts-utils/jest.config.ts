@@ -1,15 +1,10 @@
-/* eslint-disable */
-export default {
-  displayName: 'ts-utils',
-  preset: '../../jest.preset.js',
-  globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
-    },
-  },
-  transform: {
-    '^.+\\.[tj]s$': 'ts-jest',
-  },
-  moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/packages/ts-utils',
+import type { Config } from 'jest';
+
+const config: Config = {
+  clearMocks: true,
+  coverageProvider: 'v8',
+  preset: 'jest-preset-angular',
+  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
 };
+
+export default config;

@@ -13,19 +13,14 @@ include:
   - project: 'webskills/ci-cd-pipelines'
     file: 'semantic-release.gitlab-ci.yml'
 
-frontend-fixing:
-  before_script:
-    - export NX_HEAD=$CI_COMMIT_SHA
-    - export NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
-
 code_quality:
   rules:
     - if: $CI_MERGE_REQUEST_ID
 
 build-libs:
-  image: node:17
+  image: node:18
   stage: build
-  needs: [ ]
+  needs: []
   rules:
     - if: $CI_COMMIT_TAG
     - if: $CI_MERGE_REQUEST_ID
@@ -36,11 +31,9 @@ build-libs:
     npm_config_cache: '$CI_PROJECT_DIR/.npm'
     YARN_CACHE_FOLDER: '$CI_PROJECT_DIR/.yarn'
   script:
-    - NX_HEAD=$CI_COMMIT_SHA
-    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-"$CI_COMMIT_SHA~2"}
     - yarn install --frozen-lockfile
-    - yarn nx affected:test --reporters=jest-junit --base=$NX_BASE --head=$NX_HEAD --parallel --maxParallel=5
-    - NODE_ENV=production yarn nx affected:build --base=$NX_BASE --head=$NX_HEAD --parallel --maxParallel=5
+    - NODE_ENV=production yarn build
+    - yarn test.ci
   cache:
     key: deps-cache
     paths:
@@ -57,14 +50,14 @@ build-libs:
       junit: junit/*.xml
 
 frontend-sbom:
-  image: node:17
+  image: node:18
   stage: build
   rules:
     - if: $CI_COMMIT_TAG
   script:
     - ./ci/generate-frontend-sbom.sh
   cache:
-    - key: "${CI_JOB_NAME}"
+    - key: '${CI_JOB_NAME}'
       paths:
         - ci/.cache
 
@@ -76,12 +69,12 @@ sonarqube-check:
     - if: $CI_COMMIT_TAG
   image:
     name: sonarsource/sonar-scanner-cli:latest
-    entrypoint: [ "" ]
+    entrypoint: ['']
   variables:
-    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
+    SONAR_USER_HOME: '${CI_PROJECT_DIR}/.sonar'
     GIT_DEPTH: 0
   cache:
-    key: "${CI_JOB_NAME}"
+    key: '${CI_JOB_NAME}'
     paths:
       - .sonar/cache
   script:
@@ -89,7 +82,7 @@ sonarqube-check:
   allow_failure: true
 
 deploy-libs:
-  image: node:17
+  image: node:18
   stage: build
   needs:
     - build-libs
@@ -101,11 +94,10 @@ deploy-libs:
   script:
     - npm config set @webskills:registry $CI_API_V4_URL/projects/${CI_PROJECT_ID}/packages/npm/
     - npm config set -- "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken" "${GITBOT_ACCESS_TOKEN}"
-    - npm publish dist/packages/logging/
-    - npm publish dist/packages/models/
-    - npm publish dist/packages/ng-components/
-    - npm publish dist/packages/ng-utils/
-    - npm publish dist/packages/ts-utils/
+    - npm publish dist/logging/
+    - npm publish dist/ng-components/
+    - npm publish dist/ng-utils/
+    - npm publish dist/ts-utils/
   artifacts:
     paths:
       - dist/

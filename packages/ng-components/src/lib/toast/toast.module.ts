@@ -17,6 +17,5 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   declarations: [ToastViewComponent, ToastItemComponent],
   exports: [ToastViewComponent],
-  entryComponents: [ToastViewComponent],
 })
 export class ToastModule {}

@@ -9,6 +9,5 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   imports: [CommonModule, MatProgressBarModule, MatSnackBarModule],
   declarations: [LoadingComponent, ProgressComponent],
   exports: [LoadingComponent],
-  entryComponents: [ProgressComponent],
 })
 export class LoadingModule {}

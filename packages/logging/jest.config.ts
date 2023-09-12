@@ -1,15 +1,10 @@
-/* eslint-disable */
-export default {
-  displayName: 'logging',
-  preset: '../../jest.preset.js',
-  globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
-    },
-  },
-  transform: {
-    '^.+\\.[tj]s$': 'ts-jest',
-  },
-  moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/packages/logging',
+import type { Config } from 'jest';
+
+const config: Config = {
+  clearMocks: true,
+  coverageProvider: 'v8',
+  preset: 'jest-preset-angular',
+  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
 };
+
+export default config;

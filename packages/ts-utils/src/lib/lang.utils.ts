@@ -1,5 +1,5 @@
-import * as rfdc from 'rfdc';
-import * as equal from 'fast-deep-equal';
+import rfdc from 'rfdc';
+import equal from 'fast-deep-equal';
 
 /**
  * iterate over all properties of the specified object

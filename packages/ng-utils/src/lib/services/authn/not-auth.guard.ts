@@ -1,8 +1,5 @@
 import {
   ActivatedRouteSnapshot,
-  CanActivate,
-  CanActivateChild,
-  CanLoad,
   Route,
   Router,
   RouterStateSnapshot,
@@ -18,7 +15,7 @@ import { isBlank } from '@webskills/ts-utils';
 @Injectable({
   providedIn: 'root',
 })
-export class NotAuthGuard implements CanActivate, CanActivateChild, CanLoad {
+export class NotAuthGuard {
   constructor(
     private authService: AuthenticationService,
     private router: Router,

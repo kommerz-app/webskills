@@ -1,22 +1,13 @@
-/* eslint-disable */
-export default {
-  displayName: 'ng-utils',
-  preset: '../../jest.preset.js',
+import type { Config } from 'jest';
+
+const config: Config = {
+  clearMocks: true,
+  coverageProvider: 'v8',
+  preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
-      stringifyContentPathRegex: '\\.(html|svg)$',
-    },
+  moduleNameMapper: {
+    '@webskills/(.*)': '<rootDir>/../$1/src/public-api.ts',
   },
-  coverageDirectory: '../../coverage/packages/ng-utils',
-  transform: {
-    '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
-  },
-  transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
-  snapshotSerializers: [
-    'jest-preset-angular/build/serializers/no-ng-attributes',
-    'jest-preset-angular/build/serializers/ng-snapshot',
-    'jest-preset-angular/build/serializers/html-comment',
-  ],
 };
+
+export default config;

@@ -1,11 +1,9 @@
-const { createGlobPatternsForDependencies } = require('@nrwl/angular/tailwind');
-const { join } = require('path');
 const tailwindPaletteColors = require('tailwindcss/colors');
 
 module.exports = {
   content: [
-    join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
-    ...createGlobPatternsForDependencies(__dirname),
+    './apps/webskills-demo/src/**/*.html',
+    './dist/ng-components/esm2022/lib/**/*.mjs',
   ],
   theme: {
     extend: {

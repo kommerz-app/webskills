@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CanDeactivate, UrlTree } from '@angular/router';
+import { UrlTree } from '@angular/router';
 
 export interface CanDeactivateComponent {
   canDeactivate():
@@ -11,9 +11,7 @@ export interface CanDeactivateComponent {
 }
 
 @Injectable({ providedIn: 'root' })
-export class CanDeactivateGuard
-  implements CanDeactivate<CanDeactivateComponent>
-{
+export class CanDeactivateGuard {
   canDeactivate(
     component: CanDeactivateComponent
   ):
