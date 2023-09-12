@@ -57,13 +57,6 @@
       "@semantic-release/npm",
       {
         "npmPublish": false,
-        "pkgRoot": "./packages/models"
-      }
-    ],
-    [
-      "@semantic-release/npm",
-      {
-        "npmPublish": false,
         "pkgRoot": "./packages/ng-components"
       }
     ],
