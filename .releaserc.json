@@ -92,7 +92,6 @@
       {
         "assets": [
           "./packages/logging/package.json",
-          "./packages/models/package.json",
           "./packages/ng-components/package.json",
           "./packages/ng-utils/package.json",
           "./packages/ts-utils/package.json",
