@@ -1,3 +1,19 @@
+# [2.0.0](https://dev.colamda.de/webskills/webskills/compare/v1.12.9...v2.0.0) (2023-09-12)
+
+
+### Bug Fixes
+
+* **ci:** list of assets ([4e848aa](https://dev.colamda.de/webskills/webskills/commit/4e848aaba1a55b65c9ef31d674bac28dc43e9d29))
+* **ci:** list of assets ([25c4fd5](https://dev.colamda.de/webskills/webskills/commit/25c4fd5915c892f62bd9931f91eaa9a7f6395909))
+
+
+* feat(angular)!: update to angular 16 ([a6282c6](https://dev.colamda.de/webskills/webskills/commit/a6282c68726ef397dd2bc9b9aac4da2c29aaf0d0))
+
+
+### BREAKING CHANGES
+
+* update to angular 16, remove NX
+
 ## [1.12.9](https://dev.colamda.de/webskills/webskills/compare/v1.12.8...v1.12.9) (2023-08-12)
 
 
