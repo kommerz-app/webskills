@@ -17,7 +17,7 @@
     "build.ng-utils": "ng build ng-utils",
     "build.ng-components": "ng build ng-components",
     "build:watch.ng-components": "ng build ng-components --watch",
-    "serve:demo": "ng serve webskills-demo",
+    "serve:demo": "ng serve webskills-demo --port 4202",
     "lint": "ng lint"
   },
   "private": true,

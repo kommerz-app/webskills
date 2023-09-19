@@ -46,7 +46,13 @@ export class SampleLaunchpadPageComponent {
       tiles: [
         {
           title: 'Object page',
-          subtitle: 'Example Object page header',
+          subtitle: 'short Example ',
+          link: '/object-page',
+          icon: 'receipt',
+        },
+        {
+          title: 'Object page',
+          subtitle: 'Example Object page ',
           link: '/object-page',
           icon: 'receipt',
         },
@@ -58,13 +64,7 @@ export class SampleLaunchpadPageComponent {
         },
         {
           title: 'Object page',
-          subtitle: 'Example Object page header',
-          link: '/object-page',
-          icon: 'receipt',
-        },
-        {
-          title: 'Object page',
-          subtitle: 'Example Object page header',
+          subtitle: 'Very loooooooooong Example Object page header',
           link: '/object-page',
           icon: 'receipt',
         },
