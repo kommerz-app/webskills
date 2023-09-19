@@ -1,3 +1,10 @@
+## [2.0.1](https://dev.colamda.de/webskills/webskills/compare/v2.0.0...v2.0.1) (2023-09-19)
+
+
+### Bug Fixes
+
+* **mdc:** ui issues after material update ([c501428](https://dev.colamda.de/webskills/webskills/commit/c501428b31b6ae2dc6a59456dd414a511b3d92c0))
+
 # [2.0.0](https://dev.colamda.de/webskills/webskills/compare/v1.12.9...v2.0.0) (2023-09-12)
 
 
