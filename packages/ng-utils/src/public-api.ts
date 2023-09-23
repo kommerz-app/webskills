@@ -1,7 +1,10 @@
 export * from './lib/services';
 export * from './lib/pipes';
 
+export * from './lib/data-source/data-source.model';
+export * from './lib/data-source/abstract-wsk-data-source';
 export * from './lib/data-source/wsk-data-source';
+export * from './lib/data-source/wsk-lazy-data-source';
 export * from './lib/date-time/time.utils';
 export * from './lib/date-time/date.utils';
 export * from './lib/date-time/date-time.utils';
