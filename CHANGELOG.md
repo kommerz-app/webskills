@@ -1,3 +1,10 @@
+## [2.1.3](https://dev.colamda.de/webskills/webskills/compare/v2.1.2...v2.1.3) (2023-09-23)
+
+
+### Bug Fixes
+
+* update ng version and other deps ([f724cb2](https://dev.colamda.de/webskills/webskills/commit/f724cb23c754b45c68b86aa4887ff1bbfae274f6))
+
 ## [2.1.2](https://dev.colamda.de/webskills/webskills/compare/v2.1.1...v2.1.2) (2023-09-23)
 
 
