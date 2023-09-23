@@ -29,7 +29,7 @@ export class WskDataSource<T> extends AbstractWskDataSource<T> {
     return params.pageParams;
   }
 
-  protected override storeNewData(mode: string, page: Page<T>) {
+  protected override storeNewData(_mode: string, page: Page<T>) {
     this._data$.next(page.content);
   }
 
