@@ -1,3 +1,10 @@
+# [2.1.0](https://dev.colamda.de/webskills/webskills/compare/v2.0.1...v2.1.0) (2023-09-23)
+
+
+### Features
+
+* lazy data source ([588ef9a](https://dev.colamda.de/webskills/webskills/commit/588ef9a327895a5d6d8e35b78f6bb28723c05dd6))
+
 ## [2.0.1](https://dev.colamda.de/webskills/webskills/compare/v2.0.0...v2.0.1) (2023-09-19)
 
 
