@@ -69,7 +69,9 @@ export abstract class AbstractWskDataSource<T> extends DataSource<T> {
   ): Observable<T[] | ReadonlyArray<T>> {
     return combineLatest([
       this.load$.pipe(startWith('replace')),
-      this.requestParams.params$,
+      this.requestParams.params$.pipe(
+        tap((params) => this.onRequestParamsChange(params))
+      ),
     ]).pipe(
       takeUntil(this.destroy$),
       tap(() => this._loading$.next(true)),
@@ -100,6 +102,8 @@ export abstract class AbstractWskDataSource<T> extends DataSource<T> {
   ): PageParams | undefined;
 
   protected abstract storeNewData(mode: string, page: Page<T>): void;
+
+  protected abstract onRequestParamsChange(params: RequestParams): void;
 
   disconnect(collectionViewer: CollectionViewer): void {
     this.destroy$.next();

@@ -3,6 +3,7 @@ import {
   Page,
   PageParams,
   PaginationEndpoint,
+  RequestParams,
   SortParams,
 } from './data-source.model';
 import { AbstractWskDataSource } from './abstract-wsk-data-source';
@@ -17,9 +18,9 @@ export class WskLazyDataSource<T> extends AbstractWskDataSource<T> {
   private offset = 0;
 
   constructor(
-    protected cb: PaginationEndpoint<T>,
+    protected readonly cb: PaginationEndpoint<T>,
     defaultRequestParams?: LazyRequestParams,
-    private batchSize = 15
+    private readonly batchSize = 15
   ) {
     super();
 
@@ -67,5 +68,10 @@ export class WskLazyDataSource<T> extends AbstractWskDataSource<T> {
     this.requestSize = this.batchSize;
 
     this.load$.next('append');
+  }
+
+  protected onRequestParamsChange(params: RequestParams): void {
+    this.requestSize = this.batchSize;
+    this.offset = 0;
   }
 }
