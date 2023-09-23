@@ -1,3 +1,10 @@
+## [2.1.2](https://dev.colamda.de/webskills/webskills/compare/v2.1.1...v2.1.2) (2023-09-23)
+
+
+### Bug Fixes
+
+* **lazy-data-source:** reset data if sort or filter changes ([3908a5a](https://dev.colamda.de/webskills/webskills/commit/3908a5a1c6a876d0bf83b4f043fc85f111e175a7))
+
 ## [2.1.1](https://dev.colamda.de/webskills/webskills/compare/v2.1.0...v2.1.1) (2023-09-23)
 
 
