@@ -73,5 +73,6 @@ export class WskLazyDataSource<T> extends AbstractWskDataSource<T> {
   protected onRequestParamsChange(params: RequestParams): void {
     this.requestSize = this.batchSize;
     this.offset = 0;
+    this._data$.next([]);
   }
 }
