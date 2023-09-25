@@ -1,3 +1,10 @@
+## [2.1.4](https://dev.colamda.de/webskills/webskills/compare/v2.1.3...v2.1.4) (2023-09-25)
+
+
+### Bug Fixes
+
+* expose destroy observable of data source ([4cc7607](https://dev.colamda.de/webskills/webskills/commit/4cc76075da0b0faf4b35b2054dac1bd194856c7c))
+
 ## [2.1.3](https://dev.colamda.de/webskills/webskills/compare/v2.1.2...v2.1.3) (2023-09-23)
 
 
