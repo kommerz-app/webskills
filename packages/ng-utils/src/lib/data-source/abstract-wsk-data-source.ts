@@ -1,4 +1,4 @@
-import { CollectionViewer, DataSource } from '@angular/cdk/collections';
+import { DataSource } from '@angular/cdk/collections';
 import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
 import {
   catchError,
@@ -21,11 +21,12 @@ import { isDefined } from '@webskills/ts-utils';
 export abstract class AbstractWskDataSource<T> extends DataSource<T> {
   protected abstract readonly cb: PaginationEndpoint<T>;
 
-  protected readonly destroy$ = new Subject<void>();
+  protected readonly _destroy$ = new Subject<void>();
   protected readonly load$ = new Subject<string | void>();
   protected readonly _data$ = new BehaviorSubject<T[]>([]);
 
-  public readonly data$ = this._data$.pipe(takeUntil(this.destroy$));
+  public readonly data$ = this._data$.pipe(takeUntil(this._destroy$));
+  public readonly destroy$ = this._destroy$.asObservable();
 
   protected readonly _totalElements$ = new BehaviorSubject<number>(0);
 
@@ -64,9 +65,7 @@ export abstract class AbstractWskDataSource<T> extends DataSource<T> {
    */
   public abstract reload(): void;
 
-  connect(
-    collectionViewer: CollectionViewer
-  ): Observable<T[] | ReadonlyArray<T>> {
+  connect(): Observable<T[] | ReadonlyArray<T>> {
     return combineLatest([
       this.load$.pipe(startWith('replace')),
       this.requestParams.params$.pipe(
@@ -105,9 +104,9 @@ export abstract class AbstractWskDataSource<T> extends DataSource<T> {
 
   protected abstract onRequestParamsChange(params: RequestParams): void;
 
-  disconnect(collectionViewer: CollectionViewer): void {
-    this.destroy$.next();
-    this.destroy$.complete();
+  disconnect(): void {
+    this._destroy$.next();
+    this._destroy$.complete();
 
     this._requestParams.destroy();
   }
