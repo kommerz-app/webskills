@@ -63,6 +63,9 @@ export class WskLazyDataSource<T> extends AbstractWskDataSource<T> {
     if (!this.hasMore()) {
       return;
     }
+    if (this._loading$.getValue()) {
+      return;
+    }
     this.offset = this.offset + this.batchSize;
     this.requestSize = this.batchSize;
 
