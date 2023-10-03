@@ -1,3 +1,10 @@
+## [2.1.6](https://dev.colamda.de/webskills/webskills/compare/v2.1.5...v2.1.6) (2023-10-03)
+
+
+### Bug Fixes
+
+* lazy data source must not abort and append when currently loading ([6b2e4f7](https://dev.colamda.de/webskills/webskills/commit/6b2e4f7ff3fdcbc0877b4d387b7531b43ed7ac7d))
+
 ## [2.1.5](https://dev.colamda.de/webskills/webskills/compare/v2.1.4...v2.1.5) (2023-10-03)
 
 
