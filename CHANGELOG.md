@@ -1,3 +1,10 @@
+## [2.1.5](https://dev.colamda.de/webskills/webskills/compare/v2.1.4...v2.1.5) (2023-10-03)
+
+
+### Bug Fixes
+
+* allow filter params to be an array of filter params in order support nesting of AND and OR filters ([066c860](https://dev.colamda.de/webskills/webskills/commit/066c860ddcdd8d4496dba232835221ea733dc125))
+
 ## [2.1.4](https://dev.colamda.de/webskills/webskills/compare/v2.1.3...v2.1.4) (2023-09-25)
 
 
