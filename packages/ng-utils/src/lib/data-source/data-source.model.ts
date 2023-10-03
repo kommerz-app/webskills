@@ -25,11 +25,13 @@ export interface SortParams {
   sortDirection: 'asc' | 'desc' | '';
 }
 
-export interface FilterParams {
-  filterColumn: string;
-  comparator: Comparator;
-  filterValue: string;
-}
+export type FilterParams =
+  | {
+      filterColumn: string;
+      comparator: Comparator;
+      filterValue: string;
+    }
+  | FilterParams[];
 
 export interface RequestParams {
   pageParams?: PageParams;
