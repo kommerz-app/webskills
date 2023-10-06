@@ -1,3 +1,10 @@
+## [2.1.7](https://dev.colamda.de/webskills/webskills/compare/v2.1.6...v2.1.7) (2023-10-06)
+
+
+### Bug Fixes
+
+* **header-icon-button:** position not centered ([7879412](https://dev.colamda.de/webskills/webskills/commit/78794127afe6f4bee21b630d72bee0b8de7cde49))
+
 ## [2.1.6](https://dev.colamda.de/webskills/webskills/compare/v2.1.5...v2.1.6) (2023-10-03)
 
 
