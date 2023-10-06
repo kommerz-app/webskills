@@ -30,7 +30,13 @@
     </div>
 
     <div class="flex justify-center" *ngIf="showExpansion">
-      <button mat-icon-button (click)="onClick()">
+      <button
+        mat-icon-button
+        type="button"
+        [attr.aria-expanded]="!minified"
+        aria-controls="header"
+        (click)="onClick()"
+      >
         <mat-icon *ngIf="minified; else closeIcon">expand_more</mat-icon>
         <ng-template #closeIcon>
           <mat-icon>expand_less</mat-icon>

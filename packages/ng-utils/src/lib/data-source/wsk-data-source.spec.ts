@@ -2,12 +2,12 @@
 // @ts-nocheck
 
 import {
-  WskDataSource,
   FilterParams,
   Page,
   PageParams,
   PaginationEndpoint,
   SortParams,
+  WskDataSource,
 } from './wsk-data-source';
 import { forkJoin, of, Subject, throwError } from 'rxjs';
 import { map, take } from 'rxjs/operators';
@@ -109,10 +109,7 @@ describe('ColDataSource', () => {
   });
 
   it('should set sort params and keep page params', (done) => {
-    const cb: PaginationEndpoint<Address> = ({
-      pageParams: PageParams,
-      sortParams: SortParams,
-    }) => {
+    const cb: PaginationEndpoint<Address> = () => {
       expect(pageParams.size).toBe(15);
       expect(pageParams.page).toBe(3);
       expect(sortParams[0].sortColumn).toBe('street');

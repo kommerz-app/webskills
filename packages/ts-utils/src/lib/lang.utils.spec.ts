@@ -32,17 +32,14 @@ describe('LangUtils', () => {
   });
 
   it('two undefined values should be undefined', () => {
-    const testVar = '';
     expect(isUndefined(null, undefined)).toBeTruthy();
   });
 
   it('one undefined value and one defined value should be undefined', () => {
-    const testVar = '';
     expect(isUndefined('hello', undefined)).toBeTruthy();
   });
 
   it('two defined values should be defined', () => {
-    const testVar = '';
     expect(isUndefined('hello', 'you')).toBeFalsy();
   });
 

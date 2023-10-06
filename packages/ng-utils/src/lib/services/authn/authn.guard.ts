@@ -1,6 +1,5 @@
 import {
   ActivatedRouteSnapshot,
-  Route,
   Router,
   RouterStateSnapshot,
   UrlTree,
@@ -39,7 +38,7 @@ export class AuthGuard {
     );
   }
 
-  canLoad(route: Route): Observable<boolean> {
+  canLoad(): Observable<boolean> {
     return this.authService.isLoggedIn();
   }
 

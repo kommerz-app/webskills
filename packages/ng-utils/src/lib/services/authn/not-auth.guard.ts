@@ -1,10 +1,4 @@
-import {
-  ActivatedRouteSnapshot,
-  Route,
-  Router,
-  RouterStateSnapshot,
-  UrlTree,
-} from '@angular/router';
+import { Router, UrlTree } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
 import { Observable } from 'rxjs';
@@ -22,9 +16,7 @@ export class NotAuthGuard {
     private previousRouteService: PreviousRouteService
   ) {}
 
-  private checkLoggedOut(
-    state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> {
+  private checkLoggedOut(): Observable<boolean | UrlTree> {
     return this.authService.isLoggedIn().pipe(
       map((isLoggedIn) => {
         if (!isLoggedIn) {
@@ -40,21 +32,15 @@ export class NotAuthGuard {
     );
   }
 
-  canLoad(route: Route): Observable<boolean> {
+  canLoad(): Observable<boolean> {
     return this.authService.isLoggedIn();
   }
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> {
-    return this.checkLoggedOut(state);
+  canActivate(): Observable<boolean | UrlTree> {
+    return this.checkLoggedOut();
   }
 
-  canActivateChild(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> {
-    return this.checkLoggedOut(state);
+  canActivateChild(): Observable<boolean | UrlTree> {
+    return this.checkLoggedOut();
   }
 }
