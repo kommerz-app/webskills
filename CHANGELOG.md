@@ -1,3 +1,10 @@
+## [2.1.8](https://dev.colamda.de/webskills/webskills/compare/v2.1.7...v2.1.8) (2023-10-08)
+
+
+### Bug Fixes
+
+* append issues with lazy data source ([3c4c055](https://dev.colamda.de/webskills/webskills/commit/3c4c055dd1053c6039abbc6569ef4faa5a823e59))
+
 ## [2.1.7](https://dev.colamda.de/webskills/webskills/compare/v2.1.6...v2.1.7) (2023-10-06)
 
 
