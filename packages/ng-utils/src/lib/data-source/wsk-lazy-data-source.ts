@@ -13,6 +13,9 @@ export interface LazyRequestParams {
 }
 
 export class WskLazyDataSource<T> extends AbstractWskDataSource<T> {
+  /**
+   * number of items that are loaded in the next request / have been loaded in the last request
+   */
   private requestSize;
   private offset = 0;
 
@@ -31,7 +34,7 @@ export class WskLazyDataSource<T> extends AbstractWskDataSource<T> {
   }
 
   public override hasMore() {
-    return this.totalElements > this.offset + this.batchSize;
+    return this.totalElements > this.data.length;
   }
 
   /**
@@ -66,7 +69,7 @@ export class WskLazyDataSource<T> extends AbstractWskDataSource<T> {
     if (this._loading$.getValue()) {
       return;
     }
-    this.offset = this.offset + this.batchSize;
+    this.offset = this.offset + this.requestSize;
     this.requestSize = this.batchSize;
 
     this.load$.next('append');
