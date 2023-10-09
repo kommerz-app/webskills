@@ -1,3 +1,10 @@
+## [2.1.9](https://dev.colamda.de/webskills/webskills/compare/v2.1.8...v2.1.9) (2023-10-09)
+
+
+### Bug Fixes
+
+* allow vega graph to reset data ([e3ea257](https://dev.colamda.de/webskills/webskills/commit/e3ea257c5d28079892855513c8bab0ec7670ab99))
+
 ## [2.1.8](https://dev.colamda.de/webskills/webskills/compare/v2.1.7...v2.1.8) (2023-10-08)
 
 
