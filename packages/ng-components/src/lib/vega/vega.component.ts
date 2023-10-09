@@ -16,6 +16,7 @@ import { Observable, Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { formatLocale, timeFormatLocale } from './locale/de-DE';
 import { isDefined, isUndefined } from '@webskills/ts-utils';
+import { Changeset } from 'vega';
 
 export type VegaChangeSet = { [key: string]: any }[];
 
@@ -46,6 +47,8 @@ export class VegaComponent implements OnInit, OnChanges, OnDestroy {
    * functions used to filter existing data when new data arrives
    */
   @Input() filterFns?: VegaFilterFunctions;
+
+  @Input() dataMode: 'append' | 'replace' = 'append';
 
   private embeddedInstance?: Result;
   private destroyed$ = new Subject<void>();
@@ -96,7 +99,18 @@ export class VegaComponent implements OnInit, OnChanges, OnDestroy {
       return;
     }
 
-    let cs = this.embeddedInstance.view.changeset().insert(data);
+    let cs: Changeset;
+
+    if (this.dataMode === 'append') {
+      cs = this.embeddedInstance.view.changeset().insert(data);
+    } else if (this.dataMode === 'replace') {
+      cs = this.embeddedInstance.view
+        .changeset()
+        .remove(() => true)
+        .insert(data);
+    } else {
+      throw Error('dataMode is not configured correctly');
+    }
 
     if (isDefined(this.filterFns)) {
       cs = cs.remove(this.filterFns);
