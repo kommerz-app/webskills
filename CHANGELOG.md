@@ -1,3 +1,13 @@
+# [3.0.0](https://dev.colamda.de/webskills/webskills/compare/v2.1.9...v3.0.0) (2023-11-15)
+
+
+* feat(angular)!: update to angular 17 ([ea8fdfc](https://dev.colamda.de/webskills/webskills/commit/ea8fdfc43aa6c4700fe6bf0f4c1d1af0608f8ef1))
+
+
+### BREAKING CHANGES
+
+* update to angular 17
+
 ## [2.1.9](https://dev.colamda.de/webskills/webskills/compare/v2.1.8...v2.1.9) (2023-10-09)
 
 
