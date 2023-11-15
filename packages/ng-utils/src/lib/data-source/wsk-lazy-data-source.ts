@@ -22,7 +22,7 @@ export class WskLazyDataSource<T> extends AbstractWskDataSource<T> {
   constructor(
     protected readonly cb: PaginationEndpoint<T>,
     defaultRequestParams?: LazyRequestParams,
-    private readonly batchSize = 15
+    private readonly batchSize = 15,
   ) {
     super();
 

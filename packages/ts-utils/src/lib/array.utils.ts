@@ -67,7 +67,7 @@ export function getLastElement<T>(array: T[]): T | null {
 export function getElement<T>(
   array: T[],
   index: number,
-  infinite = false
+  infinite = false,
 ): T | null {
   if (isDefined(array) && array.length > 0) {
     if (infinite === true) {
@@ -139,7 +139,7 @@ export function isEmptyOrUndefinedArray<T>(array: T[]): boolean {
  */
 export function filterUnique<T>(
   array: T[],
-  retrieval: (arrayElem: T) => any
+  retrieval: (arrayElem: T) => any,
 ): T[] {
   const existingKeys: any[] = [];
 

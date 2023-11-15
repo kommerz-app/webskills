@@ -15,7 +15,7 @@ export abstract class AbstractControlValueAccessor<T = unknown>
 
   protected constructor(
     protected _renderer: Renderer2,
-    protected _elementRef: ElementRef
+    protected _elementRef: ElementRef,
   ) {}
 
   protected setProperty(key: string, value: unknown): void {

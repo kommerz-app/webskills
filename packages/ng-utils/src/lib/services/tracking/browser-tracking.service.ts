@@ -10,7 +10,7 @@ export class BrowserTrackingService {
   constructor(
     private trackingService: TrackingService,
     private router: Router,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
   ) {}
 
   init(): void {

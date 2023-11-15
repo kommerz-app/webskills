@@ -13,7 +13,7 @@ export class FindPipe<T> implements PipeTransform {
   transform(
     value: T[],
     func: (v: T, data: any) => boolean,
-    data: any
+    data: any,
   ): T | undefined {
     if (!value) {
       return undefined;

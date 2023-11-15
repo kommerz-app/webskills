@@ -13,7 +13,7 @@ export class ContainsPipe<T> implements PipeTransform {
   transform(
     value: T[],
     func: (v: T, data: any) => boolean,
-    data: any
+    data: any,
   ): boolean {
     if (!value) {
       return false;

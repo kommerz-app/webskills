@@ -35,14 +35,14 @@ export class ConsoleAppender implements Appender {
     name: string,
     level: LogLevel,
     message: any,
-    additional: any[]
+    additional: any[],
   ): void {
     const color = ConsoleAppender.getColor(level);
     console.log(
       `%c${LogLevel[level]} - ${name}: `,
       `color:${color}`,
       message,
-      ...additional
+      ...additional,
     );
   }
 }

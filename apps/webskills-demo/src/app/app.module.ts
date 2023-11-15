@@ -31,7 +31,7 @@ import { SampleListReportPageModule } from './pages/sample-list-report-page/samp
           component: SampleListReportPageComponent,
         },
       ],
-      { initialNavigation: 'enabledBlocking' }
+      { initialNavigation: 'enabledBlocking' },
     ),
     SampleObjectPageModule,
     SampleLaunchpadPageModule,

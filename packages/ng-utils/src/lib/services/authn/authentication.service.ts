@@ -27,7 +27,7 @@ export class AuthenticationService implements OnDestroy {
     private authAdapter: AuthenticationAdapter,
     private userAdapter: UserAdapter,
     private authStore: AuthStore,
-    private trackingService: TrackingService
+    private trackingService: TrackingService,
   ) {
     this.startSessionCheck();
   }
@@ -68,13 +68,13 @@ export class AuthenticationService implements OnDestroy {
         // -- check failed; we do nothing
         this.logger.debug('#recoverSession: no session');
         return of(false);
-      })
+      }),
     );
   }
 
   private insertSessionInformationIntoStore(
     user: LocalUserAccount,
-    sessionId: string
+    sessionId: string,
   ): void {
     // store session data
     this.authStore.update({
@@ -111,7 +111,7 @@ export class AuthenticationService implements OnDestroy {
         } else {
           throw new Error('could not login');
         }
-      })
+      }),
     );
   }
 
@@ -124,7 +124,7 @@ export class AuthenticationService implements OnDestroy {
     return this.authAdapter.logout(this.getSessionId()).pipe(
       // no matter whether the request was successful, we want to clear all session information on client side
       catchError(() => of(void 0)),
-      tap(() => this.resetAuthStatus())
+      tap(() => this.resetAuthStatus()),
     );
   }
 
@@ -162,7 +162,7 @@ export class AuthenticationService implements OnDestroy {
   private startSessionCheck(): void {
     const interval = this.config.getProperty(
       'authentication.sessionCheck.timerIntervalSeconds',
-      60
+      60,
     );
 
     timer(20 * 1000, interval * 1000)

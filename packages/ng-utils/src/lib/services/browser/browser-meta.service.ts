@@ -11,7 +11,7 @@ export class BrowserMetaService {
     private router: Router,
     private title: Title,
     private meta: Meta,
-    @Inject(CONFIG) private readonly config: Config<never>
+    @Inject(CONFIG) private readonly config: Config<never>,
   ) {}
 
   init(): void {
@@ -29,7 +29,7 @@ export class BrowserMetaService {
 
     const frontendUrl = this.config.getProperty(
       'frontendUrl',
-      'http://localhost'
+      'http://localhost',
     );
     const appImage = this.config.getProperty('appImage', 'assets/app.jpg');
 
@@ -60,7 +60,7 @@ export class BrowserMetaService {
   private setOrRemoveTag(
     attributeValue: string,
     content?: string,
-    attributeName: 'name' | 'property' = 'name'
+    attributeName: 'name' | 'property' = 'name',
   ): void {
     if (isBlank(content)) {
       this.meta.removeTag(`${attributeName}='${attributeValue}'`);

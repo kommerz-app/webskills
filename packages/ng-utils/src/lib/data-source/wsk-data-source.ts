@@ -10,7 +10,7 @@ import { AbstractWskDataSource } from './abstract-wsk-data-source';
 export class WskDataSource<T> extends AbstractWskDataSource<T> {
   constructor(
     protected readonly cb: PaginationEndpoint<T>,
-    defaultRequestParams?: RequestParams
+    defaultRequestParams?: RequestParams,
   ) {
     super();
 
@@ -24,7 +24,7 @@ export class WskDataSource<T> extends AbstractWskDataSource<T> {
   }
 
   protected override buildPageParams(
-    params: RequestParams
+    params: RequestParams,
   ): PageParams | undefined {
     return params.pageParams;
   }

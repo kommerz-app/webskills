@@ -17,7 +17,7 @@ export class JwtAuthInterceptor implements HttpInterceptor {
 
   intercept(
     req: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     const idToken = this.authService.getSessionId();
 

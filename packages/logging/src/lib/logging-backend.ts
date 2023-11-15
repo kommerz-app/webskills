@@ -45,7 +45,7 @@ export class LoggingBackend {
     name: string,
     level: LogLevel,
     message: any,
-    additional: any[]
+    additional: any[],
   ): void {
     LoggingBackend.appenders.forEach((appender) => {
       if (appender.level <= level) {

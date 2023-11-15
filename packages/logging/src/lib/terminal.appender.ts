@@ -35,14 +35,14 @@ export class TerminalAppender implements Appender {
     name: string,
     level: LogLevel,
     message: any,
-    additional: any[]
+    additional: any[],
   ): void {
     const color = TerminalAppender.getColor(level);
     console.log(
       `${color}${LogLevel[level]} - ${name}: `,
       message,
       ...additional,
-      '\x1b[0m'
+      '\x1b[0m',
     );
   }
 }

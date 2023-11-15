@@ -23,18 +23,18 @@ describe('TimeService', () => {
           useValue: {},
         },
       ],
-    })
+    }),
   );
 
   it('should be zero if diff smaller than runtime', () => {
     const service: TimeService = TestBed.inject(TimeService);
 
     expect(
-      service._calcOffset(new Date(0), new Date(1000), new Date(4000))
+      service._calcOffset(new Date(0), new Date(1000), new Date(4000)),
     ).toBe(0);
 
     expect(
-      service._calcOffset(new Date(0), new Date(3000), new Date(4000))
+      service._calcOffset(new Date(0), new Date(3000), new Date(4000)),
     ).toBe(0);
   });
 
@@ -44,7 +44,7 @@ describe('TimeService', () => {
     const offset = service._calcOffset(
       new Date(0),
       new Date(10000),
-      new Date(4000)
+      new Date(4000),
     );
     expect(offset).toBe(8000);
   });
@@ -55,7 +55,7 @@ describe('TimeService', () => {
     const offset = service._calcOffset(
       new Date(0),
       new Date(6000),
-      new Date(4000)
+      new Date(4000),
     );
     expect(offset).toBe(4000);
   });
@@ -66,7 +66,7 @@ describe('TimeService', () => {
     const offset = service._calcOffset(
       new Date(0),
       new Date(-4000),
-      new Date(4000)
+      new Date(4000),
     );
     expect(offset).toBe(-6000);
   });
@@ -77,7 +77,7 @@ describe('TimeService', () => {
     const offset = service._calcOffset(
       new Date(0),
       new Date(-1000),
-      new Date(4000)
+      new Date(4000),
     );
     expect(offset).toBe(-3000);
   });

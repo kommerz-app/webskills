@@ -73,7 +73,7 @@ import {
         style({
           'max-height': '108px',
           opacity: 1,
-        })
+        }),
       ),
       state(
         'hide',
@@ -81,7 +81,7 @@ import {
           opacity: 0,
           'max-height': 0,
           margin: 0,
-        })
+        }),
       ),
       transition('* => hide', [animate('0.2s')]),
       transition('* => show', [animate('0.2s')]),

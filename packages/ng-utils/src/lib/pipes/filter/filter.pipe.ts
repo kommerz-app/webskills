@@ -12,7 +12,7 @@ export class FilterPipe<T, P = unknown> implements PipeTransform {
   transform(
     value: T[],
     predicate: (v: T, param?: P) => boolean,
-    param?: P
+    param?: P,
   ): T[] | undefined {
     if (!value) {
       return undefined;

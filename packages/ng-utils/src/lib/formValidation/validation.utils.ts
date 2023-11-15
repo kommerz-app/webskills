@@ -46,7 +46,7 @@ export function int(): ValidatorFn {
  */
 export function float(
   separator: DecimalSeparator = '.',
-  decimalPlaces?: number
+  decimalPlaces?: number,
 ): ValidatorFn {
   const _floatPattern =
     decimalPlaces ?? 0 > 1

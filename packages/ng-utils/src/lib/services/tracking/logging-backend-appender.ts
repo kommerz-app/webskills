@@ -3,13 +3,16 @@ import { LogMessage } from './tracking';
 import { TrackingAdapter } from './tracking.adapter';
 
 export class LoggingBackendAppender implements Appender {
-  constructor(public level: LogLevel, private logAdapter: TrackingAdapter) {}
+  constructor(
+    public level: LogLevel,
+    private logAdapter: TrackingAdapter,
+  ) {}
 
   public appendMessage(
     name: string,
     level: LogLevel,
     message: any,
-    additional: any[]
+    additional: any[],
   ): void {
     const msgs = [];
     msgs.push(message);

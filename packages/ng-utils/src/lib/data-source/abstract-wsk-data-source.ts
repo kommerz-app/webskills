@@ -34,7 +34,7 @@ export abstract class AbstractWskDataSource<T> extends DataSource<T> {
    * Stream of current amount of all available elements.
    */
   public readonly totalElements$ = this._totalElements$.pipe(
-    takeUntil(this.destroy$)
+    takeUntil(this.destroy$),
   );
 
   protected readonly _loading$ = new BehaviorSubject<boolean>(false);
@@ -69,7 +69,7 @@ export abstract class AbstractWskDataSource<T> extends DataSource<T> {
     return combineLatest([
       this.load$.pipe(startWith('replace')),
       this.requestParams.params$.pipe(
-        tap((params) => this.onRequestParamsChange(params))
+        tap((params) => this.onRequestParamsChange(params)),
       ),
     ]).pipe(
       takeUntil(this.destroy$),
@@ -85,19 +85,19 @@ export abstract class AbstractWskDataSource<T> extends DataSource<T> {
           }),
           catchError(() => of(void 0)),
           filter((ret) => isDefined(ret)),
-          map((ret) => [mode, ret])
-        )
+          map((ret) => [mode, ret]),
+        ),
       ),
       tap(([mode, page]) => {
         this._totalElements$.next((<Page<T>>page).totalElements);
         this.storeNewData(<string>mode, <Page<T>>page);
       }),
-      map(() => this.data)
+      map(() => this.data),
     );
   }
 
   protected abstract buildPageParams(
-    params: RequestParams
+    params: RequestParams,
   ): PageParams | undefined;
 
   protected abstract storeNewData(mode: string, page: Page<T>): void;

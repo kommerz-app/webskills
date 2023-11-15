@@ -30,7 +30,10 @@ export class DynamicPageHeaderComponent
   minified = false;
   showExpansion = true;
 
-  constructor(private renderer: Renderer2, private cd: ChangeDetectorRef) {}
+  constructor(
+    private renderer: Renderer2,
+    private cd: ChangeDetectorRef,
+  ) {}
 
   ngOnInit(): void {
     this.resizeObserver = new ResizeObserver((entries) => {
@@ -38,7 +41,7 @@ export class DynamicPageHeaderComponent
       this.renderer.setStyle(
         this.contentWrapper.nativeElement,
         '--max-height.px',
-        contentHeight
+        contentHeight,
       );
 
       this.updateInternalConfig();

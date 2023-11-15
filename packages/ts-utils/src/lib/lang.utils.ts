@@ -9,7 +9,7 @@ import equal from 'fast-deep-equal';
  */
 export function forEachProp<P>(
   object: { [name: string]: P },
-  cb: (propertyKey: string, propertyValue?: P) => void
+  cb: (propertyKey: string, propertyValue?: P) => void,
 ): void {
   if (isUndefined(object)) {
     return;
@@ -24,7 +24,7 @@ export function forEachProp<P>(
 
 export function mapEachProp<T, P>(
   val: { [name: string]: P },
-  cb: (key: string, val?: P) => T
+  cb: (key: string, val?: P) => T,
 ): T[] {
   const ret: T[] = [];
 

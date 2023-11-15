@@ -15,11 +15,11 @@ import { map } from 'rxjs/operators';
 export class AuthGuard {
   constructor(
     private authService: AuthenticationService,
-    private router: Router
+    private router: Router,
   ) {}
 
   private checkLogin(
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
   ): Observable<boolean | UrlTree> {
     return this.authService.isLoggedIn().pipe(
       map((isLoggedIn) => {
@@ -34,7 +34,7 @@ export class AuthGuard {
         return this.router.createUrlTree(['/login'], {
           queryParams: { redirUrl: state.url },
         });
-      })
+      }),
     );
   }
 
@@ -44,14 +44,14 @@ export class AuthGuard {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
   ): Observable<boolean | UrlTree> {
     return this.checkLogin(state);
   }
 
   canActivateChild(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
   ): Observable<boolean | UrlTree> {
     return this.checkLogin(state);
   }

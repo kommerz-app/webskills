@@ -13,7 +13,7 @@ export class NotAuthGuard {
   constructor(
     private authService: AuthenticationService,
     private router: Router,
-    private previousRouteService: PreviousRouteService
+    private previousRouteService: PreviousRouteService,
   ) {}
 
   private checkLoggedOut(): Observable<boolean | UrlTree> {
@@ -28,7 +28,7 @@ export class NotAuthGuard {
         } else {
           return false;
         }
-      })
+      }),
     );
   }
 

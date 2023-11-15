@@ -59,7 +59,7 @@ export class ClazzDirective implements AfterViewInit, OnChanges {
   constructor(
     private renderer2: Renderer2,
     private el: ElementRef,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
   ) {
     this.breakpointObserver
       .observe([
@@ -117,20 +117,20 @@ export class ClazzDirective implements AfterViewInit, OnChanges {
     this.handleClasses(
       clazz,
       (element, clazz1) => this.renderer2.removeClass(element, clazz1),
-      true
+      true,
     );
   }
 
   private addClasses(clazz?: BreakpointClasses): void {
     this.handleClasses(clazz, (element, clazz1) =>
-      this.renderer2.addClass(element, clazz1)
+      this.renderer2.addClass(element, clazz1),
     );
   }
 
   private handleClasses(
     clazz: BreakpointClasses | undefined,
     fn: (element: Element, clazz: string) => void,
-    skipConditionTest = false
+    skipConditionTest = false,
   ): void {
     if (clazz instanceof Object) {
       for (const clazzKey in clazz) {
@@ -140,7 +140,7 @@ export class ClazzDirective implements AfterViewInit, OnChanges {
               this.el.nativeElement,
               clazz as ConditionalClasses,
               fn,
-              skipConditionTest
+              skipConditionTest,
             );
           } else if (
             typeof clazz[clazzKey] === 'string' ||
@@ -149,7 +149,7 @@ export class ClazzDirective implements AfterViewInit, OnChanges {
             this.handleSelectorClasses(
               clazz as SelectorClasses,
               fn,
-              skipConditionTest
+              skipConditionTest,
             );
           }
         }
@@ -167,7 +167,7 @@ export class ClazzDirective implements AfterViewInit, OnChanges {
     elem: Element,
     clazz: ConditionalClasses,
     fn: (element: Element, clazz: string) => void,
-    skipConditionTest = false
+    skipConditionTest = false,
   ): void {
     for (const clazzKey in clazz) {
       if (Object.prototype.hasOwnProperty.call(clazz, clazzKey)) {
@@ -181,12 +181,12 @@ export class ClazzDirective implements AfterViewInit, OnChanges {
   private handleSelectorClasses(
     clazz: SelectorClasses,
     fn: (element: Element, clazz: string) => void,
-    skipConditionTest = false
+    skipConditionTest = false,
   ): void {
     for (const clazzKey in clazz) {
       if (Object.prototype.hasOwnProperty.call(clazz, clazzKey)) {
         const founds = (this.el.nativeElement as Element).querySelectorAll(
-          clazzKey
+          clazzKey,
         );
 
         if (typeof clazz[clazzKey] === 'string') {
@@ -199,8 +199,8 @@ export class ClazzDirective implements AfterViewInit, OnChanges {
               found,
               clazz[clazzKey] as ConditionalClasses,
               fn,
-              skipConditionTest
-            )
+              skipConditionTest,
+            ),
           );
         }
       } // if has ownProperty

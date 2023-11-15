@@ -45,7 +45,7 @@ export interface Page<T> {
 }
 
 export type PaginationEndpoint<T> = (
-  params: RequestParams
+  params: RequestParams,
 ) => Observable<Page<T>>;
 
 /**
@@ -61,7 +61,7 @@ export class RequestParamsHolder {
   });
   public params$ = this._params$.pipe(
     takeUntil(this.destroy$),
-    distinctUntilChanged<RequestParams>(isEqual)
+    distinctUntilChanged<RequestParams>(isEqual),
   );
 
   public get params(): RequestParams {

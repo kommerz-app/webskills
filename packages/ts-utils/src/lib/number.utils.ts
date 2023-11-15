@@ -15,7 +15,7 @@ function _parseFloatToZero(str: string): number {
 
 export function parseFloatToZero(
   value: string | undefined,
-  separator?: DecimalSeparator
+  separator?: DecimalSeparator,
 ): number {
   if (separator === ',') {
     if (typeof value !== 'string') {

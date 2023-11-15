@@ -19,7 +19,7 @@ export class UserService {
   constructor(private userAdapter: UserAdapter) {}
 
   registerUser(
-    registerData: UserRegistrationData
+    registerData: UserRegistrationData,
   ): Observable<LocalUserAccount> {
     return this.userAdapter.registerUser(registerData);
   }
@@ -34,7 +34,7 @@ export class UserService {
 
   changePassword(
     currentPassword: string,
-    newPassword: string
+    newPassword: string,
   ): Observable<void> {
     return this.userAdapter.changePassword(currentPassword, newPassword);
   }
@@ -49,7 +49,7 @@ export class UserService {
 
   changeEmailAddress(
     newEmailAddress: string,
-    password: string
+    password: string,
   ): Observable<void> {
     return this.userAdapter.changeEmailAddress(newEmailAddress, password);
   }

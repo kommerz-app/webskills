@@ -47,7 +47,7 @@ export class FileUploadComponent extends AbstractControlValueAccessor<File[]> {
     private snackBar: MatSnackBar,
     _renderer: Renderer2,
     _elementRef: ElementRef,
-    @Inject(LOCALE_ID) private locale: string
+    @Inject(LOCALE_ID) private locale: string,
   ) {
     super(_renderer, _elementRef);
   }
@@ -70,7 +70,7 @@ export class FileUploadComponent extends AbstractControlValueAccessor<File[]> {
   onFileDropped(lastAddedFiles: File[]): void {
     if (!this.isMultiUpload && lastAddedFiles.length > 1) {
       this.snackBar.open(
-        'You have tried to upload multiple files. Please select only one file.'
+        'You have tried to upload multiple files. Please select only one file.',
       );
       return;
     }
@@ -104,7 +104,7 @@ export class FileUploadComponent extends AbstractControlValueAccessor<File[]> {
       }
 
       const isAlreadyIncluded = this.files?.some(
-        (file) => file.name === newFile.name
+        (file) => file.name === newFile.name,
       );
 
       if (!isAlreadyIncluded) {

@@ -6,7 +6,7 @@ type ID = string | null | undefined;
 
 @Directive()
 export abstract class AbstractEntityStore<
-  T extends { id?: ID }
+  T extends { id?: ID },
 > extends AbstractStore<T[]> {
   insertEntity(value: T): void {
     this.update([...this.getInstant(), value]);

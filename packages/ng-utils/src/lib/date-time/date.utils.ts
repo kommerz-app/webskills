@@ -40,7 +40,7 @@ export function formatDateWithFallback(
   value: string | number | Date | undefined,
   format: string,
   locale: string,
-  timezone?: string
+  timezone?: string,
 ): string {
   if (value === undefined || value === null) {
     return '';

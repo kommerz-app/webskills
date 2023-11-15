@@ -24,6 +24,6 @@ export interface Appender {
     name: string,
     level: LogLevel,
     message: any,
-    additional: any[]
+    additional: any[],
   ): void;
 }

@@ -109,7 +109,7 @@ export class Logger {
     name: string,
     level: LogLevel,
     message: any,
-    additional: any[]
+    additional: any[],
   ): void {
     if (this.getLogLevel() <= level) {
       LoggingBackend.log(this.name, level, message, additional);

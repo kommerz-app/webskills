@@ -6,7 +6,7 @@ export function pascalCase(str: string): string {
 
 export function camelCase(str: string): string {
   return separatorCase(str, (string, index) =>
-    index === 0 ? string.toLowerCase() : string.toUpperCase()
+    index === 0 ? string.toLowerCase() : string.toUpperCase(),
   );
 }
 
@@ -20,7 +20,7 @@ export function snakeCase(str: string): string {
 
 function separatorCase(
   str: string,
-  wordStartCallback: (string: string, index: number) => string
+  wordStartCallback: (string: string, index: number) => string,
 ): string {
   if (isBlank(str)) {
     return '';

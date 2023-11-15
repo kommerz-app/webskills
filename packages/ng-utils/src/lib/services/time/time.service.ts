@@ -17,13 +17,13 @@ export class TimeService implements OnDestroy {
   constructor(
     @Inject(CONFIG) private readonly config: Config<never>,
     private timeAdapter: TimeAdapter,
-    private trackingService: TrackingService
+    private trackingService: TrackingService,
   ) {}
 
   init(): void {
     const timerIntervalSeconds = this.config.getProperty(
       'time.requestIntervalSeconds',
-      120
+      120,
     );
 
     const initialDelayMs = 50;
@@ -35,15 +35,15 @@ export class TimeService implements OnDestroy {
           combineLatest([
             this.timeAdapter.getServerTime(),
             of(new Date()),
-          ]).pipe(catchError(() => EMPTY))
-        )
+          ]).pipe(catchError(() => EMPTY)),
+        ),
       )
       .subscribe({
         next: ([serverTime, requestStart]) => {
           const offset = this._calcOffset(
             requestStart,
             new Date(serverTime),
-            new Date()
+            new Date(),
           );
 
           if (isDefined(offset)) {
@@ -65,11 +65,11 @@ export class TimeService implements OnDestroy {
   _calcOffset(
     requestStart: Date,
     serverTime: Date,
-    now: Date
+    now: Date,
   ): number | undefined {
     const maxRuntimeSeconds = this.config.getProperty(
       'time.maxRuntimeSeconds',
-      5
+      5,
     );
 
     const runTime = now.getTime() - requestStart.getTime();

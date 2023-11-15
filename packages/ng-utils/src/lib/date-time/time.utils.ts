@@ -51,7 +51,7 @@ export function convertMinutesToTime(minutes: number): string {
  */
 export function formatLocalTimeString(
   timeString: string,
-  includeSeconds = true
+  includeSeconds = true,
 ): string {
   if (isBlank(timeString)) {
     return includeSeconds ? '0:00:00' : '0:00';

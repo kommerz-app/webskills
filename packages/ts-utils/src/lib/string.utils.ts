@@ -1,7 +1,7 @@
 import { isArray, isDefined } from './lang.utils';
 
 export function isEmpty(
-  str: string | undefined | null
+  str: string | undefined | null,
 ): str is undefined | null {
   return !isNotEmpty(str);
 }
@@ -11,7 +11,7 @@ export function isNotEmpty(str: string | undefined | null): str is string {
 }
 
 export function isBlank(
-  str: string | undefined | null
+  str: string | undefined | null,
 ): str is undefined | null {
   return !isNotBlank(str);
 }
@@ -73,7 +73,7 @@ export function replaceAllWhitespace(value: string): string | null {
 export function replaceAll(
   string: string,
   searchValue: string,
-  replaceValue: string
+  replaceValue: string,
 ): string {
   return string.replace(new RegExp(searchValue, 'g'), replaceValue);
 }

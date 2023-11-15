@@ -8,7 +8,7 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
  */
 export function removeFormControlError(
   control: AbstractControl | null,
-  errorName: string
+  errorName: string,
 ): void {
   if (control?.errors && control?.errors[errorName]) {
     delete control.errors[errorName];
@@ -28,7 +28,7 @@ export function removeFormControlError(
 export function updateFormControlError(
   control: AbstractControl | null,
   errorName: string,
-  flag: boolean
+  flag: boolean,
 ): void {
   if (flag) {
     const error: ValidationErrors = {};

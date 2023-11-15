@@ -13,7 +13,7 @@ export interface CanDeactivateComponent {
 @Injectable({ providedIn: 'root' })
 export class CanDeactivateGuard {
   canDeactivate(
-    component: CanDeactivateComponent
+    component: CanDeactivateComponent,
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
