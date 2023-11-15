@@ -1,3 +1,10 @@
+## [3.0.1](https://dev.colamda.de/webskills/webskills/compare/v3.0.0...v3.0.1) (2023-11-15)
+
+
+### Bug Fixes
+
+* update exported angular version ([0048458](https://dev.colamda.de/webskills/webskills/commit/0048458a73ea45ae56336d6016da608031870c82))
+
 # [3.0.0](https://dev.colamda.de/webskills/webskills/compare/v2.1.9...v3.0.0) (2023-11-15)
 
 
