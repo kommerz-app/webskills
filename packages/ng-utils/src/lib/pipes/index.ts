@@ -16,3 +16,6 @@ export * from './minutes/minutes.module';
 
 export * from './array/select-from-array.pipe';
 export * from './array/array.module';
+
+export * from './transform/transform.pipe';
+export * from './fallback/fallback.pipe';
