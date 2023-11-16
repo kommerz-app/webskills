@@ -1,17 +1,23 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TrackingService } from './tracking.service';
 import { Breakpoints } from '../../breakpoints/breakpoints';
 import { forEachProp } from '@webskills/ts-utils';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class BrowserTrackingService {
+  private readonly isBrowser: boolean;
+
   constructor(
     private trackingService: TrackingService,
     private router: Router,
     private breakpointObserver: BreakpointObserver,
-  ) {}
+    @Inject(PLATFORM_ID) platformId: NonNullable<unknown>,
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   init(): void {
     this.router.events.subscribe((event) => {
@@ -55,6 +61,10 @@ export class BrowserTrackingService {
   }
 
   private trackUa(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     this.trackingService.trackUserAgent({
       ua: navigator.userAgent,
       lng: navigator.language,
