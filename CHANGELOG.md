@@ -1,3 +1,10 @@
+# [3.1.0](https://dev.colamda.de/webskills/webskills/compare/v3.0.1...v3.1.0) (2023-11-16)
+
+
+### Features
+
+* several new commons from kommerz ([4449585](https://dev.colamda.de/webskills/webskills/commit/44495851649cde41cba8422115f3ba10624b0066))
+
 ## [3.0.1](https://dev.colamda.de/webskills/webskills/compare/v3.0.0...v3.0.1) (2023-11-15)
 
 
