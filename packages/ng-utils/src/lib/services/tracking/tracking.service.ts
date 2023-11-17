@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { TrackingAdapter } from './tracking.adapter';
 import { Info, Interaction, UserAgent, Visit } from './tracking';
 import { isUndefined } from '@webskills/ts-utils';
+import { isPlatformBrowser } from '@angular/common';
 
 export interface AppTrackingInteractionEvent {
   component: string;
@@ -11,9 +12,20 @@ export interface AppTrackingInteractionEvent {
 
 @Injectable({ providedIn: 'root' })
 export class TrackingService {
-  constructor(private adapter: TrackingAdapter) {}
+  private readonly isBrowser: boolean;
+
+  constructor(
+    private adapter: TrackingAdapter,
+    @Inject(PLATFORM_ID) platformId: NonNullable<unknown>,
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   trackInfo(info: { data?: any; name: string }): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     const d: Info = {
       n: info.name,
       d: info.data,
@@ -24,6 +36,10 @@ export class TrackingService {
   }
 
   trackInteraction(event: AppTrackingInteractionEvent): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     const d: Interaction = {
       d: event.data,
       e: event.event,
@@ -35,6 +51,10 @@ export class TrackingService {
   }
 
   trackVisit(event: { component?: string; url?: string }): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     const d: Visit = {
       c: event.component,
       url: event.url,
@@ -45,6 +65,10 @@ export class TrackingService {
   }
 
   trackUserAgent(userAgent: UserAgent): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     this.adapter.trackUserAgent(userAgent);
   }
 
