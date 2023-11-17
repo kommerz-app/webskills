@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { ActivationEnd, Router } from '@angular/router';
 import { PageMeta } from './page-meta';
-import { Meta, MetaDefinition, Title } from '@angular/platform-browser';
+import { Meta, MetaDefinition } from '@angular/platform-browser';
 import { isBlank, isUndefined } from '@webskills/ts-utils';
 import { Config, CONFIG } from '../configuration/config';
 
@@ -9,7 +9,6 @@ import { Config, CONFIG } from '../configuration/config';
 export class BrowserMetaService {
   constructor(
     private router: Router,
-    private title: Title,
     private meta: Meta,
     @Inject(CONFIG) private readonly config: Config<never>,
   ) {}
@@ -17,14 +16,17 @@ export class BrowserMetaService {
   init(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof ActivationEnd) {
-        this.setPageMetaData(event.snapshot.data?.['meta']);
+        this.setPageMetaData(
+          event.snapshot.data?.['meta'],
+          event.snapshot.title,
+        );
       }
     });
   }
 
-  public setPageMetaData(meta?: PageMeta): void {
+  public setPageMetaData(meta?: PageMeta, pageTitle?: string): void {
     if (isUndefined(meta)) {
-      return;
+      meta = {};
     }
 
     const frontendUrl = this.config.getProperty(
@@ -34,11 +36,10 @@ export class BrowserMetaService {
     const appImage = this.config.getProperty('appImage', 'assets/app.jpg');
 
     const socialUrl = frontendUrl + this.router.url;
-    const socialTitle = meta.og_title ?? meta.title;
+    const socialTitle = meta.og_title ?? pageTitle;
     const socialDescription = meta.og_description ?? meta.description;
     const socialImage = frontendUrl + '/' + (meta.image ?? appImage);
 
-    this.title.setTitle(meta.title);
     this.setOrRemoveTag('description', meta.description);
     this.setOrRemoveTag('keywords', meta.keywords);
     this.setOrRemoveTag('robots', meta.robots);
