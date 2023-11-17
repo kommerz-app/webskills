@@ -1,3 +1,10 @@
+## [3.1.1](https://dev.colamda.de/webskills/webskills/compare/v3.1.0...v3.1.1) (2023-11-17)
+
+
+### Bug Fixes
+
+* **ssr:** support server side rendering for tracking service ([a80357d](https://dev.colamda.de/webskills/webskills/commit/a80357dc00a3b359fccabb1d5d594d0249fdd082))
+
 # [3.1.0](https://dev.colamda.de/webskills/webskills/compare/v3.0.1...v3.1.0) (2023-11-16)
 
 
