@@ -1,3 +1,10 @@
+## [3.1.3](https://dev.colamda.de/webskills/webskills/compare/v3.1.2...v3.1.3) (2023-11-17)
+
+
+### Bug Fixes
+
+* **browser-meta:** update to angular 17 - use title from route ([9763845](https://dev.colamda.de/webskills/webskills/commit/9763845e3fc128e07da61734c36bb5c217fda2bf))
+
 ## [3.1.2](https://dev.colamda.de/webskills/webskills/compare/v3.1.1...v3.1.2) (2023-11-17)
 
 
