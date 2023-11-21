@@ -1,3 +1,10 @@
+## [3.1.5](https://dev.colamda.de/webskills/webskills/compare/v3.1.4...v3.1.5) (2023-11-21)
+
+
+### Bug Fixes
+
+* **header:** styling color ([159f426](https://dev.colamda.de/webskills/webskills/commit/159f4261a16593f9f0d371b2ae2ec184d98b488d))
+
 ## [3.1.4](https://dev.colamda.de/webskills/webskills/compare/v3.1.3...v3.1.4) (2023-11-21)
 
 
