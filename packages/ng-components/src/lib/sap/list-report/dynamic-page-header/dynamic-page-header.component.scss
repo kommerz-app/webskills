@@ -2,6 +2,10 @@
   flex: 1 1 auto;
 }
 
+.header {
+  background: var(--dynamic-header-bg-light, #ffffff);
+}
+
 .header-content {
   overflow: hidden;
   transition: max-height 300ms;
