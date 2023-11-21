@@ -1,3 +1,10 @@
+## [3.1.4](https://dev.colamda.de/webskills/webskills/compare/v3.1.3...v3.1.4) (2023-11-21)
+
+
+### Bug Fixes
+
+* **header:** styling spacing ([d216d94](https://dev.colamda.de/webskills/webskills/commit/d216d941818556875e2b7cc507b601a265e4ac40))
+
 ## [3.1.3](https://dev.colamda.de/webskills/webskills/compare/v3.1.2...v3.1.3) (2023-11-17)
 
 
