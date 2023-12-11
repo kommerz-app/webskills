@@ -38,8 +38,9 @@ export * from './lib/sap/launchpad/launchpad.module';
 export * from './lib/vega/vega.component';
 export * from './lib/vega/vega.module';
 
-export * from './lib/loading/loading.component';
 export * from './lib/loading/loading.module';
+export * from './lib/loading/loading.directive';
+export * from './lib/loading/event-loading.directive';
 
 export * from './lib/split-button/split-button.component';
 export * from './lib/split-button/split-button.module';

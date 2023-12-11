@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LoadingDirective } from './loading.directive';
 import { LoadingComponent } from './loading.component';
-import { ProgressComponent } from './progress.component';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { EventLoadingDirective } from './event-loading.directive';
 
 @NgModule({
-  imports: [CommonModule, MatProgressBarModule, MatSnackBarModule],
-  declarations: [LoadingComponent, ProgressComponent],
-  exports: [LoadingComponent],
+  declarations: [LoadingDirective, LoadingComponent, EventLoadingDirective],
+  imports: [CommonModule, MatProgressSpinnerModule],
+  exports: [LoadingDirective, EventLoadingDirective],
 })
 export class LoadingModule {}
