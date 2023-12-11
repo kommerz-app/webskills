@@ -1,3 +1,10 @@
+## [3.2.1](https://dev.colamda.de/webskills/webskills/compare/v3.2.0...v3.2.1) (2023-12-11)
+
+
+### Bug Fixes
+
+* enable loading component for SSR ([03686d5](https://dev.colamda.de/webskills/webskills/commit/03686d51878d42670fb636e741a1edbdf54a10df))
+
 # [3.2.0](https://dev.colamda.de/webskills/webskills/compare/v3.1.6...v3.2.0) (2023-12-11)
 
 
