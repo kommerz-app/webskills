@@ -1,3 +1,10 @@
+# [3.2.0](https://dev.colamda.de/webskills/webskills/compare/v3.1.6...v3.2.0) (2023-12-11)
+
+
+### Features
+
+* add event loading directive ([26a1635](https://dev.colamda.de/webskills/webskills/commit/26a163544b46dca49b59023702558b86921635ce))
+
 ## [3.1.6](https://dev.colamda.de/webskills/webskills/compare/v3.1.5...v3.1.6) (2023-11-21)
 
 
