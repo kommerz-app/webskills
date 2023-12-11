@@ -3,14 +3,17 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  Inject,
   OnDestroy,
   OnInit,
+  PLATFORM_ID,
   Renderer2,
   TemplateRef,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
 import { isDefined, isUndefined } from '@webskills/ts-utils';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   template: `
@@ -28,6 +31,7 @@ import { isDefined, isUndefined } from '@webskills/ts-utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoadingComponent implements OnInit, OnDestroy {
+  private readonly isBrowser = isPlatformBrowser(this.platformId);
   private eventCb?: [string, (event: any) => boolean | void];
 
   @ViewChild('spinnerWrapper', { static: true })
@@ -53,6 +57,7 @@ export class LoadingComponent implements OnInit, OnDestroy {
     private ref: ElementRef,
     private cdRef: ChangeDetectorRef,
     private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: NonNullable<unknown>,
   ) {}
 
   ngOnInit(): void {
@@ -62,10 +67,12 @@ export class LoadingComponent implements OnInit, OnDestroy {
 
     this.containerElement = embeddedViewRef.rootNodes[0];
 
-    this.resizeObserver = new ResizeObserver(([entry]) =>
-      this.onContainerElementHasResized(entry),
-    );
-    this.resizeObserver.observe(this.containerElement!);
+    if (this.isBrowser) {
+      this.resizeObserver = new ResizeObserver(([entry]) =>
+        this.onContainerElementHasResized(entry),
+      );
+      this.resizeObserver.observe(this.containerElement!);
+    }
 
     if (isDefined(this.eventCb)) {
       this.registerEventCallback(this.eventCb[0], this.eventCb[1]);
