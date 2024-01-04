@@ -1,3 +1,10 @@
+## [3.3.1](https://dev.colamda.de/webskills/webskills/compare/v3.3.0...v3.3.1) (2024-01-04)
+
+
+### Bug Fixes
+
+* track full url ([9921bfb](https://dev.colamda.de/webskills/webskills/commit/9921bfb245122ece492f3e4f50fb03a0b0d739ce))
+
 # [3.3.0](https://dev.colamda.de/webskills/webskills/compare/v3.2.1...v3.3.0) (2024-01-04)
 
 
