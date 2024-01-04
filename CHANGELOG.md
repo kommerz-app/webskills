@@ -1,3 +1,10 @@
+# [3.3.0](https://dev.colamda.de/webskills/webskills/compare/v3.2.1...v3.3.0) (2024-01-04)
+
+
+### Features
+
+* add session tracking ([c193f08](https://dev.colamda.de/webskills/webskills/commit/c193f08c37ebef931dc8447c4c301717052e2591))
+
 ## [3.2.1](https://dev.colamda.de/webskills/webskills/compare/v3.2.0...v3.2.1) (2023-12-11)
 
 
