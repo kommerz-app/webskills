@@ -21,14 +21,16 @@ export class BrowserTrackingService {
 
   init(): void {
     this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.trackingService.trackVisit({ url: event.url });
+      if (event instanceof NavigationEnd && this.isBrowser) {
+        this.trackingService.trackVisit({ url: document.baseURI + event.url });
       }
     });
 
-    this.trackUa();
-    this.trackBreakpoints();
-    this.trackingService.trackSession();
+    if (this.isBrowser) {
+      this.trackUa();
+      this.trackBreakpoints();
+      this.trackingService.trackSession();
+    }
   }
 
   private trackBreakpoints(): void {
@@ -62,10 +64,6 @@ export class BrowserTrackingService {
   }
 
   private trackUa(): void {
-    if (!this.isBrowser) {
-      return;
-    }
-
     this.trackingService.trackUserAgent({
       ua: navigator.userAgent,
       lng: navigator.language,
