@@ -90,3 +90,14 @@ export interface LogMessage {
   messages: string[];
   sId?: string;
 }
+
+export interface Session {
+  browserId?: string;
+  referrer?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmTerm?: string;
+  utmContent?: string;
+  sId?: string;
+}

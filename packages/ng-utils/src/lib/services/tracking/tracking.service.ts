@@ -1,6 +1,6 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { TrackingAdapter } from './tracking.adapter';
-import { Info, Interaction, UserAgent, Visit } from './tracking';
+import { Info, Interaction, Session, UserAgent, Visit } from './tracking';
 import { isUndefined } from '@webskills/ts-utils';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -19,6 +19,25 @@ export class TrackingService {
     @Inject(PLATFORM_ID) platformId: NonNullable<unknown>,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  trackSession() {
+    if (!this.isBrowser) {
+      return;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const d: Session = {
+      referrer: document.referrer,
+      utmCampaign: urlParams.get('utm_campaign') ?? undefined,
+      utmContent: urlParams.get('utm_content') ?? undefined,
+      utmMedium: urlParams.get('utm_medium') ?? undefined,
+      utmSource: urlParams.get('utm_source') ?? undefined,
+      utmTerm: urlParams.get('utm_term') ?? undefined,
+    };
+
+    this.adapter.trackSession(d);
   }
 
   trackInfo(info: { data?: any; name: string }): void {
@@ -79,6 +98,6 @@ export class TrackingService {
   }
 
   private getBrowserUrl(): string {
-    return window.location.pathname;
+    return window.location.href;
   }
 }

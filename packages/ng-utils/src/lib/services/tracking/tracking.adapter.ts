@@ -1,4 +1,11 @@
-import { Info, Interaction, LogMessage, UserAgent, Visit } from './tracking';
+import {
+  Info,
+  Interaction,
+  LogMessage,
+  Session,
+  UserAgent,
+  Visit,
+} from './tracking';
 
 export abstract class TrackingAdapter {
   abstract trackUserAgent(ua: UserAgent): void;
@@ -10,4 +17,6 @@ export abstract class TrackingAdapter {
   abstract trackVisit(visit: Visit): void;
 
   abstract trackLog(log: LogMessage): void;
+
+  abstract trackSession(session: Session): void;
 }

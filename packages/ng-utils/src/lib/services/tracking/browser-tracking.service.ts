@@ -28,6 +28,7 @@ export class BrowserTrackingService {
 
     this.trackUa();
     this.trackBreakpoints();
+    this.trackingService.trackSession();
   }
 
   private trackBreakpoints(): void {
