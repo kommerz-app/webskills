@@ -22,7 +22,9 @@ export class BrowserTrackingService {
   init(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd && this.isBrowser) {
-        this.trackingService.trackVisit({ url: document.baseURI + event.url });
+        let baseUri = document.baseURI;
+        baseUri = baseUri.substring(0, baseUri.length - 1);
+        this.trackingService.trackVisit({ url: baseUri + event.url });
       }
     });
 
