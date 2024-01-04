@@ -1,3 +1,10 @@
+## [3.3.2](https://dev.colamda.de/webskills/webskills/compare/v3.3.1...v3.3.2) (2024-01-04)
+
+
+### Bug Fixes
+
+* remove double slashes ([76fae69](https://dev.colamda.de/webskills/webskills/commit/76fae693d84bbea709028d8c6a46d8ca62d5ea7a))
+
 ## [3.3.1](https://dev.colamda.de/webskills/webskills/compare/v3.3.0...v3.3.1) (2024-01-04)
 
 
