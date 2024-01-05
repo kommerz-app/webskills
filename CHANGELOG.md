@@ -1,3 +1,10 @@
+## [3.3.3](https://dev.colamda.de/webskills/webskills/compare/v3.3.2...v3.3.3) (2024-01-05)
+
+
+### Bug Fixes
+
+* error handler logs message and code ([4c50fc9](https://dev.colamda.de/webskills/webskills/commit/4c50fc96c5e9e21a57595d761ade3e2b9c06235e))
+
 ## [3.3.2](https://dev.colamda.de/webskills/webskills/compare/v3.3.1...v3.3.2) (2024-01-04)
 
 
