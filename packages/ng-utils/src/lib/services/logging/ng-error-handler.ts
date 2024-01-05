@@ -11,6 +11,6 @@ export class NgErrorHandler implements ErrorHandler {
   private logger = new Logger('NgErrorHandler');
 
   handleError(error: any): void {
-    this.logger.error(error);
+    this.logger.error(error.toString(), error);
   }
 }
