@@ -31,7 +31,7 @@ export function updateFormControlError(
   flag: boolean,
 ): void {
   if (flag) {
-    const error: ValidationErrors = {};
+    const error: ValidationErrors = control?.errors ?? {};
     error[errorName] = flag;
     control?.setErrors(error);
     control?.markAsTouched();

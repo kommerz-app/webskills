@@ -41,5 +41,9 @@ describe('FormControlErrorUtils', () => {
 
     updateFormControlError(input, 'min', true);
     expect(input.errors?.['min']).toBeTruthy();
+
+    updateFormControlError(input, 'min2', true);
+    expect(input.errors?.['min']).toBeTruthy();
+    expect(input.errors?.['min2']).toBeTruthy();
   });
 });
