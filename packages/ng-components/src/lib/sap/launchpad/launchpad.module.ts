@@ -10,7 +10,6 @@ import { RouterModule } from '@angular/router';
 import { LaunchpadTopLevelNavigationComponent } from './launchpad-top-level-navigation/launchpad-top-level-navigation.component';
 import { LaunchpadComponent } from './launchpad.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -22,7 +21,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatBadgeModule,
     RouterModule,
     MatCardModule,
-    MatTooltipModule,
   ],
   declarations: [
     LaunchpadSpaceComponent,

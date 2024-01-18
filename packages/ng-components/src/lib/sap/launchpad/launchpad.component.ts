@@ -1,4 +1,11 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  ContentChildren,
+  Input,
+  QueryList,
+  TemplateRef,
+} from '@angular/core';
+import { TemplateDirective } from '../../template/template.directive';
 
 export interface Group {
   groupTitle?: string;
@@ -12,6 +19,8 @@ export interface Tile {
   subtitle: string;
   link: string;
   icon: string;
+  headerComponent: string;
+  detailsComponent: string;
 }
 
 export interface Links {
@@ -26,5 +35,14 @@ export interface Links {
   styleUrls: ['./launchpad.component.scss'],
 })
 export class LaunchpadComponent {
-  @Input() groups!: Group[];
+  @Input() groups?: Group[];
+
+  @ContentChildren(TemplateDirective)
+  detailsTemplates!: QueryList<TemplateDirective>;
+
+  getColumnTemplate(name: string): TemplateRef<any> | null {
+    return (
+      this.detailsTemplates?.find((t) => t.name === name)?.template ?? null
+    );
+  }
 }

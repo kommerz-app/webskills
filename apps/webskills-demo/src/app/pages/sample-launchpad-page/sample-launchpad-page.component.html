@@ -4,4 +4,24 @@
   ></wsk-launchpad-top-level-navigation>
 </div>
 
-<wsk-launchpad [groups]="groups"></wsk-launchpad>
+<wsk-launchpad [groups]="groups">
+  <ng-template wskTemplate="title-subtitle" let-config>
+    <mat-card-title
+      class="text-base md:text-lg truncate"
+      matTooltip="{{ config.title }}"
+    >
+      {{ config.title }}
+    </mat-card-title>
+
+    <mat-card-subtitle
+      class="text-sm md:text-base truncate"
+      matTooltip="{{ config.subtitle }}"
+    >
+      {{ config.subtitle }}
+    </mat-card-subtitle>
+  </ng-template>
+
+  <ng-template wskTemplate="icon" let-config>
+    <mat-icon>{{ config.icon }}</mat-icon>
+  </ng-template>
+</wsk-launchpad>
