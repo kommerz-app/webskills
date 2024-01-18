@@ -1,3 +1,10 @@
+## [3.3.7](https://dev.colamda.de/webskills/webskills/compare/v3.3.6...v3.3.7) (2024-01-18)
+
+
+### Bug Fixes
+
+* adjust padding of launchpad card ([4b0ff7c](https://dev.colamda.de/webskills/webskills/commit/4b0ff7ce22669e2ee83b96245de0a6d53ffee686))
+
 ## [3.3.6](https://dev.colamda.de/webskills/webskills/compare/v3.3.5...v3.3.6) (2024-01-18)
 
 
