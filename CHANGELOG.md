@@ -1,3 +1,11 @@
+## [3.3.4](https://dev.colamda.de/webskills/webskills/compare/v3.3.3...v3.3.4) (2024-01-18)
+
+
+### Bug Fixes
+
+* projects content in launchpad components ([512915a](https://dev.colamda.de/webskills/webskills/commit/512915a277a8eab806d2e8bc0fc2e49d34ec3412))
+* updateFormControlError did overwrite the previous values ([e931870](https://dev.colamda.de/webskills/webskills/commit/e931870ebcee0ce8cfecf1d76d6cae115d058caf))
+
 ## [3.3.3](https://dev.colamda.de/webskills/webskills/compare/v3.3.2...v3.3.3) (2024-01-05)
 
 

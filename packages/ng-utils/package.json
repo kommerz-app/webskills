@@ -2,7 +2,7 @@
   "name": "@webskills/ng-utils",
   "author": "Colamda GmbH",
   "license": "MIT",
-  "version": "3.3.3",
+  "version": "3.3.4",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0"
