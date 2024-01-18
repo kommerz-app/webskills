@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ContentChildren,
   Input,
@@ -33,6 +34,7 @@ export interface Links {
   selector: 'wsk-launchpad',
   templateUrl: './launchpad.component.html',
   styleUrls: ['./launchpad.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LaunchpadComponent {
   @Input() groups?: Group[];
