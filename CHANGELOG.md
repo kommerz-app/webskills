@@ -1,3 +1,10 @@
+## [3.3.6](https://dev.colamda.de/webskills/webskills/compare/v3.3.5...v3.3.6) (2024-01-18)
+
+
+### Bug Fixes
+
+* refactor items ([d2b6489](https://dev.colamda.de/webskills/webskills/commit/d2b64898984d9a7020b3ba57e95cabe90ae595c7))
+
 ## [3.3.5](https://dev.colamda.de/webskills/webskills/compare/v3.3.4...v3.3.5) (2024-01-18)
 
 
