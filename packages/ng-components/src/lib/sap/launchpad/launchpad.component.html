@@ -8,23 +8,24 @@
       {{ group.groupTitle }}
     </h3>
 
-    <div *ngFor="let tile of group.tiles" class="sm:col-span-1 launchpad-card">
+    <div
+      *ngFor="let tile of group.tiles"
+      class="sm:col-span-1 launchpad-card mat-mdc-card mdc-card mat-mdc-card-outlined mdc-card--outlined"
+    >
       <a [routerLink]="tile.link">
-        <mat-card appearance="outlined" class="aspect-square">
-          <mat-card-header>
-            <div class="overflow-hidden">
-              <ng-container *ngIf="getColumnTemplate(tile.headerComponent)">
-                <ng-container
-                  *ngTemplateOutlet="
-                    getColumnTemplate(tile.headerComponent);
-                    context: { $implicit: tile }
-                  "
-                ></ng-container>
-              </ng-container>
-            </div>
-          </mat-card-header>
+        <div class="aspect-square p-2 flex flex-col">
+          <div class="overflow-hidden flex-grow-0">
+            <ng-container *ngIf="getColumnTemplate(tile.headerComponent)">
+              <ng-container
+                *ngTemplateOutlet="
+                  getColumnTemplate(tile.headerComponent);
+                  context: { $implicit: tile }
+                "
+              ></ng-container>
+            </ng-container>
+          </div>
 
-          <mat-card-content>
+          <div class="flex-1 overflow-hidden">
             <ng-container *ngIf="getColumnTemplate(tile.detailsComponent)">
               <ng-container
                 *ngTemplateOutlet="
@@ -33,8 +34,8 @@
                 "
               ></ng-container>
             </ng-container>
-          </mat-card-content>
-        </mat-card>
+          </div>
+        </div>
       </a>
     </div>
   </div>

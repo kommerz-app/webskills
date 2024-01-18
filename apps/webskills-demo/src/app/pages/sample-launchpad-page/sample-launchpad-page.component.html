@@ -6,19 +6,19 @@
 
 <wsk-launchpad [groups]="groups">
   <ng-template wskTemplate="title-subtitle" let-config>
-    <mat-card-title
-      class="text-base md:text-lg truncate"
+    <div
+      class="text-base md:text-lg truncate mat-mdc-card-title"
       matTooltip="{{ config.title }}"
     >
       {{ config.title }}
-    </mat-card-title>
+    </div>
 
-    <mat-card-subtitle
-      class="text-sm md:text-base truncate"
+    <div
+      class="text-sm md:text-base truncate mat-mdc-card-subtitle"
       matTooltip="{{ config.subtitle }}"
     >
       {{ config.subtitle }}
-    </mat-card-subtitle>
+    </div>
   </ng-template>
 
   <ng-template wskTemplate="icon" let-config>
