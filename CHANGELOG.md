@@ -1,3 +1,10 @@
+## [3.3.5](https://dev.colamda.de/webskills/webskills/compare/v3.3.4...v3.3.5) (2024-01-18)
+
+
+### Bug Fixes
+
+* change changeDetection to OnPush ([a920e67](https://dev.colamda.de/webskills/webskills/commit/a920e672b4eafa71db09e22cd083d6f3cfc4fc80))
+
 ## [3.3.4](https://dev.colamda.de/webskills/webskills/compare/v3.3.3...v3.3.4) (2024-01-18)
 
 
