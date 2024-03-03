@@ -17,6 +17,9 @@ jobs:
       issues: write
       pull-requests: write
       id-token: write
+    env:
+      GIT_AUTHOR_EMAIL: gitbot@kommerz.app
+      GIT_AUTHOR_NAME: Kommerz bot
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
