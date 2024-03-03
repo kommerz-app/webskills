@@ -1,9 +1,9 @@
-name: Code Formatting Check
+name: Build and deploy libs
 
 on:
-  pull_request:
-    branches:
-      - main
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 permissions:
   contents: read
@@ -12,15 +12,19 @@ jobs:
   format-check:
     name: Format check
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -28,5 +32,10 @@ jobs:
         run: NODE_ENV=production yarn build
       - name: Test
         run: yarn test.ci
-      - name: Check code formatting and linting
-        run: yarn lint && yarn format
+
+      - name: Publish
+        run: |
+          npm publish dist/logging/
+          npm publish dist/ng-components/
+          npm publish dist/ng-utils/
+          npm publish dist/ts-utils/
