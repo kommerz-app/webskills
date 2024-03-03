@@ -1,3 +1,11 @@
+## [3.3.12](https://github.com/kommerz-app/webskills/compare/v3.3.11...v3.3.12) (2024-03-03)
+
+
+### Bug Fixes
+
+* ci cd ([bebab39](https://github.com/kommerz-app/webskills/commit/bebab39ecc7a903ea01e75897cc8ab531279b111))
+* ci cd ([d3b56bc](https://github.com/kommerz-app/webskills/commit/d3b56bc53c1ba0f2bda4214a5dc7233f82a0e298))
+
 ## [3.3.11](https://github.com/kommerz-app/webskills/compare/v3.3.10...v3.3.11) (2024-03-03)
 
 
