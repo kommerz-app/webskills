@@ -1,3 +1,11 @@
+## [3.3.8](https://github.com/kommerz-app/webskills/compare/v3.3.7...v3.3.8) (2024-03-03)
+
+
+### Bug Fixes
+
+* add license file ([e371a76](https://github.com/kommerz-app/webskills/commit/e371a76d89d66f3664dbf5d5e7dad52e9e680d58))
+* ci cd ([#1](https://github.com/kommerz-app/webskills/issues/1)) ([6eb2a7d](https://github.com/kommerz-app/webskills/commit/6eb2a7d1f23c4aaf13047c8cea747c3709d9e6fa))
+
 ## [3.3.7](https://dev.colamda.de/webskills/webskills/compare/v3.3.6...v3.3.7) (2024-01-18)
 
 
