@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   format-check:
+    name: Format check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
