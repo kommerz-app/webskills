@@ -1,10 +1,12 @@
 {
   "name": "webskills",
-  "author": "Colamda GmbH",
+  "author": "Kommerz.App",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "format": "prettier . --check",
     "format:write": "prettier --write .",
+    "lint": "ng lint && prettier . --check",
     "linting:write": "ng lint --fix",
     "test.ci": "yarn test.ts-utils && yarn test.logging && yarn test.ng-utils && yarn test.ng-components",
     "test.ts-utils": "jest --config ./packages/ts-utils/jest.config.ts --reporters=jest-junit --reporters=default",
@@ -18,7 +20,6 @@
     "build.ng-components": "ng build ng-components",
     "build:watch.ng-components": "ng build ng-components --watch",
     "serve:demo": "ng serve webskills-demo --port 4202",
-    "lint": "ng lint",
     "prepare": "husky"
   },
   "private": true,
