@@ -92,11 +92,6 @@
         ]
       }
     ],
-    [
-      "@semantic-release/gitlab",
-      {
-        "gitlabUrl": "https://dev.colamda.de"
-      }
-    ]
+    ["@semantic-release/github"]
   ]
 }
