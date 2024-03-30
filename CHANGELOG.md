@@ -1,3 +1,12 @@
+## [3.3.13](https://github.com/kommerz-app/webskills/compare/v3.3.12...v3.3.13) (2024-03-30)
+
+
+### Bug Fixes
+
+* add npm info ([24c076d](https://github.com/kommerz-app/webskills/commit/24c076d972887666bdce6257b0ce9890c41976cd))
+* ci cd ([ae60960](https://github.com/kommerz-app/webskills/commit/ae6096069ceacf8adee5c14df270819b7276e107))
+* update to new angular control flow ([#4](https://github.com/kommerz-app/webskills/issues/4)) ([e535920](https://github.com/kommerz-app/webskills/commit/e535920978d46c168b20deb141046a1a899d7e3e))
+
 ## [3.3.12](https://github.com/kommerz-app/webskills/compare/v3.3.11...v3.3.12) (2024-03-03)
 
 
