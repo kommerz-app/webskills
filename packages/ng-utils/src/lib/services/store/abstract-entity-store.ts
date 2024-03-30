@@ -48,17 +48,22 @@ export abstract class AbstractEntityStore<
     ]);
   }
 
-  deleteEntity(id: string): void {
+  /**
+   * @return false if entity with id was not found
+   */
+  deleteEntity(id: string): boolean {
     const idx = this.getIdx(id);
 
     if (idx == -1) {
-      throw new Error('no such entity with id ' + id);
+      return false;
     }
 
     this.update([
       ...this.getInstant().slice(0, idx),
       ...this.getInstant().slice(idx + 1),
     ]);
+
+    return true;
   }
 
   private getIdx(id: ID) {
