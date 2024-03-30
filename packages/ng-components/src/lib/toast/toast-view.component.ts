@@ -8,12 +8,12 @@ import { ToastItemComponent } from './toast-item.component';
 @Component({
   selector: 'wsk-toast-view',
   template: `
-    <ng-container *ngFor="let item of items">
+    @for (item of items; track item) {
       <wsk-toast-item
         [message]="item"
         (removed)="onRemoved(item)"
       ></wsk-toast-item>
-    </ng-container>
+    }
   `,
 })
 export class ToastViewComponent {

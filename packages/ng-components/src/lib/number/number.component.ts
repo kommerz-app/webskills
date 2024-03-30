@@ -7,8 +7,7 @@ import {
 
 @Component({
   selector: 'wsk-number',
-  template:
-    '<ng-container *ngIf="renderPlus">+</ng-container>{{ value | number: digitsInfo }}',
+  template: '@if (renderPlus) {+}{{ value | number: digitsInfo }}',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NumberComponent {

@@ -9,12 +9,15 @@
   <div class="flex flex-col">
     <div class="flex pt-6 px-6">
       <div class="flex items-center">
-        <div *ngIf="!minified">
-          <ng-content select="[header]"></ng-content>
-        </div>
-        <div *ngIf="minified">
-          <ng-content select="[headerMinified]"></ng-content>
-        </div>
+        @if (!minified) {
+          <div>
+            <ng-content select="[header]"></ng-content>
+          </div>
+        } @else {
+          <div>
+            <ng-content select="[headerMinified]"></ng-content>
+          </div>
+        }
       </div>
       <span class="example-spacer"></span>
 
@@ -29,19 +32,22 @@
       </div>
     </div>
 
-    <div class="flex justify-center" *ngIf="showExpansion">
-      <button
-        mat-icon-button
-        type="button"
-        [attr.aria-expanded]="!minified"
-        aria-controls="header"
-        (click)="onClick()"
-      >
-        <mat-icon *ngIf="minified; else closeIcon">expand_more</mat-icon>
-        <ng-template #closeIcon>
-          <mat-icon>expand_less</mat-icon>
-        </ng-template>
-      </button>
-    </div>
+    @if (showExpansion) {
+      <div class="flex justify-center">
+        <button
+          mat-icon-button
+          type="button"
+          [attr.aria-expanded]="!minified"
+          aria-controls="header"
+          (click)="onClick()"
+        >
+          @if (minified) {
+            <mat-icon>expand_more</mat-icon>
+          } @else {
+            <mat-icon>expand_less</mat-icon>
+          }
+        </button>
+      </div>
+    }
   </div>
 </div>

@@ -18,13 +18,10 @@
 </button>
 
 <mat-menu #dropdownMenuOne="matMenu">
-  <button
-    mat-menu-item
-    *ngFor="let item of items; let idx = index"
-    (click)="item.action()"
-    [disabled]="item.disabled"
-  >
-    <mat-icon>{{ item.icon }}</mat-icon>
-    <span class="uppercase">{{ item.label }}</span>
-  </button>
+  @for (item of items; track item; let idx = $index) {
+    <button mat-menu-item (click)="item.action()" [disabled]="item.disabled">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span class="uppercase">{{ item.label }}</span>
+    </button>
+  }
 </mat-menu>

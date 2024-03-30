@@ -56,7 +56,7 @@ export function fallbackIfBlank(
   return null;
 }
 
-export function trimToNull(value: string): string | null {
+export function trimToNull(value: string | null | undefined): string | null {
   if (isBlank(value)) {
     return null;
   }
