@@ -1,18 +1,18 @@
 import {
   Component,
-  Input,
-  Output,
   EventEmitter,
+  Input,
   OnChanges,
+  Output,
   SimpleChanges,
 } from '@angular/core';
 import { ToastMessage } from './toast';
 import {
-  trigger,
+  animate,
   state,
   style,
-  animate,
   transition,
+  trigger,
 } from '@angular/animations';
 
 @Component({
@@ -24,12 +24,9 @@ import {
       (@showHide.done)="onHideDone()"
     >
       <div class="content flex gap-2 p-3" [ngClass]="message.type!">
-        <img
-          *ngIf="message.avatar && message.type === 'notification'"
-          src="{{ message.avatar }}"
-          alt="Avatar"
-          class="avatar h-8 w-8"
-        />
+        @if (message.avatar && message.type === 'notification') {
+          <img src="{{ message.avatar }}" alt="Avatar" class="avatar h-8 w-8" />
+        }
         <div
           class="flex-auto"
           [ngClass]="{ 'flex items-center': message.type !== 'notification' }"
@@ -40,18 +37,20 @@ import {
               {{ message.messageTitle }}
             </p>
           </div>
-          <p
-            *ngIf="message.type === 'notification'"
-            class="toast-subtitle-truncate pt-1 text-xs text-slate-600"
-          >
-            {{ message.subtitle }}
-          </p>
-          <div class="flex pt-2" *ngIf="message.type === 'notification'">
-            <p class="notification-type text-slate-600 text-xs">
-              {{ message.notificationType }}
+          @if (message.type === 'notification') {
+            <p class="toast-subtitle-truncate pt-1 text-xs text-slate-600">
+              {{ message.subtitle }}
             </p>
-            <p class="!mr-3 text-slate-600 text-xs">{{ message.timestamp }}</p>
-          </div>
+
+            <div class="flex pt-2">
+              <p class="notification-type text-slate-600 text-xs">
+                {{ message.notificationType }}
+              </p>
+              <p class="!mr-3 text-slate-600 text-xs">{{
+                message.timestamp
+              }}</p>
+            </div>
+          }
         </div>
         <div class="close-button-container">
           <button

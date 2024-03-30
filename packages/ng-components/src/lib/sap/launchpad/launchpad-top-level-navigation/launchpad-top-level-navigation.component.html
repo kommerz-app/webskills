@@ -1,36 +1,42 @@
 <nav>
   <ul class="flex items-center list-none">
-    <wsk-launchpad-space *ngFor="let item of menuItems">
-      <a
-        spaceTitle
-        mat-button
-        *ngIf="!item.pages"
-        routerLink="{{ item.spaceLink }}"
-        class="!ml-6 !text-white"
-      >
-        {{ item.spaceTitle }}
-      </a>
-      <div pages *ngIf="item.pages">
-        <button
-          mat-button
-          [matMenuTriggerFor]="menu"
-          aria-label="icon button with a menu"
-          class="!ml-6 !text-white"
-        >
-          {{ item.spaceTitle }}
-          <mat-icon class="text-white">keyboard_arrow_down</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button
-            *ngFor="let page of item.pages"
-            mat-menu-item
-            routerLink="{{ page.link }}"
-            type="button"
+    @for (item of menuItems; track item) {
+      <wsk-launchpad-space>
+        @if (!item.pages) {
+          <a
+            spaceTitle
+            mat-button
+            routerLink="{{ item.spaceLink }}"
+            class="!ml-6 !text-white"
           >
-            {{ page.text }}
-          </button>
-        </mat-menu>
-      </div>
-    </wsk-launchpad-space>
+            {{ item.spaceTitle }}
+          </a>
+        }
+        @if (item.pages) {
+          <div pages>
+            <button
+              mat-button
+              [matMenuTriggerFor]="menu"
+              aria-label="icon button with a menu"
+              class="!ml-6 !text-white"
+            >
+              {{ item.spaceTitle }}
+              <mat-icon class="text-white">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              @for (page of item.pages; track page) {
+                <button
+                  mat-menu-item
+                  routerLink="{{ page.link }}"
+                  type="button"
+                >
+                  {{ page.text }}
+                </button>
+              }
+            </mat-menu>
+          </div>
+        }
+      </wsk-launchpad-space>
+    }
   </ul>
 </nav>

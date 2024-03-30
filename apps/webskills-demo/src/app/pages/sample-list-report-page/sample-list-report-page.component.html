@@ -29,12 +29,11 @@
           <mat-form-field class="w-full">
             <mat-label>Availability</mat-label>
             <mat-select>
-              <mat-option
-                *ngFor="let availability of availabilities"
-                [value]="availability.value"
-              >
-                {{ availability.viewValue }}
-              </mat-option>
+              @for (availability of availabilities; track availability) {
+                <mat-option [value]="availability.value">
+                  {{ availability.viewValue }}
+                </mat-option>
+              }
             </mat-select>
           </mat-form-field>
         </div>
@@ -51,12 +50,11 @@
           <mat-form-field class="w-full">
             <mat-label>Category</mat-label>
             <mat-select>
-              <mat-option
-                *ngFor="let category of categories"
-                [value]="category.value"
-              >
-                {{ category.viewValue }}
-              </mat-option>
+              @for (category of categories; track category) {
+                <mat-option [value]="category.value">
+                  {{ category.viewValue }}
+                </mat-option>
+              }
             </mat-select>
           </mat-form-field>
         </div>

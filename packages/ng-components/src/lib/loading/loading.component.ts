@@ -24,7 +24,9 @@ import { isPlatformBrowser } from '@angular/common';
         #spinnerWrapper
         style="display: none; position: absolute; align-items: center; justify-content: center; z-index: 101"
       >
-        <mat-spinner *ngIf="loading" [diameter]="diameter"></mat-spinner>
+        @if (loading) {
+          <mat-spinner [diameter]="diameter"></mat-spinner>
+        }
       </div>
     </div>
   `,

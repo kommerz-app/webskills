@@ -9,17 +9,13 @@
       <div
         class="flex flex-col items-center border border-primary rounded-xl p-8"
       >
-        <p
-          i18n="@@fileUploadDragYourFiles"
-          *ngIf="isMultiUpload; else elseBlock"
-          class="text-sm md:text-base"
-          >Drag your files here</p
-        >
-        <ng-template #elseBlock
-          ><p i18n="@@fileUploadDragYourFile"
-            >Drag your file here</p
-          ></ng-template
-        >
+        @if (isMultiUpload) {
+          <p i18n="@@fileUploadDragYourFiles" class="text-sm md:text-base"
+            >Drag your files here</p
+          >
+        } @else {
+          <p i18n="@@fileUploadDragYourFile">Drag your file here</p>
+        }
         <mat-icon class="upload-icon text-primary">cloud_upload</mat-icon>
         <div class="flex flex-col justify-center items-center">
           <p i18n="@@fileUploadOr" class="pb-3 text-sm md:text-base">or</p>
@@ -33,12 +29,11 @@
             (click)="fileInput.click()"
             >Browse files</button
           >
-          <p
-            *ngIf="(maxFileSize ?? 0) > 0"
-            class="text-xs pt-3"
-            i18n="@@fileUploadMaxSize"
-            >max. {{ getMaxFileSizeInMb() }} MB</p
-          >
+          @if ((maxFileSize ?? 0) > 0) {
+            <p class="text-xs pt-3" i18n="@@fileUploadMaxSize"
+              >max. {{ getMaxFileSizeInMb() }} MB</p
+            >
+          }
         </div>
       </div>
       <input
@@ -53,36 +48,38 @@
       />
     </div>
   </div>
-  <div class="w-full" *ngIf="showFileName">
-    <p
-      i18n="@@fileUploadUploadedFiles"
-      class="pt-6 pl-4 font-bold"
-      *ngIf="files.length"
-      >Selected files</p
-    >
-    <ul
-      data-cy="file-upload-show-file"
-      class="w-full py-6 px-4"
-      *ngIf="files?.length"
-    >
-      <li
-        class="mb-7 last:mb-0 border-b border-primary"
-        *ngFor="let file of files; let i = index"
-      >
-        <div class="flex items-center justify-between pb-1">
-          <p
-            class="truncate"
-            matTooltip="{{ files[i].name }}"
-            i18n-aria-label
-            aria-label="Text that displays the full file name when focused or hovered over"
-          >
-            {{ files[i].name }}
-          </p>
-          <button mat-icon-button color="primary" (click)="removeFile(file)">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </div>
-      </li>
-    </ul>
-  </div>
+  @if (showFileName) {
+    <div class="w-full">
+      @if (files.length) {
+        <p i18n="@@fileUploadUploadedFiles" class="pt-6 pl-4 font-bold"
+          >Selected files</p
+        >
+      }
+      @if (files?.length) {
+        <ul data-cy="file-upload-show-file" class="w-full py-6 px-4">
+          @for (file of files; track file; let i = $index) {
+            <li class="mb-7 last:mb-0 border-b border-primary">
+              <div class="flex items-center justify-between pb-1">
+                <p
+                  class="truncate"
+                  matTooltip="{{ files[i].name }}"
+                  i18n-aria-label
+                  aria-label="Text that displays the full file name when focused or hovered over"
+                >
+                  {{ files[i].name }}
+                </p>
+                <button
+                  mat-icon-button
+                  color="primary"
+                  (click)="removeFile(file)"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  }
 </div>
