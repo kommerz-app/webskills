@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/kommerz-app/webskills/compare/v3.3.14...v3.4.0) (2024-04-20)
+
+
+### Features
+
+* content and request utils ([#5](https://github.com/kommerz-app/webskills/issues/5)) ([7110a46](https://github.com/kommerz-app/webskills/commit/7110a46217e85196e16c60369a3f4f58343d66b8))
+
 ## [3.3.14](https://github.com/kommerz-app/webskills/compare/v3.3.13...v3.3.14) (2024-04-20)
 
 
