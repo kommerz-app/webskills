@@ -1,3 +1,10 @@
+## [3.3.14](https://github.com/kommerz-app/webskills/compare/v3.3.13...v3.3.14) (2024-04-20)
+
+
+### Bug Fixes
+
+* add global tracking of external links ([d08069e](https://github.com/kommerz-app/webskills/commit/d08069ed2acd6892c2e3fb3f4f6511bba93ad572))
+
 ## [3.3.13](https://github.com/kommerz-app/webskills/compare/v3.3.12...v3.3.13) (2024-03-30)
 
 
