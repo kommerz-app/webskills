@@ -51,6 +51,14 @@ export class EventLoadingDirective implements OnChanges, OnDestroy {
     }
   }
 
+  public startLoading() {
+    this.component.instance.loading = true;
+  }
+
+  public stopLoading() {
+    this.component.instance.loading = false;
+  }
+
   private handleEvent(event: any): void {
     event.stopPropagation();
 
