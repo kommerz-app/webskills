@@ -24,3 +24,4 @@ export * from './lib/formValidation/formControlError.utils';
 export * from './lib/rxjs/active-request';
 export * from './lib/angular/instanceOf.utils';
 export * from './lib/immutability/freeze.utils';
+export * from './lib/comm/request.utils';
