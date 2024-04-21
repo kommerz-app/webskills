@@ -1,3 +1,10 @@
+## [3.4.1](https://github.com/kommerz-app/webskills/compare/v3.4.0...v3.4.1) (2024-04-21)
+
+
+### Bug Fixes
+
+* export html content component ([938205d](https://github.com/kommerz-app/webskills/commit/938205d2e586ef956ca2fffb4b255d7a70da26a9))
+
 # [3.4.0](https://github.com/kommerz-app/webskills/compare/v3.3.14...v3.4.0) (2024-04-20)
 
 
