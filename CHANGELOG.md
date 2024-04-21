@@ -1,3 +1,10 @@
+## [3.4.2](https://github.com/kommerz-app/webskills/compare/v3.4.1...v3.4.2) (2024-04-21)
+
+
+### Bug Fixes
+
+* **html-content:** observe right input ([0a742b3](https://github.com/kommerz-app/webskills/commit/0a742b31dd5ad3ea33fae4480dcb68b0caca9649))
+
 ## [3.4.1](https://github.com/kommerz-app/webskills/compare/v3.4.0...v3.4.1) (2024-04-21)
 
 
