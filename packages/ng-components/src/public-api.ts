@@ -42,6 +42,10 @@ export * from './lib/loading/loading.module';
 export * from './lib/loading/loading.directive';
 export * from './lib/loading/event-loading.directive';
 
+export * from './lib/html-content/html-content.component';
+export * from './lib/html-content/content-path.pipe';
+export * from './lib/html-content/content-path.utils';
+
 export * from './lib/split-button/split-button.component';
 export * from './lib/split-button/split-button.module';
 
