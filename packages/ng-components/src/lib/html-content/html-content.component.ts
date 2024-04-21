@@ -55,7 +55,7 @@ export class HtmlContentComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['path']) {
+    if (changes['url']) {
       if (isNotBlank(this.url)) {
         this.insertContent();
       }
