@@ -1,3 +1,10 @@
+## [3.4.3](https://github.com/kommerz-app/webskills/compare/v3.4.2...v3.4.3) (2024-04-23)
+
+
+### Bug Fixes
+
+* **browser-meta:** prevent multiple set/reset of meta tags during navigation ([4d21baf](https://github.com/kommerz-app/webskills/commit/4d21baf66ebf0e15566876b61b759c41519b868d))
+
 ## [3.4.2](https://github.com/kommerz-app/webskills/compare/v3.4.1...v3.4.2) (2024-04-21)
 
 
