@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { ActivationEnd, Router } from '@angular/router';
 import { PageMeta } from './page-meta';
 import { Meta, MetaDefinition } from '@angular/platform-browser';
-import { isBlank, isUndefined } from '@webskills/ts-utils';
+import { isBlank, isEmptyArray, isUndefined } from '@webskills/ts-utils';
 import { Config, CONFIG } from '../configuration/config';
 
 @Injectable({ providedIn: 'root' })
@@ -15,7 +15,10 @@ export class BrowserMetaService {
 
   init(): void {
     this.router.events.subscribe((event) => {
-      if (event instanceof ActivationEnd) {
+      if (
+        event instanceof ActivationEnd &&
+        isEmptyArray(event.snapshot.children)
+      ) {
         this.setPageMetaData(
           event.snapshot.data?.['meta'],
           event.snapshot.title,
