@@ -23,22 +23,50 @@ export class BrowserTrackingService implements OnDestroy {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  init(): void {
+  public init(
+    options: {
+      monitorNavigationEvents?: boolean;
+      trackExternalLinks?: boolean;
+      trackUa?: boolean;
+      trackBreakpoints?: boolean;
+      trackSession?: boolean;
+    } = {
+      monitorNavigationEvents: true,
+      trackExternalLinks: true,
+      trackUa: true,
+      trackBreakpoints: true,
+      trackSession: true,
+    },
+  ): void {
     if (!this.isBrowser) {
       return;
     }
 
-    this.monitorAndTrackNavigationEvents();
-    this.trackExternalLinks();
-    this.trackUa();
-    this.trackBreakpoints();
-    this.trackingService.trackSession();
+    if (options.monitorNavigationEvents) {
+      this.monitorAndTrackNavigationEvents();
+    }
+
+    if (options.trackExternalLinks) {
+      this.trackExternalLinks();
+    }
+
+    if (options.trackUa) {
+      this.trackUa();
+    }
+
+    if (options.trackBreakpoints) {
+      this.trackBreakpoints();
+    }
+
+    if (options.trackSession) {
+      this.trackingService.trackSession();
+    }
   }
 
   private monitorAndTrackNavigationEvents() {
     this.router.events.pipe(takeUntil(this.destroyed$)).subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        let baseUri = document.baseURI;
+        let baseUri = this.document.baseURI;
         baseUri = baseUri.substring(0, baseUri.length - 1);
         this.trackingService.trackVisit({ url: baseUri + event.url });
       }
