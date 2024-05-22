@@ -48,7 +48,7 @@ export class BrowserTrackingService implements OnDestroy {
   private trackExternalLinks() {
     this.document.addEventListener('click', (event) => {
       if ((<Element>event.target)?.tagName === 'A') {
-        const link = (<HTMLAnchorElement>event.target).href;
+        const link = (<HTMLAnchorElement>event.target).getAttribute('href');
 
         if (
           isNotBlank(link) &&
