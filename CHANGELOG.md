@@ -1,3 +1,10 @@
+## [3.4.4](https://github.com/kommerz-app/webskills/compare/v3.4.3...v3.4.4) (2024-05-22)
+
+
+### Bug Fixes
+
+* use href attribute instead href property because property always resolves full URL including http ([d7629fd](https://github.com/kommerz-app/webskills/commit/d7629fd6908e954bf07ac039fefbd1d35eaaa932))
+
 ## [3.4.3](https://github.com/kommerz-app/webskills/compare/v3.4.2...v3.4.3) (2024-04-23)
 
 
