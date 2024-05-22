@@ -1,3 +1,10 @@
+# [3.5.0](https://github.com/kommerz-app/webskills/compare/v3.4.4...v3.5.0) (2024-05-22)
+
+
+### Features
+
+* **browser-tracking-service:** add options to init method ([28eb788](https://github.com/kommerz-app/webskills/commit/28eb788159f690c4e96950b1180c7e84a9cea39c))
+
 ## [3.4.4](https://github.com/kommerz-app/webskills/compare/v3.4.3...v3.4.4) (2024-05-22)
 
 
