@@ -1,3 +1,10 @@
+# [3.6.0](https://github.com/kommerz-app/webskills/compare/v3.5.0...v3.6.0) (2024-05-23)
+
+
+### Features
+
+* **tracking-service:** add options parameter to tracking methods ([ed74a8b](https://github.com/kommerz-app/webskills/commit/ed74a8b9676f69249f74e153b0fea1927a88e83d))
+
 # [3.5.0](https://github.com/kommerz-app/webskills/compare/v3.4.4...v3.5.0) (2024-05-22)
 
 
