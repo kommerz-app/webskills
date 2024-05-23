@@ -25,6 +25,11 @@ export interface UserAgent {
    * cookies supported
    */
   c?: boolean;
+
+  /**
+   * user id
+   */
+  uId?: string;
 }
 
 export interface Interaction {
@@ -49,6 +54,11 @@ export interface Interaction {
    * component
    */
   c: string;
+
+  /**
+   * user id
+   */
+  uId?: string;
 }
 
 export interface Visit {
@@ -63,6 +73,11 @@ export interface Visit {
    * component view
    */
   c?: string;
+
+  /**
+   * user id
+   */
+  uId?: string;
 }
 
 export interface Info {
@@ -82,6 +97,11 @@ export interface Info {
    * data
    */
   d?: any;
+
+  /**
+   * user id
+   */
+  uId?: string;
 }
 
 export interface LogMessage {
@@ -89,6 +109,7 @@ export interface LogMessage {
   level: string;
   messages: string[];
   sId?: string;
+  uId?: string;
 }
 
 export interface Session {
@@ -100,4 +121,5 @@ export interface Session {
   utmTerm?: string;
   utmContent?: string;
   sId?: string;
+  uId?: string;
 }

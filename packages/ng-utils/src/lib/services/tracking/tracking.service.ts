@@ -10,6 +10,10 @@ export interface AppTrackingInteractionEvent {
   data?: any;
 }
 
+export interface Options {
+  uId?: string;
+}
+
 @Injectable({ providedIn: 'root' })
 export class TrackingService {
   private readonly isBrowser: boolean;
@@ -21,7 +25,7 @@ export class TrackingService {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  trackSession() {
+  trackSession(options?: Options): void {
     if (!this.isBrowser) {
       return;
     }
@@ -35,12 +39,13 @@ export class TrackingService {
       utmMedium: urlParams.get('utm_medium') ?? undefined,
       utmSource: urlParams.get('utm_source') ?? undefined,
       utmTerm: urlParams.get('utm_term') ?? undefined,
+      uId: options?.uId,
     };
 
     this.adapter.trackSession(d);
   }
 
-  trackInfo(info: { data?: any; name: string }): void {
+  trackInfo(info: { data?: any; name: string }, options?: Options): void {
     if (!this.isBrowser) {
       return;
     }
@@ -48,13 +53,17 @@ export class TrackingService {
     const d: Info = {
       n: info.name,
       d: info.data,
+      uId: options?.uId,
     };
 
     this.enrichWithUrl(d);
     this.adapter.trackInfo(d);
   }
 
-  trackInteraction(event: AppTrackingInteractionEvent): void {
+  trackInteraction(
+    event: AppTrackingInteractionEvent,
+    options?: Options,
+  ): void {
     if (!this.isBrowser) {
       return;
     }
@@ -63,13 +72,17 @@ export class TrackingService {
       d: event.data,
       e: event.event,
       c: event.component,
+      uId: options?.uId,
     };
 
     this.enrichWithUrl(d);
     this.adapter.trackInteraction(d);
   }
 
-  trackVisit(event: { component?: string; url?: string }): void {
+  trackVisit(
+    event: { component?: string; url?: string },
+    options?: Options,
+  ): void {
     if (!this.isBrowser) {
       return;
     }
@@ -77,18 +90,22 @@ export class TrackingService {
     const d: Visit = {
       c: event.component,
       url: event.url,
+      uId: options?.uId,
     };
 
     this.enrichWithUrl(d);
     this.adapter.trackVisit(d);
   }
 
-  trackUserAgent(userAgent: UserAgent): void {
+  trackUserAgent(userAgent: UserAgent, options?: Options): void {
     if (!this.isBrowser) {
       return;
     }
 
-    this.adapter.trackUserAgent(userAgent);
+    this.adapter.trackUserAgent({
+      ...userAgent,
+      uId: options?.uId,
+    });
   }
 
   private enrichWithUrl(trackingEvent: { url?: string }): void {
