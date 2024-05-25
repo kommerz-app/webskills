@@ -1,3 +1,10 @@
+## [3.6.1](https://github.com/kommerz-app/webskills/compare/v3.6.0...v3.6.1) (2024-05-25)
+
+
+### Bug Fixes
+
+* pipe must not contain dash in name ([0a58625](https://github.com/kommerz-app/webskills/commit/0a586251b5c43b3108366b9552af0fa4c72477fd))
+
 # [3.6.0](https://github.com/kommerz-app/webskills/compare/v3.5.0...v3.6.0) (2024-05-23)
 
 
