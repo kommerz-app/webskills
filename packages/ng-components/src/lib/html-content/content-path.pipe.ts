@@ -6,7 +6,7 @@ import { transformPaths } from './content-path.utils';
  * transform relative path to load content from "assets/content/${locale}/..."
  */
 @Pipe({
-  name: 'content-path',
+  name: 'contentPath',
   standalone: true,
 })
 export class ContentPathPipe implements PipeTransform {
