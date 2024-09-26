@@ -1,3 +1,10 @@
+## [3.6.2](https://github.com/kommerz-app/webskills/compare/v3.6.1...v3.6.2) (2024-09-26)
+
+
+### Bug Fixes
+
+* do not redirect on content error ([00dbc14](https://github.com/kommerz-app/webskills/commit/00dbc145f527e42c2f1e827e4f5c6cf6a5be489b))
+
 ## [3.6.1](https://github.com/kommerz-app/webskills/compare/v3.6.0...v3.6.1) (2024-05-25)
 
 
