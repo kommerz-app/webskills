@@ -4,10 +4,12 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  EventEmitter,
   Inject,
   Input,
   isDevMode,
   OnChanges,
+  Output,
   PLATFORM_ID,
   Renderer2,
   SimpleChanges,
@@ -37,6 +39,7 @@ export class HtmlContentComponent implements OnChanges {
 
   @Input() url?: string | null;
   @Input() saveHtml = false;
+  @Output() loadingError = new EventEmitter<any>();
 
   content?: string | SafeHtml;
   private readonly isBrowser: boolean;
@@ -93,7 +96,7 @@ export class HtmlContentComponent implements OnChanges {
           setTimeout(() => this.replaceImgElements());
           this.cd.markForCheck();
         },
-        error: () => this.router.navigate(['/404'], { replaceUrl: true }),
+        error: (err) => this.loadingError.emit(err),
       });
   }
 
