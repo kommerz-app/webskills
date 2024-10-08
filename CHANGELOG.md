@@ -1,3 +1,10 @@
+## [3.6.3](https://github.com/kommerz-app/webskills/compare/v3.6.2...v3.6.3) (2024-10-08)
+
+
+### Bug Fixes
+
+* disable custom element on SSR ([c6ef3cd](https://github.com/kommerz-app/webskills/commit/c6ef3cd0580f049f779633ec46e6327648b0c1c8))
+
 ## [3.6.2](https://github.com/kommerz-app/webskills/compare/v3.6.1...v3.6.2) (2024-09-26)
 
 
