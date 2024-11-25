@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter,
@@ -48,12 +49,14 @@ export class FileUploadComponent extends AbstractControlValueAccessor<File[]> {
     _renderer: Renderer2,
     _elementRef: ElementRef,
     @Inject(LOCALE_ID) private locale: string,
+    private cd: ChangeDetectorRef,
   ) {
     super(_renderer, _elementRef);
   }
 
   override writeValue(data?: File[]): void {
     this.files = data ?? [];
+    this.cd.markForCheck();
   }
 
   onFileInputSelected(fileEventTarget: EventTarget | null): void {
@@ -70,7 +73,7 @@ export class FileUploadComponent extends AbstractControlValueAccessor<File[]> {
   onFileDropped(lastAddedFiles: File[]): void {
     if (!this.isMultiUpload && lastAddedFiles.length > 1) {
       this.snackBar.open(
-        'You have tried to upload multiple files. Please select only one file.',
+        $localize`:@@fileUploadMultipleError:You have tried to upload multiple files. Please select only one file.`,
       );
       return;
     }
@@ -114,7 +117,9 @@ export class FileUploadComponent extends AbstractControlValueAccessor<File[]> {
 
     if (tooLargeFiles.length > 0) {
       const combinedFiles = tooLargeFiles.map((file) => file.name).join(', ');
-      this.snackBar.open(`The following files are too large: ${combinedFiles}`);
+      this.snackBar.open(
+        $localize`:@@fileUploadMultipleTooLargeError:The following files are too large: ${combinedFiles}`,
+      );
     }
 
     this.emitChange();
@@ -126,7 +131,9 @@ export class FileUploadComponent extends AbstractControlValueAccessor<File[]> {
     }
 
     if (this.maxFileSize && newFiles[0].size > this.maxFileSize) {
-      this.snackBar.open('The file is too large.');
+      this.snackBar.open(
+        $localize`:@@fileUploadSingleTooLargeError:The file is too large.`,
+      );
       return;
     }
 
