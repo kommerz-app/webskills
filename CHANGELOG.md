@@ -1,3 +1,10 @@
+## [3.6.4](https://github.com/kommerz-app/webskills/compare/v3.6.3...v3.6.4) (2024-11-25)
+
+
+### Bug Fixes
+
+* **file-upload:** repaint and localization ([33b8d93](https://github.com/kommerz-app/webskills/commit/33b8d93f96558e7682c975fdb4116028813b180f))
+
 ## [3.6.3](https://github.com/kommerz-app/webskills/compare/v3.6.2...v3.6.3) (2024-10-08)
 
 
