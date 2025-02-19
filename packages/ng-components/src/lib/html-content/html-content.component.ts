@@ -28,8 +28,7 @@ import { Router } from '@angular/router';
 import { isBlank, isNotBlank } from '@webskills/ts-utils';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { decorateLinks } from '@webskills/ng-utils';
-import { of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { of, tap } from 'rxjs';
 
 @Component({
   selector: 'wsk-html-content',
