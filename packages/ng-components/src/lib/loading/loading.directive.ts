@@ -13,7 +13,6 @@ import { LoadingComponent } from './loading.component';
 @Directive({
   selector: '[wskLoading]',
   exportAs: 'wskLoading',
-  
 })
 export class LoadingDirective implements OnDestroy, OnChanges {
   @Input() wskLoading: boolean | null = false;

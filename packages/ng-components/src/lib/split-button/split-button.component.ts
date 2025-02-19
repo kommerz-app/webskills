@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
+import { MatIcon } from '@angular/material/icon';
 
 export interface MenuItem {
   label: string;
@@ -10,8 +13,8 @@ export interface MenuItem {
 @Component({
   selector: 'wsk-split-button',
   templateUrl: './split-button.component.html',
-  styleUrls: ['./split-button.component.scss'],
-  
+
+  imports: [MatButton, MatMenuTrigger, MatMenu, MatIcon, MatMenuItem],
 })
 export class SplitButtonComponent {
   @Input() disabled!: boolean;

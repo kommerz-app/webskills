@@ -5,7 +5,6 @@ import { Group } from '@webskills/ng-components';
   selector: 'webskills-sample-launchpad-page',
   templateUrl: './sample-launchpad-page.component.html',
   styleUrls: ['./sample-launchpad-page.component.scss'],
-  
 })
 export class SampleLaunchpadPageComponent {
   menuItems = [

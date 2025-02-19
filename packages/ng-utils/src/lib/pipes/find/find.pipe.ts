@@ -2,7 +2,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'find',
-  
 })
 export class FindPipe<T> implements PipeTransform {
   /**

@@ -4,6 +4,9 @@ interface LetContext<T> {
   wskLet: T;
 }
 
+/**
+ * @deprecated use @let instead
+ */
 @Directive({
   selector: '[wskLet]',
   standalone: true,

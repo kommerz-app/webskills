@@ -4,12 +4,14 @@ import {
   HostBinding,
   Input,
 } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'wsk-number',
   template: '@if (renderPlus) {+}{{ value | number: digitsInfo }}',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  
+
+  imports: [DecimalPipe],
 })
 export class NumberComponent {
   @HostBinding('class') get classes(): string | undefined {

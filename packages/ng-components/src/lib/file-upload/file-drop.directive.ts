@@ -8,7 +8,6 @@ import {
 
 @Directive({
   selector: '[wskFileDrop]',
-  
 })
 export class FileDropDirective {
   @Output() fileDropped = new EventEmitter<File[]>();
@@ -41,13 +40,14 @@ export class FileDropDirective {
   public ondrop(evt: {
     preventDefault: () => void;
     stopPropagation: () => void;
-    dataTransfer: { files: any };
+    dataTransfer: { files: FileList };
   }): void {
     evt.preventDefault();
     evt.stopPropagation();
     this.hasFile = true;
     this.isDragOver = false;
-    const files: FileList = evt.dataTransfer.files;
+
+    const files = evt.dataTransfer.files;
     const filesToEmit: File[] = [];
 
     for (let i = 0; i < files.length; i++) {

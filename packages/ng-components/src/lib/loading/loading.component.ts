@@ -13,7 +13,8 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { isDefined, isUndefined } from '@webskills/ts-utils';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgStyle } from '@angular/common';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 @Component({
   template: `
@@ -31,7 +32,7 @@ import { isPlatformBrowser } from '@angular/common';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  
+  imports: [NgStyle, MatProgressSpinner],
 })
 export class LoadingComponent implements OnInit, OnDestroy {
   private readonly isBrowser = isPlatformBrowser(this.platformId);

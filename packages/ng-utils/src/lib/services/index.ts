@@ -23,7 +23,6 @@ export * from './tracking/browser-tracking.service';
 export * from './tracking/click-tracking.directive';
 export * from './tracking/logging-backend-appender';
 export * from './tracking/tracking.adapter';
-export * from './tracking/tracking.module';
 export * from './tracking/tracking.service';
 export * from './tracking/tracking';
 export * from './logging/ng-error-handler';

@@ -14,6 +14,9 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { NgClass } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { MatIconButton } from '@angular/material/button';
 
 @Component({
   selector: 'wsk-toast-item',
@@ -87,7 +90,8 @@ import {
     ]),
   ],
   styleUrls: ['./toast-item.component.scss'],
-  
+
+  imports: [NgClass, MatIcon, MatIconButton],
 })
 export class ToastItemComponent implements OnChanges {
   show = true;

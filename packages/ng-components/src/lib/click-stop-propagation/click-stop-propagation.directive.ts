@@ -3,7 +3,6 @@ import { Logger } from '@webskills/logging';
 
 @Directive({
   selector: '[wskClickStopPropagation]',
-  
 })
 export class ClickStopPropagationDirective {
   private logger = new Logger('ClickStopPropagationDirective');
