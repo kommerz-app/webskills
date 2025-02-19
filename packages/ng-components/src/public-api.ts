@@ -1,5 +1,3 @@
-import '@angular/localize/init';
-
 export * from './lib/clazz/clazz.directive';
 
 export * from './lib/edit/edit-type';
