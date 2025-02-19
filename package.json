@@ -57,7 +57,6 @@
     "@angular/cli": "18.2.14",
     "@angular/compiler-cli": "18.2.13",
     "@angular/language-service": "18.2.13",
-    "@schematics/angular": "17.0.1",
     "@types/jest": "29.5.8",
     "@types/node": "20.9.0",
     "@typescript-eslint/eslint-plugin": "6.11.0",
