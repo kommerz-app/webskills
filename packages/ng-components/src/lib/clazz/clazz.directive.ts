@@ -45,7 +45,7 @@ type BreakpointClasses = string | ConditionalClasses | SelectorClasses;
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[clazz]',
-  standalone: false,
+  
 })
 export class ClazzDirective implements AfterViewInit, OnChanges {
   private matchingBreakpoints: { [key: string]: boolean } = {};

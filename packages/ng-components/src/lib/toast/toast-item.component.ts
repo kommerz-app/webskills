@@ -87,7 +87,7 @@ import {
     ]),
   ],
   styleUrls: ['./toast-item.component.scss'],
-  standalone: false,
+  
 })
 export class ToastItemComponent implements OnChanges {
   show = true;

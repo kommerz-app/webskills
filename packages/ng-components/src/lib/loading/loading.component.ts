@@ -31,7 +31,7 @@ import { isPlatformBrowser } from '@angular/common';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  
 })
 export class LoadingComponent implements OnInit, OnDestroy {
   private readonly isBrowser = isPlatformBrowser(this.platformId);

@@ -4,7 +4,7 @@ import { isUndefined } from '@webskills/ts-utils';
 
 @Pipe({
   name: 'durationMinutes',
-  standalone: false,
+  
 })
 export class DurationMinutesPipe implements PipeTransform {
   transform(minutes: number): string | undefined {

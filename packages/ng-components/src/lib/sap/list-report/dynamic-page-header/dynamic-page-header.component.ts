@@ -15,7 +15,7 @@ import {
   templateUrl: './dynamic-page-header.component.html',
   styleUrls: ['./dynamic-page-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  
 })
 export class DynamicPageHeaderComponent
   implements OnInit, OnDestroy, AfterViewInit

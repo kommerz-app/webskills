@@ -5,6 +5,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './launchpad-space.component.html',
   styleUrls: ['./launchpad-space.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  
 })
 export class LaunchpadSpaceComponent {}

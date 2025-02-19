@@ -28,7 +28,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
       useExisting: FileUploadComponent,
     },
   ],
-  standalone: false,
+  
 })
 export class FileUploadComponent extends AbstractControlValueAccessor<File[]> {
   @Input() isMultiUpload = false;
