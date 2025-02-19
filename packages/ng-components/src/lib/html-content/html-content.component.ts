@@ -8,12 +8,14 @@ import {
   Inject,
   Input,
   isDevMode,
+  makeStateKey,
   OnChanges,
   Output,
   PLATFORM_ID,
   Renderer2,
   SimpleChanges,
   TemplateRef,
+  TransferState,
   ViewChild,
 } from '@angular/core';
 import {
@@ -26,6 +28,8 @@ import { Router } from '@angular/router';
 import { isBlank, isNotBlank } from '@webskills/ts-utils';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { decorateLinks } from '@webskills/ng-utils';
+import { of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'wsk-html-content',
@@ -42,18 +46,21 @@ export class HtmlContentComponent implements OnChanges {
 
   content?: string | SafeHtml;
   private readonly isBrowser: boolean;
+  private readonly prefix: string;
 
   constructor(
-    private http: HttpClient,
-    private elementRef: ElementRef,
-    private router: Router,
-    private renderer: Renderer2,
-    private cd: ChangeDetectorRef,
-    private domSanitizer: DomSanitizer,
-    private appRef: ApplicationRef,
+    private readonly http: HttpClient,
+    private readonly elementRef: ElementRef,
+    private readonly router: Router,
+    private readonly renderer: Renderer2,
+    private readonly cd: ChangeDetectorRef,
+    private readonly domSanitizer: DomSanitizer,
+    private readonly appRef: ApplicationRef,
     @Inject(PLATFORM_ID) platformId: object,
+    private readonly transferState: TransferState,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
+    this.prefix = this.isBrowser ? '' : '/';
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -65,38 +72,44 @@ export class HtmlContentComponent implements OnChanges {
   }
 
   private insertContent() {
-    this.http
-      .get(this.url!, {
-        responseType: 'text',
-      })
-      .subscribe({
-        next: (html) => {
-          if (this.saveHtml) {
-            this.content = this.domSanitizer.bypassSecurityTrustHtml(html);
-          } else {
-            this.content = html;
-          }
-          if (this.isBrowser) {
-            setTimeout(() =>
-              decorateLinks(
-                this.elementRef.nativeElement,
-                this.renderer,
-                this.router,
-                undefined,
-                undefined,
-                (href, elem) => {
-                  if (href.startsWith('http')) {
-                    elem.setAttribute('target', '_blank');
-                  }
-                },
-              ),
-            );
-          }
-          setTimeout(() => this.replaceImgElements());
-          this.cd.markForCheck();
-        },
-        error: (err) => this.loadingError.emit(err),
-      });
+    const urlStateKey = makeStateKey<string>(this.url!);
+
+    const state = this.transferState.get(urlStateKey, undefined);
+
+    const req$ = isBlank(state)
+      ? this.http
+          .get(this.prefix + this.url!, { responseType: 'text' })
+          .pipe(tap((html) => this.transferState.set(urlStateKey, html)))
+      : of(state);
+
+    req$.subscribe({
+      next: (html) => {
+        if (this.saveHtml) {
+          this.content = this.domSanitizer.bypassSecurityTrustHtml(html);
+        } else {
+          this.content = html;
+        }
+        if (this.isBrowser) {
+          setTimeout(() =>
+            decorateLinks(
+              this.elementRef.nativeElement,
+              this.renderer,
+              this.router,
+              undefined,
+              undefined,
+              (href, elem) => {
+                if (href.startsWith('http')) {
+                  elem.setAttribute('target', '_blank');
+                }
+              },
+            ),
+          );
+        }
+        setTimeout(() => this.replaceImgElements());
+        this.cd.markForCheck();
+      },
+      error: (err) => this.loadingError.emit(err),
+    });
   }
 
   private replaceImgElements() {
@@ -104,8 +117,8 @@ export class HtmlContentComponent implements OnChanges {
       this.elementRef.nativeElement.querySelectorAll('img'),
     );
 
-    for (let i = 0; i < res.length; i++) {
-      const img = res[i];
+    for (const element of res) {
+      const img = element;
 
       if (img.hasAttribute('data-md')) {
         continue;
