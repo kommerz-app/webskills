@@ -3,7 +3,8 @@
 @import 'styles/roboto';
 @import 'styles/variables';
 
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 @tailwind base;
 @tailwind components;
