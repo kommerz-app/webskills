@@ -16,6 +16,7 @@ export interface LaunchpadPage {
   templateUrl: './launchpad-top-level-navigation.component.html',
   styleUrls: ['./launchpad-top-level-navigation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class LaunchpadTopLevelNavigationComponent {
   @Input() menuItems!: LaunchpadMenuItem[];

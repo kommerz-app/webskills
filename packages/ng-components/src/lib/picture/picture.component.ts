@@ -11,6 +11,7 @@ import { isBlank } from '@webskills/ts-utils';
   templateUrl: './picture.component.html',
   styleUrls: ['./picture.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class PictureComponent {
   @Input() src?: string;

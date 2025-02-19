@@ -9,6 +9,7 @@ import {
   selector: 'wsk-number',
   template: '@if (renderPlus) {+}{{ value | number: digitsInfo }}',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class NumberComponent {
   @HostBinding('class') get classes(): string | undefined {

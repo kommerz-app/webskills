@@ -29,7 +29,6 @@ import { decorateLinks } from '@webskills/ng-utils';
 
 @Component({
   selector: 'wsk-html-content',
-  standalone: true,
   imports: [CommonModule, NgOptimizedImage],
   templateUrl: './html-content.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

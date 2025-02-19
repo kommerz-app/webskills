@@ -8,6 +8,7 @@ import {
 
 @Directive({
   selector: '[wskFileDrop]',
+  standalone: false,
 })
 export class FileDropDirective {
   @Output() fileDropped = new EventEmitter<File[]>();

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'webskills-sample-list-report-page',
   templateUrl: './sample-list-report-page.component.html',
   styleUrls: ['./sample-list-report-page.component.scss'],
+  standalone: false,
 })
 export class SampleListReportPageComponent {
   availabilities = [

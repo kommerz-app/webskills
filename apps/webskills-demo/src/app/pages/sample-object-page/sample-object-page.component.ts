@@ -14,6 +14,7 @@ interface User {
   selector: 'webskills-sample-object-page',
   templateUrl: './sample-object-page.component.html',
   styleUrls: ['./sample-object-page.component.scss'],
+  standalone: false,
 })
 export class SampleObjectPageComponent {
   users: User[] = [

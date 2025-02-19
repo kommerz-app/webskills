@@ -6,6 +6,7 @@ import {
 
 @Directive({
   selector: '[wskClickTracking]',
+  standalone: false,
 })
 export class ClickTrackingDirective {
   @Input() wskClickTracking!: AppTrackingInteractionEvent;

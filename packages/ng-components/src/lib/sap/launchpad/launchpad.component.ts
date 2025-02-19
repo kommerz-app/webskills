@@ -35,6 +35,7 @@ export interface Links {
   templateUrl: './launchpad.component.html',
   styleUrls: ['./launchpad.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class LaunchpadComponent {
   @Input() groups?: Group[];

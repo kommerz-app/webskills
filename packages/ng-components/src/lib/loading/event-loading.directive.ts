@@ -14,6 +14,7 @@ import { Observable, take } from 'rxjs';
 @Directive({
   selector: '[wskEventLoading]',
   exportAs: 'wskEventLoading',
+  standalone: false,
 })
 export class EventLoadingDirective implements OnChanges, OnDestroy {
   /**

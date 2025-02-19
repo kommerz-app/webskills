@@ -11,6 +11,7 @@ export interface MenuItem {
   selector: 'wsk-split-button',
   templateUrl: './split-button.component.html',
   styleUrls: ['./split-button.component.scss'],
+  standalone: false,
 })
 export class SplitButtonComponent {
   @Input() disabled!: boolean;

@@ -30,6 +30,7 @@ export type VegaFilterFunctions = (dataEntry: {
     '<div #vega style="width: 100%; height: 100%; overflow: hidden"></div>',
   styles: [':host { display: inline-block}'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class VegaComponent implements OnInit, OnChanges, OnDestroy {
   @ViewChild('vega', { static: true }) vega!: ElementRef;
