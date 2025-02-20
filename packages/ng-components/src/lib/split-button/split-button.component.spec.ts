@@ -10,8 +10,7 @@ describe('SplitButtonComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [SplitButtonComponent],
-      imports: [MatIconModule, MatMenuModule],
+      imports: [SplitButtonComponent, MatIconModule, MatMenuModule],
     }).compileComponents();
   }));
 

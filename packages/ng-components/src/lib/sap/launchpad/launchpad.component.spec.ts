@@ -8,7 +8,7 @@ describe('LaunchpadComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LaunchpadComponent],
+      imports: [LaunchpadComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LaunchpadComponent);

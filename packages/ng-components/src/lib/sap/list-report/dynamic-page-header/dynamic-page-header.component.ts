@@ -9,12 +9,17 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'wsk-dynamic-page-header',
   templateUrl: './dynamic-page-header.component.html',
   styleUrls: ['./dynamic-page-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+
+  imports: [NgClass, MatIconButton, MatIcon],
 })
 export class DynamicPageHeaderComponent
   implements OnInit, OnDestroy, AfterViewInit

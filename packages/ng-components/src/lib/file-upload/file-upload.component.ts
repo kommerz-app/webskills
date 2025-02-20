@@ -15,6 +15,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { AbstractControlValueAccessor } from '@webskills/ng-utils';
 import { formatNumber } from '@angular/common';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FileDropDirective } from './file-drop.directive';
+import { MatButton, MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'wsk-file-upload',
@@ -28,6 +32,8 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
       useExisting: FileUploadComponent,
     },
   ],
+
+  imports: [FileDropDirective, MatButton, MatIcon, MatIconButton, MatTooltip],
 })
 export class FileUploadComponent extends AbstractControlValueAccessor<File[]> {
   @Input() isMultiUpload = false;

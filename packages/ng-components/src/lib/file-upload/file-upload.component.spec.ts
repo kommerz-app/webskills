@@ -5,14 +5,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import '@angular/localize/init';
+
 describe('FileUploadComponent', () => {
   let component: FileUploadComponent;
   let fixture: ComponentFixture<FileUploadComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [FileUploadComponent],
-      imports: [MatIconModule, MatSnackBarModule, NoopAnimationsModule],
+      imports: [
+        FileUploadComponent,
+        MatIconModule,
+        MatSnackBarModule,
+        NoopAnimationsModule,
+      ],
     }).compileComponents();
   }));
 

@@ -15,6 +15,8 @@ import { ToastItemComponent } from './toast-item.component';
       ></wsk-toast-item>
     }
   `,
+
+  imports: [ToastItemComponent],
 })
 export class ToastViewComponent {
   /**

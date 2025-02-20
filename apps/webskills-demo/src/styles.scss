@@ -3,17 +3,18 @@
 @import 'styles/roboto';
 @import 'styles/variables';
 
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-$webskills-primary: mat.define-palette($webskills-blue, 800);
-$webskills-accent: mat.define-palette($webskills-cyan, 500);
-$webskills-warn: mat.define-palette($webskills-warn, 600);
+$webskills-primary: mat.m2-define-palette($webskills-blue, 800);
+$webskills-accent: mat.m2-define-palette($webskills-cyan, 500);
+$webskills-warn: mat.m2-define-palette($webskills-warn, 600);
 
-$webskills-theme: mat.define-light-theme(
+$webskills-theme: mat.m2-define-light-theme(
   (
     color: (
       primary: $webskills-primary,

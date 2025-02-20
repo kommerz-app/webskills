@@ -51,7 +51,7 @@ export class VegaComponent implements OnInit, OnChanges, OnDestroy {
   @Input() dataMode: 'append' | 'replace' = 'append';
 
   private embeddedInstance?: Result;
-  private destroyed$ = new Subject<void>();
+  private readonly destroyed$ = new Subject<void>();
   private dataSubscription?: Subscription;
 
   constructor(@Inject(LOCALE_ID) private locale: string) {}

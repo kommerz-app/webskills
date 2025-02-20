@@ -7,6 +7,8 @@ import {
   TemplateRef,
 } from '@angular/core';
 import { TemplateDirective } from '../../template/template.directive';
+import { RouterLink } from '@angular/router';
+import { MatCard } from '@angular/material/card';
 
 export interface Group {
   groupTitle?: string;
@@ -35,6 +37,8 @@ export interface Links {
   templateUrl: './launchpad.component.html',
   styleUrls: ['./launchpad.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+
+  imports: [RouterLink, MatCard],
 })
 export class LaunchpadComponent {
   @Input() groups?: Group[];
