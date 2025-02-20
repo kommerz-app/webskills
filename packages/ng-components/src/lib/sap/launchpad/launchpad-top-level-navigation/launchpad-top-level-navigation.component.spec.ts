@@ -8,7 +8,7 @@ describe('LaunchpadTopLevelNavigationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LaunchpadTopLevelNavigationComponent],
+      imports: [LaunchpadTopLevelNavigationComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LaunchpadTopLevelNavigationComponent);

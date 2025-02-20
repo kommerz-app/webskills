@@ -11,8 +11,12 @@ describe('FileUploadComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [FileUploadComponent],
-      imports: [MatIconModule, MatSnackBarModule, NoopAnimationsModule],
+      imports: [
+        FileUploadComponent,
+        MatIconModule,
+        MatSnackBarModule,
+        NoopAnimationsModule,
+      ],
     }).compileComponents();
   }));
 

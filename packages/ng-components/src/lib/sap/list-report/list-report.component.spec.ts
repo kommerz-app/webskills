@@ -8,7 +8,7 @@ describe('ListReportComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListReportComponent],
+      imports: [ListReportComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ListReportComponent);

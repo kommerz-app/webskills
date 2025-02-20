@@ -8,7 +8,7 @@ describe('PictureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PictureComponent],
+      imports: [PictureComponent],
     }).compileComponents();
   });
 

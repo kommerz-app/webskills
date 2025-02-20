@@ -16,7 +16,7 @@ describe('DynamicPageHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DynamicPageHeaderComponent],
+      imports: [DynamicPageHeaderComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DynamicPageHeaderComponent);
