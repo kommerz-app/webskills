@@ -1,3 +1,10 @@
+## [3.6.6](https://github.com/kommerz-app/webskills/compare/v3.6.5...v3.6.6) (2025-02-20)
+
+
+### Bug Fixes
+
+* update to ng-19 ([#6](https://github.com/kommerz-app/webskills/issues/6)) ([f9ba8bb](https://github.com/kommerz-app/webskills/commit/f9ba8bb33583390f53eefde0460df72bd700fde8))
+
 ## [3.6.5](https://github.com/kommerz-app/webskills/compare/v3.6.4...v3.6.5) (2024-11-25)
 
 
