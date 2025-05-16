@@ -1,3 +1,10 @@
+## [3.6.7](https://github.com/kommerz-app/webskills/compare/v3.6.6...v3.6.7) (2025-05-16)
+
+
+### Bug Fixes
+
+* missing import in LaunchpadComponent ([90df79a](https://github.com/kommerz-app/webskills/commit/90df79ab2e17eb6994c1ce44acbac03afd11c881))
+
 ## [3.6.6](https://github.com/kommerz-app/webskills/compare/v3.6.5...v3.6.6) (2025-02-20)
 
 

@@ -2,7 +2,7 @@
   "name": "@webskills/logging",
   "author": "Kommerz.App",
   "license": "MIT",
-  "version": "3.6.6",
+  "version": "3.6.7",
   "publishConfig": {
     "access": "public"
   }
