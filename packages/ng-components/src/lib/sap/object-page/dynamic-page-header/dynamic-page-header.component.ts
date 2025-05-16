@@ -18,7 +18,6 @@ import { MatIcon } from '@angular/material/icon';
   templateUrl: './dynamic-page-header.component.html',
   styleUrls: ['./dynamic-page-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-
   imports: [NgClass, MatIconButton, MatIcon],
 })
 export class DynamicPageHeaderComponent

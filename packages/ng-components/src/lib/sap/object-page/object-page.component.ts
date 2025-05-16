@@ -5,7 +5,6 @@ import { DynamicPageHeaderComponent } from './dynamic-page-header/dynamic-page-h
   selector: 'wsk-object-page',
   templateUrl: './object-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-
   imports: [DynamicPageHeaderComponent],
 })
 export class ObjectPageComponent {}
