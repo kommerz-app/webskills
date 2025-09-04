@@ -1,8 +1,9 @@
 {
   "name": "@webskills/ts-utils",
   "author": "Kommerz.App",
+  "homepage": "https://kommerz.app",
   "license": "MIT",
-  "version": "3.6.7",
+  "version": "4.0.0",
   "peerDependencies": {
     "fast-deep-equal": "^3.1.3"
   },

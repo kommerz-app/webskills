@@ -18,11 +18,7 @@ import {
   TransferState,
   ViewChild,
 } from '@angular/core';
-import {
-  CommonModule,
-  isPlatformBrowser,
-  NgOptimizedImage,
-} from '@angular/common';
+import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { isBlank, isNotBlank } from '@webskills/ts-utils';
@@ -32,7 +28,7 @@ import { of, tap } from 'rxjs';
 
 @Component({
   selector: 'wsk-html-content',
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [NgOptimizedImage],
   templateUrl: './html-content.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

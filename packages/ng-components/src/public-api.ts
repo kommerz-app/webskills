@@ -1,3 +1,5 @@
+/// <reference types="@angular/localize" />
+
 export * from './lib/clazz/clazz.directive';
 
 export * from './lib/edit/edit-type';

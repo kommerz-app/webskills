@@ -1,8 +1,9 @@
 {
   "name": "@webskills/logging",
   "author": "Kommerz.App",
+  "homepage": "https://kommerz.app",
   "license": "MIT",
-  "version": "3.6.7",
+  "version": "4.0.0",
   "publishConfig": {
     "access": "public"
   }

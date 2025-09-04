@@ -1,3 +1,13 @@
+# [4.0.0](https://github.com/kommerz-app/webskills/compare/v3.6.7...v4.0.0) (2025-09-04)
+
+
+* feat(angular)!: update to angular 20 ([#7](https://github.com/kommerz-app/webskills/issues/7)) ([2654f7c](https://github.com/kommerz-app/webskills/commit/2654f7ca68922506aa8b59785940c0f6d9a7de4e))
+
+
+### BREAKING CHANGES
+
+* update to angular 20
+
 ## [3.6.7](https://github.com/kommerz-app/webskills/compare/v3.6.6...v3.6.7) (2025-05-16)
 
 
