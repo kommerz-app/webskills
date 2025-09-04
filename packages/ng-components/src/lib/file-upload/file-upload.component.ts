@@ -1,3 +1,5 @@
+declare const $localize: any;
+
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

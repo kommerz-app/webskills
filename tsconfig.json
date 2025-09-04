@@ -19,6 +19,8 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
+    "skipLibCheck": true,
+    "typeRoots": ["./types", "./node_modules/@types"],
     "paths": {
       "@webskills/logging": ["dist/logging"],
       "@webskills/ng-components": ["dist/ng-components"],

@@ -7,7 +7,8 @@
     "declarationMap": true,
     "inlineSources": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["@angular/localize"]
+    "types": []
   },
+  "files": ["src/typings/ambient.d.ts"],
   "exclude": ["**/*.spec.ts"]
 }
