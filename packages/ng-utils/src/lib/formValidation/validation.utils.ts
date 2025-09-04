@@ -49,7 +49,7 @@ export function float(
   decimalPlaces?: number,
 ): ValidatorFn {
   const _floatPattern =
-    decimalPlaces ?? 0 > 1
+    (decimalPlaces ?? 0 > 1)
       ? `^[0-9]+(\\.[0-9]{1,${decimalPlaces}})?$`
       : floatPattern;
 

@@ -39,6 +39,7 @@ export function getValueOf(obj: any, path: string): any {
 export function get<V>(cb: () => V): V | null {
   try {
     return cb();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
     // nop - hide exception
     return null;
