@@ -1,10 +1,16 @@
-import { Inject, Injectable, OnDestroy, PLATFORM_ID } from '@angular/core';
+import {
+  Inject,
+  Injectable,
+  OnDestroy,
+  PLATFORM_ID,
+  DOCUMENT,
+} from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TrackingService } from './tracking.service';
 import { Breakpoints } from '../../breakpoints/breakpoints';
 import { forEachProp, isNotBlank } from '@webskills/ts-utils';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 

@@ -9,5 +9,6 @@
     "allowSyntheticDefaultImports": true,
     "types": ["@angular/localize"]
   },
+  "files": ["src/typings/ambient.d.ts"],
   "exclude": ["**/*.spec.ts"]
 }
