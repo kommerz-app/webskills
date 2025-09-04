@@ -7,19 +7,20 @@
   }"
 >
   <div class="flex flex-col">
-    <div class="flex pt-6 px-6">
-      <div class="flex items-center">
+    <div class="flex pt-6 px-6 overflow-hidden">
+      <div class="flex items-center overflow-hidden">
         @if (!minified) {
-          <div>
+          <div class="overflow-hidden">
             <ng-content select="[header]"></ng-content>
           </div>
         } @else {
-          <div>
+          <div class="overflow-hidden">
             <ng-content select="[headerMinified]"></ng-content>
           </div>
         }
       </div>
-      <span class="example-spacer"></span>
+
+      <span class="spacer"></span>
 
       <div>
         <ng-content select="[headerToolbar]"></ng-content>
