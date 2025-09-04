@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { EMPTY, MonoTypeOperatorFunction, retry, timer } from 'rxjs';
+import { MonoTypeOperatorFunction, retry, timer } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { isDevMode } from '@angular/core';
 
@@ -20,10 +20,13 @@ export function retryRequest<T>(config: {
       retry({
         delay: (error, retryCount) => {
           if (isClientError(error)) {
-            return EMPTY;
+            throw error;
           }
 
-          return retryCount <= config.retries ? timer(config.delay) : EMPTY;
+          if (retryCount <= config.retries) {
+            return timer(config.delay);
+          }
+          throw error;
         },
       }),
     );
@@ -48,7 +51,12 @@ export function retryWithMessage<T>(
           }
 
           if (isClientError(error)) {
-            return EMPTY;
+            snackBar.open(config.message, undefined, {
+              duration: config.duration,
+              panelClass: 'testid-error',
+            });
+
+            throw error;
           }
 
           return retryCount <= config.retries
