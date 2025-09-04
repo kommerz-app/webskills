@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/kommerz-app/webskills/compare/v4.0.0...v4.0.1) (2025-09-04)
+
+
+### Bug Fixes
+
+* truncate title and retry logic ([#8](https://github.com/kommerz-app/webskills/issues/8)) ([7fb735c](https://github.com/kommerz-app/webskills/commit/7fb735cc53a4a58729b4a1707abaad2ef3823690))
+
 # [4.0.0](https://github.com/kommerz-app/webskills/compare/v3.6.7...v4.0.0) (2025-09-04)
 
 
