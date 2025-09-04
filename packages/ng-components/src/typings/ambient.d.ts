@@ -6,5 +6,3 @@ declare module 'fast-json-patch/index.mjs' {
     value?: any;
   }
 }
-
-declare const $localize: any;
