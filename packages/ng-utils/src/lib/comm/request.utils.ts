@@ -51,6 +51,11 @@ export function retryWithMessage<T>(
           }
 
           if (isClientError(error)) {
+            snackBar.open(config.message, undefined, {
+              duration: config.duration,
+              panelClass: 'testid-error',
+            });
+
             throw error;
           }
 
