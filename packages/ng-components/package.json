@@ -3,7 +3,7 @@
   "author": "Kommerz.App",
   "homepage": "https://kommerz.app",
   "license": "MIT",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "publishConfig": {
     "access": "public"
   }

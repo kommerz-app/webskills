@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/kommerz-app/webskills/compare/v4.0.1...v4.0.2) (2025-10-22)
+
+
+### Bug Fixes
+
+* remove replaceImgElements as it does not work reliably with SSR on ng 20 ([e0850d4](https://github.com/kommerz-app/webskills/commit/e0850d4f4be5d0ccf607d9f7043aa5d52a176601))
+
 ## [4.0.1](https://github.com/kommerz-app/webskills/compare/v4.0.0...v4.0.1) (2025-09-04)
 
 
