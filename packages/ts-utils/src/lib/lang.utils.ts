@@ -15,10 +15,8 @@ export function forEachProp<P>(
     return;
   }
 
-  for (const name in object) {
-    if (Object.prototype.hasOwnProperty.call(object, name)) {
-      cb(name, object[name]);
-    }
+  for (const key of Object.keys(object)) {
+    cb(key, object[key]);
   }
 }
 

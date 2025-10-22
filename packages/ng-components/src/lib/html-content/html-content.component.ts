@@ -1,5 +1,4 @@
 import {
-  ApplicationRef,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -7,18 +6,15 @@ import {
   EventEmitter,
   Inject,
   Input,
-  isDevMode,
   makeStateKey,
   OnChanges,
   Output,
   PLATFORM_ID,
   Renderer2,
   SimpleChanges,
-  TemplateRef,
   TransferState,
-  ViewChild,
 } from '@angular/core';
-import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { isBlank, isNotBlank } from '@webskills/ts-utils';
@@ -28,13 +24,11 @@ import { of, tap } from 'rxjs';
 
 @Component({
   selector: 'wsk-html-content',
-  imports: [NgOptimizedImage],
+  imports: [],
   templateUrl: './html-content.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HtmlContentComponent implements OnChanges {
-  @ViewChild('ngImg', { static: true }) ngImg!: TemplateRef<any>;
-
   @Input() url?: string | null;
   @Input() saveHtml = false;
   @Output() loadingError = new EventEmitter<any>();
@@ -50,7 +44,6 @@ export class HtmlContentComponent implements OnChanges {
     private readonly renderer: Renderer2,
     private readonly cd: ChangeDetectorRef,
     private readonly domSanitizer: DomSanitizer,
-    private readonly appRef: ApplicationRef,
     @Inject(PLATFORM_ID) platformId: object,
     private readonly transferState: TransferState,
   ) {
@@ -100,48 +93,9 @@ export class HtmlContentComponent implements OnChanges {
             ),
           );
         }
-        setTimeout(() => this.replaceImgElements());
         this.cd.markForCheck();
       },
       error: (err) => this.loadingError.emit(err),
     });
-  }
-
-  private replaceImgElements() {
-    const res: Element[] = Array.from(
-      this.elementRef.nativeElement.querySelectorAll('img'),
-    );
-
-    for (const element of res) {
-      const img = element;
-
-      if (img.hasAttribute('data-md')) {
-        continue;
-      }
-
-      const ngSrc = img.getAttribute('ngSrc');
-
-      if (isBlank(ngSrc)) {
-        if (isDevMode()) {
-          console.warn('detected img in content without ngSrc');
-        }
-        continue;
-      }
-
-      const ngImgRef = this.ngImg.createEmbeddedView({
-        ngSrc: ngSrc,
-        width: img.getAttribute('width') ?? undefined,
-        height: img.getAttribute('height') ?? undefined,
-        sizes: img.getAttribute('sizes') ?? '',
-        alt: img.getAttribute('alt') ?? '',
-        clazz: img.getAttribute('class') ?? '',
-      });
-
-      this.appRef.attachView(ngImgRef);
-      const ngImg = ngImgRef.rootNodes[0];
-
-      this.renderer.insertBefore(img.parentElement, ngImg, img);
-      this.renderer.removeChild(this.elementRef.nativeElement, img);
-    }
   }
 }
