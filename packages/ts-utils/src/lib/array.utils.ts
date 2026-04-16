@@ -104,7 +104,9 @@ export function pushElementIfNotPresent<T>(array: T[], ...elems: T[]): void {
  * @param {any[]} array
  * @returns {boolean}
  */
-export function isNotEmptyArray<T>(array: T[]): boolean {
+export function isNotEmptyArray<T>(
+  array: T[] | null | undefined,
+): array is T[] {
   return isDefined(array) && array.length > 0;
 }
 
@@ -114,7 +116,7 @@ export function isNotEmptyArray<T>(array: T[]): boolean {
  * @param {any[]} array
  * @returns {boolean}
  */
-export function isEmptyArray<T>(array: T[]): boolean {
+export function isEmptyArray<T>(array: T[] | null | undefined): boolean {
   return isDefined(array) && array.length === 0;
 }
 
@@ -124,7 +126,9 @@ export function isEmptyArray<T>(array: T[]): boolean {
  * @param {any[]} array
  * @returns {boolean}
  */
-export function isEmptyOrUndefinedArray<T>(array: T[]): boolean {
+export function isEmptyOrUndefinedArray<T>(
+  array: T[] | null | undefined,
+): boolean {
   return !isNotEmptyArray(array);
 }
 
