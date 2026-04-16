@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/kommerz-app/webskills/compare/v4.0.2...v4.0.3) (2026-04-16)
+
+
+### Bug Fixes
+
+* launchpad without link lacked mat-card styles ([11ba5b2](https://github.com/kommerz-app/webskills/commit/11ba5b22daacee5b796b90ab3c32f0ad0007abcf))
+
 ## [4.0.2](https://github.com/kommerz-app/webskills/compare/v4.0.1...v4.0.2) (2025-10-22)
 
 
