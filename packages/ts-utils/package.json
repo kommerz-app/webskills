@@ -4,6 +4,9 @@
   "homepage": "https://kommerz.app",
   "license": "MIT",
   "version": "4.0.4",
+  "repository": {
+    "url": "https://github.com/kommerz-app/webskills"
+  },
   "peerDependencies": {
     "fast-deep-equal": "^3.1.3"
   },

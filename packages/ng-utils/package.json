@@ -4,6 +4,9 @@
   "homepage": "https://kommerz.app",
   "license": "MIT",
   "version": "4.0.4",
+  "repository": {
+    "url": "https://github.com/kommerz-app/webskills"
+  },
   "peerDependencies": {
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0"
