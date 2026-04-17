@@ -1,3 +1,10 @@
+## [4.0.4](https://github.com/kommerz-app/webskills/compare/v4.0.3...v4.0.4) (2026-04-17)
+
+
+### Bug Fixes
+
+* **ci:** npm publishing (1) ([0a551cc](https://github.com/kommerz-app/webskills/commit/0a551cc04e998dd1e35e5d36629c881dffa9a62b))
+
 ## [4.0.3](https://github.com/kommerz-app/webskills/compare/v4.0.2...v4.0.3) (2026-04-16)
 
 
