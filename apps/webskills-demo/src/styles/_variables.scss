@@ -4,8 +4,8 @@ This file contains all variables that can be overridden.
 
 // color settings
 
-$dark-primary-text: rgba(black, 0.87);
-$light-primary-text: white;
+$dark-primary-text: rgba(black, 0.87) !default;
+$light-primary-text: white !default;
 
 //webskills blue-palette
 $webskills-blue: (
@@ -31,7 +31,7 @@ $webskills-blue: (
     800: $light-primary-text,
     900: $light-primary-text,
   ),
-);
+) !default;
 
 //webskills cyan-palette
 $webskills-cyan: (
@@ -57,7 +57,7 @@ $webskills-cyan: (
     800: $light-primary-text,
     900: $light-primary-text,
   ),
-);
+) !default;
 
 //webskills warn-palette
 $webskills-warn: (
@@ -83,6 +83,6 @@ $webskills-warn: (
     800: $light-primary-text,
     900: $light-primary-text,
   ),
-);
+) !default;
 
 // font settings
