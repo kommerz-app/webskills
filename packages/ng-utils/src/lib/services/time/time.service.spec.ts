@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import { TimeService } from './time.service';
 import { TestBed } from '@angular/core/testing';
 import { TimeAdapter } from './time.adapter';
@@ -11,7 +12,7 @@ describe('TimeService', () => {
         {
           provide: TimeAdapter,
           useValue: {
-            getServerTime: jest.fn(),
+            getServerTime: vi.fn(),
           },
         },
         {

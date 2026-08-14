@@ -2,9 +2,15 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/spec",
-    "types": ["jest", "node"],
+    "types": ["vitest/globals", "node"],
     "esModuleInterop": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@webskills/logging": ["../logging/src/public-api.ts"],
+      "@webskills/ng-components": ["../ng-components/src/public-api.ts"],
+      "@webskills/ng-utils": ["../ng-utils/src/public-api.ts"],
+      "@webskills/ts-utils": ["../ts-utils/src/public-api.ts"]
+    }
   },
   "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

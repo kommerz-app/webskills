@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { vi } from 'vitest';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FileUploadComponent } from './file-upload.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,8 +12,8 @@ describe('FileUploadComponent', () => {
   let component: FileUploadComponent;
   let fixture: ComponentFixture<FileUploadComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [
         FileUploadComponent,
         MatIconModule,
@@ -20,7 +21,7 @@ describe('FileUploadComponent', () => {
         NoopAnimationsModule,
       ],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FileUploadComponent);
@@ -52,7 +53,7 @@ describe('FileUploadComponent', () => {
   });
 
   it('should add a file via file selected', () => {
-    const fileSelectedSpy = jest.spyOn(component.fileSelected, 'emit');
+    const fileSelectedSpy = vi.spyOn(component.fileSelected, 'emit');
 
     component.onFileInputSelected(fileEventMock);
 
@@ -89,7 +90,7 @@ describe('FileUploadComponent', () => {
 
     component.isMultiUpload = true;
 
-    const fileSelectedSpy = jest.spyOn(component.fileSelected, 'emit');
+    const fileSelectedSpy = vi.spyOn(component.fileSelected, 'emit');
 
     component.onFileInputSelected(fileEventMock);
 
@@ -98,7 +99,7 @@ describe('FileUploadComponent', () => {
   });
 
   it('should add the same file via file selected only once', () => {
-    const fileSelectedSpy = jest.spyOn(component.fileSelected, 'emit');
+    const fileSelectedSpy = vi.spyOn(component.fileSelected, 'emit');
 
     component.onFileInputSelected(fileEventMock);
     component.onFileInputSelected(fileEventMock);
@@ -111,7 +112,7 @@ describe('FileUploadComponent', () => {
       type: 'image/png',
     });
 
-    const fileSelectedSpy = jest.spyOn(component.fileSelected, 'emit');
+    const fileSelectedSpy = vi.spyOn(component.fileSelected, 'emit');
 
     component.onFileDropped([file1]);
 
@@ -128,7 +129,7 @@ describe('FileUploadComponent', () => {
     });
 
     const files = [file1, file2];
-    const fileSelectedSpy = jest.spyOn(component.fileSelected, 'emit');
+    const fileSelectedSpy = vi.spyOn(component.fileSelected, 'emit');
 
     component.isMultiUpload = true;
     component.onFileDropped(files);
@@ -151,7 +152,7 @@ describe('FileUploadComponent', () => {
 
     const files = [file1, file2, file3];
     const expectedFiles = [file1, file3];
-    const fileSelectedSpy = jest.spyOn(component.fileSelected, 'emit');
+    const fileSelectedSpy = vi.spyOn(component.fileSelected, 'emit');
 
     component.isMultiUpload = true;
     component.onFileDropped(files);
@@ -170,7 +171,7 @@ describe('FileUploadComponent', () => {
 
     const files = [file1, file2];
 
-    const fileSelectedSpy = jest.spyOn(component.fileSelected, 'emit');
+    const fileSelectedSpy = vi.spyOn(component.fileSelected, 'emit');
 
     component.isMultiUpload = true;
     component.onFileDropped(files);

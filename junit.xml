@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="18" failures="0" errors="0" time="4.704">
+  <testsuite name="LaunchpadSpaceComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:10" time="2.056" tests="1">
+    <testcase classname="LaunchpadSpaceComponent should create" name="LaunchpadSpaceComponent should create" time="0.116">
+    </testcase>
+  </testsuite>
+  <testsuite name="LaunchpadComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:12" time="0.336" tests="1">
+    <testcase classname="LaunchpadComponent should create" name="LaunchpadComponent should create" time="0.084">
+    </testcase>
+  </testsuite>
+  <testsuite name="DynamicPageHeaderComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:10" time="2.497" tests="1">
+    <testcase classname="DynamicPageHeaderComponent should create" name="DynamicPageHeaderComponent should create" time="0.074">
+    </testcase>
+  </testsuite>
+  <testsuite name="LaunchpadTopLevelNavigationComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:10" time="2.53" tests="1">
+    <testcase classname="LaunchpadTopLevelNavigationComponent should create" name="LaunchpadTopLevelNavigationComponent should create" time="0.061">
+    </testcase>
+  </testsuite>
+  <testsuite name="ObjectPageComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:10" time="2.471" tests="1">
+    <testcase classname="ObjectPageComponent should create" name="ObjectPageComponent should create" time="0.085">
+    </testcase>
+  </testsuite>
+  <testsuite name="ListReportComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:10" time="2.551" tests="1">
+    <testcase classname="ListReportComponent should create" name="ListReportComponent should create" time="0.055">
+    </testcase>
+  </testsuite>
+  <testsuite name="SplitButtonComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:10" time="2.571" tests="1">
+    <testcase classname="SplitButtonComponent should create" name="SplitButtonComponent should create" time="0.061">
+    </testcase>
+  </testsuite>
+  <testsuite name="DynamicPageHeaderComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:10" time="2.476" tests="1">
+    <testcase classname="DynamicPageHeaderComponent should create" name="DynamicPageHeaderComponent should create" time="0.067">
+    </testcase>
+  </testsuite>
+  <testsuite name="PictureComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:10" time="2.928" tests="1">
+    <testcase classname="PictureComponent should create" name="PictureComponent should create" time="0.038">
+    </testcase>
+  </testsuite>
+  <testsuite name="FileUploadComponent" errors="0" failures="0" skipped="0" timestamp="2026-08-14T17:39:10" time="3.617" tests="9">
+    <testcase classname="FileUploadComponent should create" name="FileUploadComponent should create" time="0.047">
+    </testcase>
+    <testcase classname="FileUploadComponent should add a file via file selected" name="FileUploadComponent should add a file via file selected" time="0.008">
+    </testcase>
+    <testcase classname="FileUploadComponent should add multiple files via file selected" name="FileUploadComponent should add multiple files via file selected" time="0.009">
+    </testcase>
+    <testcase classname="FileUploadComponent should add the same file via file selected only once" name="FileUploadComponent should add the same file via file selected only once" time="0.006">
+    </testcase>
+    <testcase classname="FileUploadComponent should add a file via file dropped" name="FileUploadComponent should add a file via file dropped" time="0.006">
+    </testcase>
+    <testcase classname="FileUploadComponent should add multiple files via file dropped" name="FileUploadComponent should add multiple files via file dropped" time="0.005">
+    </testcase>
+    <testcase classname="FileUploadComponent should add the same file via file dropped only once" name="FileUploadComponent should add the same file via file dropped only once" time="0.005">
+    </testcase>
+    <testcase classname="FileUploadComponent should remove file" name="FileUploadComponent should remove file" time="0.005">
+    </testcase>
+    <testcase classname="FileUploadComponent should show snackbar if multiUpload is false and user selects more than one file" name="FileUploadComponent should show snackbar if multiUpload is false and user selects more than one file" time="0.013">
+    </testcase>
+  </testsuite>
+</testsuites>

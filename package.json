@@ -14,10 +14,10 @@
     "lint": "ng lint && prettier . --check",
     "linting:write": "ng lint --fix",
     "test.ci": "pnpm test.ts-utils && pnpm test.logging && pnpm test.ng-utils && pnpm test.ng-components",
-    "test.ts-utils": "jest --config ./packages/ts-utils/jest.config.ts --reporters=jest-junit --reporters=default",
-    "test.logging": "jest --config ./packages/logging/jest.config.ts --reporters=jest-junit --reporters=default",
-    "test.ng-utils": "jest --config ./packages/ng-utils/jest.config.ts --reporters=jest-junit --reporters=default",
-    "test.ng-components": "jest --config ./packages/ng-components/jest.config.ts --reporters=jest-junit --reporters=default",
+    "test.ts-utils": "ng test ts-utils --no-watch --reporters=default --reporters=junit --output-file=junit/ts-utils.xml",
+    "test.logging": "ng test logging --no-watch --reporters=default --reporters=junit --output-file=junit/logging.xml",
+    "test.ng-utils": "ng test ng-utils --no-watch --reporters=default --reporters=junit --output-file=junit/ng-utils.xml",
+    "test.ng-components": "ng test ng-components --no-watch --reporters=default --reporters=junit --output-file=junit/ng-components.xml",
     "build": "pnpm build.ts-utils && pnpm build.logging && pnpm build.ng-utils && pnpm build.ng-components",
     "build.ts-utils": "ng build ts-utils",
     "build.logging": "ng build logging",
@@ -25,7 +25,8 @@
     "build.ng-components": "ng build ng-components",
     "build:watch.ng-components": "ng build ng-components --watch",
     "serve:demo": "ng serve webskills-demo --port 4202",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -63,16 +64,12 @@
     "@semantic-release/changelog": "7.0.0",
     "@semantic-release/exec": "7.1.0",
     "@semantic-release/git": "11.0.1",
-    "@types/jest": "30.0.0",
     "@types/node": "24.13.3",
+    "@vitest/coverage-v8": "4.1.10",
     "angular-eslint": "22.1.0",
     "autoprefixer": "10.4.21",
     "eslint": "9.39.5",
     "husky": "^9.1.7",
-    "jest": "30.1.3",
-    "jest-environment-jsdom": "^30.1.2",
-    "jest-junit": "^16.0.0",
-    "jest-preset-angular": "17.0.0",
     "jsdom": "^26.1.0",
     "ng-packagr": "22.1.1",
     "postcss": "^8.4.5",
@@ -82,9 +79,8 @@
     "prettier": "3.6.2",
     "semantic-release": "25.0.9",
     "tailwindcss": "3.3.5",
-    "ts-jest": "29.4.12",
-    "ts-node": "10.9.2",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.67.0"
+    "typescript-eslint": "8.67.0",
+    "vitest": "4.1.10"
   }
 }
