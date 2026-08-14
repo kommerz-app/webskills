@@ -28,7 +28,10 @@
               "apps/webskills-demo/src/favicon.ico",
               "apps/webskills-demo/src/assets"
             ],
-            "styles": ["apps/webskills-demo/src/styles.scss"],
+            "styles": [
+              "apps/webskills-demo/src/tailwind.css",
+              "apps/webskills-demo/src/styles.scss"
+            ],
             "scripts": [],
             "browser": "apps/webskills-demo/src/main.ts"
           },
@@ -61,7 +64,8 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "apps/webskills-demo/tsconfig.spec.json",
-            "setupFiles": ["testing/setup-dom-stubs.ts"]
+            "setupFiles": ["testing/setup-dom-stubs.ts"],
+            "providersFile": "testing/zoneless-providers.ts"
           }
         },
         "serve": {
@@ -117,7 +121,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "packages/logging/tsconfig.spec.json"
+            "tsConfig": "packages/logging/tsconfig.spec.json",
+            "providersFile": "testing/zoneless-providers.ts"
           }
         },
         "lint": {
@@ -155,7 +160,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "packages/ng-utils/tsconfig.spec.json"
+            "tsConfig": "packages/ng-utils/tsconfig.spec.json",
+            "providersFile": "testing/zoneless-providers.ts"
           }
         },
         "lint": {
@@ -194,7 +200,8 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "packages/ng-components/tsconfig.spec.json",
-            "setupFiles": ["testing/setup-dom-stubs.ts"]
+            "setupFiles": ["testing/setup-dom-stubs.ts"],
+            "providersFile": "testing/zoneless-providers.ts"
           }
         },
         "lint": {
@@ -232,7 +239,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "packages/ts-utils/tsconfig.spec.json"
+            "tsConfig": "packages/ts-utils/tsconfig.spec.json",
+            "providersFile": "testing/zoneless-providers.ts"
           }
         },
         "lint": {

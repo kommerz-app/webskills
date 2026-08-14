@@ -3,3 +3,10 @@ minimumReleaseAgeIgnoreMissingTime: false
 ignoreScripts: true
 # trustPolicy: no-downgrade
 engineStrict: true
+
+# Angular 22 pins TypeScript to >=6.0 <6.1 through its peer dependencies, so
+# `pnpm up --latest` must not drag it to the next major. Remove this entry when
+# upgrading Angular itself.
+updateConfig:
+  ignoreDependencies:
+    - typescript

@@ -1,4 +1,4 @@
 export enum EditType {
-  'CREATE',
-  'UPDATE',
+  CREATE,
+  UPDATE,
 }

@@ -2,9 +2,9 @@ import { Directive, ElementRef, Renderer2 } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
 @Directive()
-export abstract class AbstractControlValueAccessor<T = unknown>
-  implements ControlValueAccessor
-{
+export abstract class AbstractControlValueAccessor<
+  T = unknown,
+> implements ControlValueAccessor {
   protected onChange: (data: T) => void = () => {
     // nop
   };

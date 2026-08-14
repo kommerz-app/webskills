@@ -12,5 +12,5 @@
       "@webskills/ts-utils": ["../ts-utils/src/public-api.ts"]
     }
   },
-  "include": ["**/*.spec.ts", "**/*.d.ts"]
+  "include": ["**/*.spec.ts", "**/*.d.ts", "../../testing/*.ts"]
 }

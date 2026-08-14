@@ -23,7 +23,7 @@ import { MatIconButton } from '@angular/material/button';
   selector: 'wsk-toast-item',
   template: `
     <div
-      class="animation-container mt-3 mr-0 sm:mr-3 overflow-hidden rounded-sm mat-elevation-z3"
+      class="animation-container mt-3 mr-0 sm:mr-3 overflow-hidden rounded-xs mat-elevation-z3"
       [@showHide]="show() ? 'show' : 'hide'"
       (@showHide.done)="onHideDone()"
     >

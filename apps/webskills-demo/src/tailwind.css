@@ -1,0 +1,7 @@
+/*
+ * Tailwind lives in its own plain CSS file: v4 is processed by PostCSS and its
+ * at-rules do not survive a trip through Sass. styles.scss keeps the Material
+ * theme, which does need Sass.
+ */
+@import 'tailwindcss';
+@config '../tailwind.config.js';
