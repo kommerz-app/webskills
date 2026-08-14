@@ -41,6 +41,7 @@ Thumbs.db
 
 .angular
 junit
+junit.xml
 .npm
 .pnpm-store
 .yarn
