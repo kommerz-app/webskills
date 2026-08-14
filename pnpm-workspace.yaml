@@ -1,13 +1,5 @@
-# pnpm settings. Since pnpm 11 only auth/registry settings are read from .npmrc,
-# everything else belongs here. See https://pnpm.io/settings
-
-# Supply-chain cooldown: never install a version published less than 4 days ago.
 minimumReleaseAge: 5760
-
-# Never run lifecycle scripts, neither of this project nor of its dependencies.
-# Consequence: `prepare` does not run on install -> run `pnpm run prepare` once
-# after cloning to install the husky hooks.
+minimumReleaseAgeIgnoreMissingTime: false
 ignoreScripts: true
-
-# Fail the install instead of warning when engines in package.json are unmet.
+# trustPolicy: no-downgrade
 engineStrict: true
