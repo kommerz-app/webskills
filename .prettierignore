@@ -3,3 +3,7 @@
 /dist
 /coverage
 CHANGELOG.md
+
+# Generated lockfile. Unlike yarn.lock, prettier has a parser for it and would
+# reformat it on every install.
+pnpm-lock.yaml

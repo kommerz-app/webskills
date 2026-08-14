@@ -29,15 +29,17 @@ build-libs:
     JEST_JUNIT_UNIQUE_OUTPUT_NAME: 'true'
     NODE_OPTIONS: '--max_old_space_size=4096'
     npm_config_cache: '$CI_PROJECT_DIR/.npm'
-    YARN_CACHE_FOLDER: '$CI_PROJECT_DIR/.yarn'
+    COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
   script:
-    - yarn install --frozen-lockfile
-    - NODE_ENV=production yarn build
-    - yarn test.ci
+    # Corepack activates the pnpm version pinned in package.json#packageManager.
+    - npm install -g corepack@latest && corepack enable
+    - pnpm install --frozen-lockfile --store-dir "$CI_PROJECT_DIR/.pnpm-store"
+    - NODE_ENV=production pnpm build
+    - pnpm test.ci
   cache:
     key: deps-cache
     paths:
-      - .yarn
+      - .pnpm-store
       - .npm
       - .cache
   artifacts:
@@ -90,7 +92,6 @@ deploy-libs:
     - if: $CI_COMMIT_TAG
   variables:
     npm_config_cache: '$CI_PROJECT_DIR/.npm'
-    YARN_CACHE_FOLDER: '$CI_PROJECT_DIR/.yarn'
   script:
     - npm config set @webskills:registry $CI_API_V4_URL/projects/${CI_PROJECT_ID}/packages/npm/
     - npm config set -- "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken" "${GITBOT_ACCESS_TOKEN}"
@@ -105,5 +106,4 @@ deploy-libs:
   cache:
     key: npm-release-cache
     paths:
-      - .yarn
       - .npm
