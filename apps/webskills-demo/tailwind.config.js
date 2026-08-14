@@ -3,7 +3,7 @@ const tailwindPaletteColors = require('tailwindcss/colors');
 module.exports = {
   content: [
     './apps/webskills-demo/src/**/*.html',
-    './dist/ng-components/esm2022/lib/**/*.mjs',
+    './dist/ng-components/fesm2022/**/*.mjs',
   ],
   theme: {
     extend: {

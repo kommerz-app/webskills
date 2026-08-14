@@ -2,14 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListReportComponent } from './list-report.component';
 
-window.ResizeObserver =
-  window.ResizeObserver ||
-  jest.fn().mockImplementation(() => ({
-    disconnect: jest.fn(),
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-  }));
-
 describe('ListReportComponent', () => {
   let component: ListReportComponent;
   let fixture: ComponentFixture<ListReportComponent>;

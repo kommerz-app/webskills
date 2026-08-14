@@ -4,6 +4,7 @@ import {
   Input,
   OnChanges,
   Output,
+  signal,
   SimpleChanges,
 } from '@angular/core';
 import { ToastMessage } from './toast';
@@ -22,8 +23,8 @@ import { MatIconButton } from '@angular/material/button';
   selector: 'wsk-toast-item',
   template: `
     <div
-      class="animation-container mt-3 mr-0 sm:mr-3 overflow-hidden rounded-sm mat-elevation-z3"
-      [@showHide]="show ? 'show' : 'hide'"
+      class="animation-container mt-3 mr-0 sm:mr-3 overflow-hidden rounded-xs mat-elevation-z3"
+      [@showHide]="show() ? 'show' : 'hide'"
       (@showHide.done)="onHideDone()"
     >
       <div class="content flex gap-2 p-3" [ngClass]="message.type!">
@@ -94,7 +95,7 @@ import { MatIconButton } from '@angular/material/button';
   imports: [NgClass, MatIcon, MatIconButton],
 })
 export class ToastItemComponent implements OnChanges {
-  show = true;
+  readonly show = signal(true);
 
   @Input() message!: ToastMessage;
   @Output() removed = new EventEmitter<void>();
@@ -120,17 +121,16 @@ export class ToastItemComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['message'] && this.message && this.message.autoHide !== false) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       setTimeout(() => this.remove(), this.message.ttlSeconds! * 1000);
     }
   }
 
   remove(): void {
-    this.show = false;
+    this.show.set(false);
   }
 
   onHideDone(): void {
-    if (!this.show) {
+    if (!this.show()) {
       this.removed.emit();
     }
   }

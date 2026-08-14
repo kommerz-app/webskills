@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SplitButtonComponent } from './split-button.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,11 +8,11 @@ describe('SplitButtonComponent', () => {
   let component: SplitButtonComponent;
   let fixture: ComponentFixture<SplitButtonComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [SplitButtonComponent, MatIconModule, MatMenuModule],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SplitButtonComponent);

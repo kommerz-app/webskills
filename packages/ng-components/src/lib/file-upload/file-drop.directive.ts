@@ -16,10 +16,7 @@ export class FileDropDirective {
   @HostBinding('class.isDragOver') isDragOver?: boolean;
   @HostBinding('class.hasFile') hasFile?: boolean;
 
-  @HostListener('dragover', ['$event']) onDragOver(evt: {
-    preventDefault: () => void;
-    stopPropagation: () => void;
-  }): void {
+  @HostListener('dragover', ['$event']) onDragOver(evt: DragEvent): void {
     evt.preventDefault();
     evt.stopPropagation();
     this.isDragOver = true;
@@ -27,34 +24,22 @@ export class FileDropDirective {
   }
 
   @HostListener('dragleave', ['$event'])
-  public onDragLeave(evt: {
-    preventDefault: () => void;
-    stopPropagation: () => void;
-  }): void {
+  public onDragLeave(evt: DragEvent): void {
     evt.preventDefault();
     evt.stopPropagation();
     this.isDragOver = false;
   }
 
   @HostListener('drop', ['$event'])
-  public ondrop(evt: {
-    preventDefault: () => void;
-    stopPropagation: () => void;
-    dataTransfer: { files: FileList };
-  }): void {
+  public ondrop(evt: DragEvent): void {
     evt.preventDefault();
     evt.stopPropagation();
     this.hasFile = true;
     this.isDragOver = false;
 
-    const files = evt.dataTransfer.files;
-    const filesToEmit: File[] = [];
+    const filesToEmit = Array.from(evt.dataTransfer?.files ?? []);
 
-    for (let i = 0; i < files.length; i++) {
-      filesToEmit.push(files[i]);
-    }
-
-    if (files.length > 0) {
+    if (filesToEmit.length > 0) {
       this.fileDropped.emit(filesToEmit);
     }
   }

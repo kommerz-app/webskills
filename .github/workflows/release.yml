@@ -23,13 +23,16 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*'
+          node-version: '24'
+          cache: 'pnpm'
       - name: Install dependencies
-        run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/exec
+        run: pnpm install --frozen-lockfile
       - name: Run Semantic Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release
+        run: pnpm exec semantic-release

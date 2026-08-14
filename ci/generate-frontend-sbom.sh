@@ -1,14 +1,19 @@
 #!/usr/bin/env sh
+set -e
+
+SYFT_VERSION=1.51.0
 
 mkdir -p ci/.cache
 cd ci/.cache
 
-if ! [ -f syft ]; then
-    curl -L -o syft.tgz https://github.com/anchore/syft/releases/download/v0.59.0/syft_0.59.0_linux_amd64.tar.gz
-    tar -xzf syft.tgz
+if ! [ -f "syft-${SYFT_VERSION}" ]; then
+    curl -L -o syft.tgz "https://github.com/anchore/syft/releases/download/v${SYFT_VERSION}/syft_${SYFT_VERSION}_linux_amd64.tar.gz"
+    tar -xzf syft.tgz syft
+    mv syft "syft-${SYFT_VERSION}"
+    rm syft.tgz
 fi
 
-./syft packages ../../yarn.lock -o cyclonedx-xml > bom.xml
+"./syft-${SYFT_VERSION}" scan ../../pnpm-lock.yaml -o cyclonedx-xml > bom.xml
 
 curl -X "POST" "https://dtrack-api.colamda.de/api/v1/bom" \
   -H 'Content-Type: multipart/form-data' \

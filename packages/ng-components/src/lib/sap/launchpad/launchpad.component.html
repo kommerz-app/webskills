@@ -15,7 +15,7 @@
         <mat-card appearance="outlined" class="sm:col-span-1 launchpad-card">
           <a [routerLink]="tile.link">
             <div class="aspect-square p-4 flex flex-col">
-              <div class="overflow-hidden flex-grow-0">
+              <div class="overflow-hidden grow-0">
                 @if (getColumnTemplate(tile.headerComponent)) {
                   <ng-container
                     *ngTemplateOutlet="

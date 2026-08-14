@@ -21,14 +21,17 @@
               "base": "dist/webskills-demo"
             },
             "index": "apps/webskills-demo/src/index.html",
-            "polyfills": ["zone.js"],
+            "polyfills": ["@angular/localize/init"],
             "tsConfig": "apps/webskills-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/webskills-demo/src/favicon.ico",
               "apps/webskills-demo/src/assets"
             ],
-            "styles": ["apps/webskills-demo/src/styles.scss"],
+            "styles": [
+              "apps/webskills-demo/src/tailwind.css",
+              "apps/webskills-demo/src/styles.scss"
+            ],
             "scripts": [],
             "browser": "apps/webskills-demo/src/main.ts"
           },
@@ -56,6 +59,14 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "apps/webskills-demo/tsconfig.spec.json",
+            "setupFiles": ["testing/setup-dom-stubs.ts"],
+            "providersFile": "testing/zoneless-providers.ts"
+          }
         },
         "serve": {
           "builder": "@angular/build:dev-server",
@@ -107,6 +118,13 @@
           },
           "defaultConfiguration": "production"
         },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "packages/logging/tsconfig.spec.json",
+            "providersFile": "testing/zoneless-providers.ts"
+          }
+        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -138,6 +156,13 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "packages/ng-utils/tsconfig.spec.json",
+            "providersFile": "testing/zoneless-providers.ts"
+          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
@@ -171,6 +196,14 @@
           },
           "defaultConfiguration": "production"
         },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "packages/ng-components/tsconfig.spec.json",
+            "setupFiles": ["testing/setup-dom-stubs.ts"],
+            "providersFile": "testing/zoneless-providers.ts"
+          }
+        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -203,6 +236,13 @@
           },
           "defaultConfiguration": "production"
         },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "packages/ts-utils/tsconfig.spec.json",
+            "providersFile": "testing/zoneless-providers.ts"
+          }
+        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -216,7 +256,8 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "packageManager": "pnpm"
   },
   "schematics": {
     "@schematics/angular:component": {

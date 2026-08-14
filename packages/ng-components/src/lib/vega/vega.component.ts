@@ -11,12 +11,12 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import embed, { Result, VisualizationSpec } from 'vega-embed';
+import type { Result, VisualizationSpec } from 'vega-embed';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { formatLocale, timeFormatLocale } from './locale/de-DE';
 import { isDefined, isUndefined } from '@webskills/ts-utils';
-import { Changeset } from 'vega';
+import type { Changeset } from 'vega';
 
 export type VegaChangeSet = { [key: string]: any }[];
 
@@ -65,6 +65,10 @@ export class VegaComponent implements OnInit, OnChanges, OnDestroy {
         timeFormatLocale: timeFormatLocale,
       };
     }
+
+    // Imported on demand so that vega, which dwarfs the rest of this library,
+    // only reaches consumers that actually render a chart.
+    const { default: embed } = await import('vega-embed');
 
     this.embeddedInstance = await embed(this.vega.nativeElement, this.spec, {
       ...options,

@@ -55,7 +55,7 @@
           >Selected files</p
         >
       }
-      @if (files?.length) {
+      @if (files.length) {
         <ul data-cy="file-upload-show-file" class="w-full py-6 px-4">
           @for (file of files; track file; let i = $index) {
             <li class="mb-7 last:mb-0 border-b border-primary">
