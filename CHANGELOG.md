@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/kommerz-app/webskills/compare/v4.0.5...v4.1.0) (2026-08-14)
+
+
+### Features
+
+* update to ng 22 ([#9](https://github.com/kommerz-app/webskills/issues/9)) ([058e3e5](https://github.com/kommerz-app/webskills/commit/058e3e5c530f960a1c5926f6f961634b271d1db3))
+
 ## [4.0.5](https://github.com/kommerz-app/webskills/compare/v4.0.4...v4.0.5) (2026-04-17)
 
 
