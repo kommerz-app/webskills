@@ -43,3 +43,4 @@ Thumbs.db
 junit
 .npm
 .pnpm-store
+.yarn
