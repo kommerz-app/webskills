@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
@@ -90,6 +91,7 @@ import { MatIconButton } from '@angular/material/button';
     ]),
   ],
   styleUrls: ['./toast-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
 
   imports: [NgClass, MatIcon, MatIconButton],
 })

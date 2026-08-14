@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'webskills-sample-list-report-page',
   templateUrl: './sample-list-report-page.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./sample-list-report-page.component.scss'],
 })
 export class SampleListReportPageComponent {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   MenuItem,
   NotificationType,
@@ -13,6 +13,7 @@ interface User {
 @Component({
   selector: 'webskills-sample-object-page',
   templateUrl: './sample-object-page.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./sample-object-page.component.scss'],
 })
 export class SampleObjectPageComponent {

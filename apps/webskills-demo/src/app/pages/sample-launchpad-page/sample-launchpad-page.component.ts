@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Group } from '@webskills/ng-components';
 
 @Component({
   selector: 'webskills-sample-launchpad-page',
   templateUrl: './sample-launchpad-page.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./sample-launchpad-page.component.scss'],
 })
 export class SampleLaunchpadPageComponent {

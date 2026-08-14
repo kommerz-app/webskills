@@ -1,4 +1,9 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { ToastMessage } from './toast';
 import { ToastItemComponent } from './toast-item.component';
 
@@ -15,6 +20,7 @@ import { ToastItemComponent } from './toast-item.component';
       ></wsk-toast-item>
     }
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
 
   imports: [ToastItemComponent],
 })
