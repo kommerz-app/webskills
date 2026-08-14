@@ -66,9 +66,9 @@
     "@semantic-release/exec": "7.1.0",
     "@semantic-release/git": "11.0.1",
     "@types/jest": "30.0.0",
-    "@types/node": "20.9.0",
-    "@typescript-eslint/eslint-plugin": "8.42.0",
-    "@typescript-eslint/parser": "8.42.0",
+    "@types/node": "24.13.3",
+    "@typescript-eslint/eslint-plugin": "8.67.0",
+    "@typescript-eslint/parser": "8.67.0",
     "autoprefixer": "10.4.21",
     "eslint": "9.34.0",
     "husky": "^9.1.7",
@@ -87,6 +87,6 @@
     "tailwindcss": "3.3.5",
     "ts-jest": "29.4.12",
     "ts-node": "10.9.2",
-    "typescript": "5.9.2"
+    "typescript": "6.0.3"
   }
 }
