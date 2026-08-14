@@ -82,7 +82,6 @@
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3",
     "typescript-eslint": "8.67.0",
-    "vitest": "4.1.10",
-    "zone.js": "0.16.2"
+    "vitest": "4.1.10"
   }
 }

@@ -10,3 +10,11 @@ engineStrict: true
 updateConfig:
   ignoreDependencies:
     - typescript
+
+# zone.js is an optional peer of @angular/core. The applications and the unit
+# test setup are zoneless, and the unit-test builder decides whether to emit a
+# zone.js import purely by trying to resolve it - so letting pnpm materialise
+# this peer silently breaks every test suite.
+peerDependencyRules:
+  ignoreMissing:
+    - zone.js
