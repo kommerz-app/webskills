@@ -1,3 +1,4 @@
+import { provideZoneChangeDetection, NgModule } from '@angular/core';
 import 'jest-preset-angular/setup-env/zone';
 import { TestBed } from '@angular/core/testing';
 import {
@@ -5,6 +6,12 @@ import {
   platformBrowserTesting,
 } from '@angular/platform-browser/testing';
 
+@NgModule({ providers: [provideZoneChangeDetection()] })
+export class ZoneChangeDetectionModule {}
+
 beforeAll(() => {
-  TestBed.initTestEnvironment(BrowserTestingModule, platformBrowserTesting());
+  TestBed.initTestEnvironment(
+    [ZoneChangeDetectionModule, BrowserTestingModule],
+    platformBrowserTesting(),
+  );
 });

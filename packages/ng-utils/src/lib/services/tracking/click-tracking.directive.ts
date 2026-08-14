@@ -10,7 +10,7 @@ import {
 export class ClickTrackingDirective {
   @Input() wskClickTracking!: AppTrackingInteractionEvent;
 
-  @HostListener('click', ['$event'])
+  @HostListener('click')
   public onClick(): void {
     this.trackingService.trackInteraction(this.wskClickTracking);
   }
