@@ -122,7 +122,6 @@ export class ToastItemComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['message'] && this.message && this.message.autoHide !== false) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       setTimeout(() => this.remove(), this.message.ttlSeconds! * 1000);
     }
   }
