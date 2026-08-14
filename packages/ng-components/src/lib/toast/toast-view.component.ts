@@ -1,8 +1,10 @@
 import {
-  ChangeDetectionStrategy,
+  afterNextRender,
   Component,
-  QueryList,
-  ViewChildren,
+  inject,
+  Injector,
+  signal,
+  viewChildren,
 } from '@angular/core';
 import { ToastMessage } from './toast';
 import { ToastItemComponent } from './toast-item.component';
@@ -13,14 +15,13 @@ import { ToastItemComponent } from './toast-item.component';
 @Component({
   selector: 'wsk-toast-view',
   template: `
-    @for (item of items; track item) {
+    @for (item of items(); track item) {
       <wsk-toast-item
         [message]="item"
         (removed)="onRemoved(item)"
       ></wsk-toast-item>
     }
   `,
-  changeDetection: ChangeDetectionStrategy.Eager,
 
   imports: [ToastItemComponent],
 })
@@ -35,27 +36,28 @@ export class ToastViewComponent {
    */
   ttlSeconds = 5;
 
-  items: ToastMessage[] = [];
+  readonly items = signal<ToastMessage[]>([]);
 
-  @ViewChildren(ToastItemComponent)
-  itemComponents!: QueryList<ToastItemComponent>;
+  readonly itemComponents = viewChildren(ToastItemComponent);
+
+  private readonly injector = inject(Injector);
 
   addToast(toast: ToastMessage): void {
     if (!toast.ttlSeconds) {
       toast.ttlSeconds = this.ttlSeconds;
     }
 
-    this.items.unshift(toast);
+    this.items.update((items) => [toast, ...items]);
 
-    setTimeout(() => this.checkChildren());
+    // The surplus toasts can only be identified once the new one has been rendered.
+    afterNextRender(() => this.checkChildren(), { injector: this.injector });
   }
 
   checkChildren(): void {
     // call remove on all items that shall disappear
-    this.itemComponents
-      .toArray()
+    this.itemComponents()
       .slice(this.maxItems)
-      .forEach((i) => i.remove());
+      .forEach((item) => item.remove());
   }
 
   /**
@@ -64,9 +66,8 @@ export class ToastViewComponent {
    * @param item the item was hidden/removed
    */
   onRemoved(item: ToastMessage): void {
-    const idx = this.items.findIndex((i) => i === item);
-    if (idx > -1) {
-      this.items.splice(idx, 1);
-    }
+    this.items.update((items) =>
+      items.filter((candidate) => candidate !== item),
+    );
   }
 }

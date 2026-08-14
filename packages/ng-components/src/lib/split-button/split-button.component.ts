@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
 import { MatIcon } from '@angular/material/icon';
@@ -19,7 +13,6 @@ export interface MenuItem {
 @Component({
   selector: 'wsk-split-button',
   templateUrl: './split-button.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
 
   imports: [MatButton, MatMenuTrigger, MatMenu, MatIcon, MatMenuItem],
 })
