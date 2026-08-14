@@ -1,11 +1,24 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Group } from '@webskills/ng-components';
+import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {
+  Group,
+  LaunchpadComponent,
+  LaunchpadTopLevelNavigationComponent,
+  TemplateDirective,
+} from '@webskills/ng-components';
 
 @Component({
   selector: 'webskills-sample-launchpad-page',
   templateUrl: './sample-launchpad-page.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./sample-launchpad-page.component.scss'],
+  imports: [
+    LaunchpadComponent,
+    LaunchpadTopLevelNavigationComponent,
+    TemplateDirective,
+    MatIconModule,
+    MatTooltipModule,
+  ],
 })
 export class SampleLaunchpadPageComponent {
   menuItems = [

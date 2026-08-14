@@ -21,7 +21,7 @@
               "base": "dist/webskills-demo"
             },
             "index": "apps/webskills-demo/src/index.html",
-            "polyfills": ["zone.js"],
+            "polyfills": ["@angular/localize/init"],
             "tsConfig": "apps/webskills-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -56,6 +56,13 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "apps/webskills-demo/tsconfig.spec.json",
+            "setupFiles": ["testing/setup-dom-stubs.ts"]
+          }
         },
         "serve": {
           "builder": "@angular/build:dev-server",
@@ -186,7 +193,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "packages/ng-components/tsconfig.spec.json"
+            "tsConfig": "packages/ng-components/tsconfig.spec.json",
+            "setupFiles": ["testing/setup-dom-stubs.ts"]
           }
         },
         "lint": {

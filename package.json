@@ -13,7 +13,7 @@
     "format:write": "prettier --write .",
     "lint": "ng lint && prettier . --check",
     "linting:write": "ng lint --fix",
-    "test.ci": "pnpm test.ts-utils && pnpm test.logging && pnpm test.ng-utils && pnpm test.ng-components",
+    "test.ci": "pnpm test.ts-utils && pnpm test.logging && pnpm test.ng-utils && pnpm test.ng-components && pnpm test.webskills-demo",
     "test.ts-utils": "ng test ts-utils --no-watch --reporters=default --reporters=junit --output-file=junit/ts-utils.xml",
     "test.logging": "ng test logging --no-watch --reporters=default --reporters=junit --output-file=junit/logging.xml",
     "test.ng-utils": "ng test ng-utils --no-watch --reporters=default --reporters=junit --output-file=junit/ng-utils.xml",
@@ -26,7 +26,8 @@
     "build:watch.ng-components": "ng build ng-components --watch",
     "serve:demo": "ng serve webskills-demo --port 4202",
     "prepare": "husky",
-    "test": "ng test"
+    "test": "ng test",
+    "test.webskills-demo": "ng test webskills-demo --no-watch --reporters=default --reporters=junit --output-file=junit/webskills-demo.xml"
   },
   "private": true,
   "dependencies": {
@@ -48,8 +49,7 @@
     "tslib": "^2.0.0",
     "vega": "6.1.2",
     "vega-embed": "7.0.2",
-    "vega-lite": "6.3.0",
-    "zone.js": "0.15.0"
+    "vega-lite": "6.3.0"
   },
   "devDependencies": {
     "@angular-devkit/core": "22.1.3",
