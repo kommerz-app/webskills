@@ -83,13 +83,6 @@ export class HtmlContentComponent implements OnChanges {
               this.elementRef.nativeElement,
               this.renderer,
               this.router,
-              undefined,
-              undefined,
-              (href, elem) => {
-                if (href.startsWith('http')) {
-                  elem.setAttribute('target', '_blank');
-                }
-              },
             ),
           );
         }

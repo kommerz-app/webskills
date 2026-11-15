@@ -3,6 +3,8 @@ import { NavigationExtras, Router } from '@angular/router';
 import { isDefined, isUndefined } from '@webskills/ts-utils';
 
 export const LINK_MARKER = 'data-link';
+const URI_SCHEME = /^[a-z][a-z\d+.-]*:/i;
+const WEB_SCHEME = /^https?:/i;
 
 /**
  *
@@ -34,8 +36,10 @@ export function decorateLinks(
 
     a.setAttribute(LINK_MARKER, '');
 
-    if (href.startsWith('http')) {
-      a.setAttribute('target', '_blank');
+    if (URI_SCHEME.test(href)) {
+      if (WEB_SCHEME.test(href)) {
+        a.setAttribute('target', '_blank');
+      }
       return;
     }
 
