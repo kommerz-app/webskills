@@ -1,3 +1,10 @@
+## [4.1.1](https://github.com/kommerz-app/webskills/compare/v4.1.0...v4.1.1) (2026-11-15)
+
+
+### Bug Fixes
+
+* trigger release ([2509178](https://github.com/kommerz-app/webskills/commit/2509178994ba2ccb5256cde6da25270e5ae72485))
+
 # [4.1.0](https://github.com/kommerz-app/webskills/compare/v4.0.5...v4.1.0) (2026-08-14)
 
 
